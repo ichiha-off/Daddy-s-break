@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
 		case resource
 			when Admin
 				root_path
-			when EndUser
+			when User
 				root_path
 		end
 	end
@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
 		case resource
 			when Admin
 				root_path
-			when EndUser
+			when User
 				root_path
 		end
 	end
