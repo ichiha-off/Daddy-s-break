@@ -1,24 +1,24 @@
-# README
+# Daddy's break
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+Daddy's breakは、妻子のいるパパが集まって愚痴をいったり、子育ての相談したり、夫婦間の悩みに答えたり…。
+お父さん達が少し息抜きできる場所です。
 
-Things you may want to cover:
+### サイトテーマ
+パパが休める場所
 
-* Ruby version
+### テーマを選んだ理由
+自分がいま父親になり、こういうサイトがあったらいろんなことが相談できると思い、なら作ってしまえ！
+と考えました！
 
-* System dependencies
+### ターゲットユーザ
+現代に生きるパパ達
 
-* Configuration
+### 主な利用シーン
+少し子育てで悩んでいる、夫婦喧嘩をしてしまった、こんな絵本を購入したら子供が喜んでくれたなど…。
 
-* Database creation
+## 設計書
 
-* Database initialization
+### チャレンジ要素一覧
+https://docs.google.com/spreadsheets/d/1sWG6eNAbCPrumlF2OvziQ3gGeFQ4w-efXBhGwBDxmB4/edit?usp=sharing
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
