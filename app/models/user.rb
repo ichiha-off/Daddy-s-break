@@ -8,7 +8,7 @@ class User < ApplicationRecord
 	validates :name, length: {maximum: 10, minimum: 2}, uniqueness: true
 	validates :introduction, length: {maximum: 50}
 
-	enum :is_active {"無効": 0, "有効": 1}
+	enum is_active: {"無効": 0, "有効": 1}
 
 	has_many :topics, dependent: :destroy
 	has_many :comments, dependent: :destroy
