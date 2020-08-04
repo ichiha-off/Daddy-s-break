@@ -72,3 +72,6 @@ gem "jquery-rails"
 gem 'bootstrap', '~> 4.1.1'
 gem 'impressionist'
 gem 'dotenv-rails'
+group :production do
+  gem 'mysql2'
+end
