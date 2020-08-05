@@ -1,0 +1,39 @@
+<header class="navbar fixed-top">
+  <div class="container">
+    <nav class='nav navbar-nav navbar-center'>
+      <%= link_to '#', class: 'navbar-link' do %>
+        <span>ロゴ</span>
+      <% end %>
+    </nav>
+
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <div class="row justify-content-end">
+        <% if user_signed_in? %>
+          <li>
+            <div>
+                ようこそ！<%= current_user.name %> 様
+            </div>
+          </li>
+          <li>
+              <%= link_to destroy_user_session_path, method: :delete, class: 'navbar-link' do %>
+                <i class="fas fa-sign-out-alt"> ログアウト</i>
+              <% end %>
+          </li>
+        <% else %>
+          <li>
+            <%= link_to about_path, class: 'navbar-link' do %>
+              <i class="far fa-bookmark"> 初めての方はこちら</i> 
+            <% end %>
+          </li>
+          <li>
+            <%= link_to new_user_session_path, class: 'navbar-link' do %>
+              <i class="fas fa-sign-in-alt"> ログイン</i>
+            <% end %>
+          </li>
+        <% end %>
+        </div>
+      </ul>
+    </nav>
+  </div>
+</header>

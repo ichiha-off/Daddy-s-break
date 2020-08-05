@@ -71,6 +71,7 @@ gem 'kaminari','~> 1.2.1'
 gem "jquery-rails"
 gem 'bootstrap', '~> 4.1.1'
 gem 'impressionist'
+gem 'font-awesome-sass'
 gem 'dotenv-rails'
 group :production do
   gem 'mysql2'
