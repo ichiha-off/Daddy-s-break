@@ -1,3 +1,39 @@
 // Place all the styles related to the topics controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.topic-new {
+  padding: 50px;
+}
+
+.topic-new .col-lg-6 {
+  margin-bottom: 30px;
+  align-self: center;
+}
+
+.topic-form {
+  width: 100%;
+}
+
+.topic-show {
+  background-color: white;
+  margin: 115px 30px 30px 30px;
+  padding: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.topic-body {
+  border-top: 0.1em grey dotted;
+  padding-top: 30px;
+  display: inline-block;
+}
+
+.topic-title {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+#topic_body {
+  height: 160px;
+}

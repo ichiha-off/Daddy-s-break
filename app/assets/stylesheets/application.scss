@@ -24,7 +24,7 @@
 
 body {
   background-color: #E0F0F0;
-  margin-top: 115px;
+  margin-top: 85px;
 }
 
 a:hover{
@@ -41,13 +41,18 @@ a:hover{
 }
 
 .navbar-link {
-  line-height: 100px;
-  font-size: 20px;
+  display: inline-block;
+  line-height: 70px;
+  font-size: 16px;
   margin: 0 0 0 10px;
   color: white;
 }
+
 .navbar-link > i:hover, .navbar-link > span:hover {
   color: white;
 }
 
+.flash {
+	text-align: center;
+}
 

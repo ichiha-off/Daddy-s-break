@@ -1,0 +1,33 @@
+<div class="container">
+  <%= form_with model: @topic, local: true do |f| %>
+    <div class="row topic-new">
+
+      <div class="col-sm-12 col-lg-6">
+        <%= attachment_image_tag(@topic, :image, fallback: "no_image.jpg",size: "300x300" ) %>
+        <br><%= f.attachment_field :image %>
+      </div>
+
+      <div class="col-sm-12 col-lg-6">
+        <table class="table">
+          <tr>
+            <td><%= f.text_field :title, class: "topic-form" %></td>
+          </tr>
+
+          <tr>
+            <td><%= f.text_area :body, class: "topic-form" %></td>
+          </tr>
+
+          <tr>
+            <td><%= f.collection_select :category_id, @categories, :id, :name, :prompt => 'カテゴリ選択', class: "topic-form" %></td>
+          </tr>
+
+          <tr class="text-center">
+            <td><%= f.submit "内容を更新する", class: 'btn btn-success btn-lg' %></td>
+          </tr>
+        </table>
+      </div>
+      
+    </div>
+
+  <% end %>
+</div>

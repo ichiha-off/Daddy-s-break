@@ -1,0 +1,22 @@
+<div class="topic-show">
+
+  <div class="row topic-title">
+    <div class="col-sm-2">
+      <%= attachment_image_tag(@topic, :image, size: "100x100", fallback: "no_image.jpg") %>
+    </div>
+    <div class="col-sm-5">
+      <p><%= @topic.title %></p>
+      <% if current_user.id == @topic.user_id%>
+        <%= link_to "編集する", edit_topic_path(@topic), class: "btn btn-primary" %>
+        <%= link_to "削除する", topic_path(@topic), method: :delete, class: "btn btn-danger" %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row topic-body">
+    <div class="col-sm-12">
+      <%= @topic.body %>
+    </div>
+  </div>
+
+</div>

@@ -5,7 +5,7 @@ class User < ApplicationRecord
 	devise :database_authenticatable, :registerable,
 				 :recoverable, :rememberable, :validatable
 
-	validates :name, length: {maximum: 10, minimum: 2}, uniqueness: true
+	validates :name, presence: true, length: {maximum: 20, minimum: 1}
 	validates :introduction, length: {maximum: 50}
 
 	enum is_active: {"無効": 0, "有効": 1}

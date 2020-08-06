@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
 
 	before_action :configure_permitted_parameters,if: :devise_controller? 
+	#デバイス機能実行前にconfigure_permitted_parametersの実行をする。
 
 	private
 
@@ -9,7 +10,7 @@ class ApplicationController < ActionController::Base
 			when Admin
 				root_path
 			when User
-				root_path
+				topics_path
 		end
 	end
 
@@ -24,6 +25,9 @@ class ApplicationController < ActionController::Base
 
 	def configure_permitted_parameters
 		devise_parameter_sanitizer.permit(:sign_up,keys:[:email])
+
+		devise_parameter_sanitizer.permit(:account_update, keys: [:name, :introduction])
 	end
+
 
 end
