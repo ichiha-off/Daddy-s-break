@@ -1,21 +1,91 @@
 <div class="topic-show">
 
   <div class="row topic-title">
+
     <div class="col-sm-2">
       <%= attachment_image_tag(@topic, :image, size: "100x100", fallback: "no_image.jpg") %>
     </div>
-    <div class="col-sm-5">
-      <p><%= @topic.title %></p>
+
+    <div class="col-sm-10">
+
+      <div class="row">
+        <div class="title">
+          <%= @topic.title %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-5 topic-comment-count">
+          <span class="far fa-comment-dots"> <%= @topic.comments.count %> コメント <%= @topic.created_at.strftime('%Y/%m/%d %H:%M') %></span>
+        </div>
+        <div class="col-sm-7 comment-to">
+          <%= link_to "コメントする", '#comment-form', class: "btn btn-lg btn-bule" %>
+        </div>
+      </div>
+
       <% if current_user.id == @topic.user_id%>
-        <%= link_to "編集する", edit_topic_path(@topic), class: "btn btn-primary" %>
-        <%= link_to "削除する", topic_path(@topic), method: :delete, class: "btn btn-danger" %>
+        <div class="row justify-content-end">
+          <%= link_to "編集する", edit_topic_path(@topic), class: "btn btn-primary topic-edit-btn" %>
+          <%= link_to "削除する", topic_path(@topic), method: :delete, class: "btn btn-danger topic-destroy-btn" %>
+        </div>
       <% end %>
+
     </div>
+
   </div>
 
   <div class="row topic-body">
     <div class="col-sm-12">
       <%= @topic.body %>
+    </div>
+  </div>
+
+</div>
+
+<div class="topic-comments">
+
+  <div class="row">
+    <div class="col-sm-12">
+
+      <%= paginate @comments %>
+
+      <ul>
+        <% @comments.each do |comment| %>
+          <li class="comment-li">
+            <p>
+              <%= attachment_image_tag(comment.user, :profile_image_id, style: "width: 60px; height: 60px;", fallback: "no_image.jpg") %>
+              <a href="#"><%= comment.user.name %></a>
+              <%= comment.created_at.strftime('%Y/%m/%d %H:%M') %>
+            </p>
+            <div class="comment-view-image">
+              <%= attachment_image_tag(comment, :image, style: "width: 200px; height: 200px;") %>
+            </div>
+            <div class="comment-comment"><%= comment.comment %></div>
+            <% if current_user == comment.user %>
+              <div class="comment-destroy">
+                <%= link_to "削除する", topic_comment_path(comment.topic, comment), method: :delete, class: "btn btn-danger" %>
+              </div>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+
+      <%= paginate @comments %>
+
+      <%= form_with model:[@topic, @comment], id: "comment-form", local: true do |f| %>
+        <%= f.text_area :comment, rows:'5', class: "form-control", placeholder: "コメントを書く" %>
+        <div class="comment-image">
+          <span class="fas fa-camera fa-3x"></span> <%= f.attachment_field :image %>
+          <p>画像を選択</p>
+        </div>
+
+        <img class='image preview' >
+
+        <div class="row justify-content-center comment-button">
+          <%= f.submit "コメントを投稿する", class: "btn btn-lg btn-bule col-sm-8" %>
+        </div>
+      <% end %>
+
     </div>
   </div>
 

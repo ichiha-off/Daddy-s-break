@@ -4,6 +4,8 @@ class Comment < ApplicationRecord
   has_many :replies, dependent: :destroy
   has_many :notifications, dependent: :destroy
 
+  attachment :image
+
   belongs_to :topic
   belongs_to :user
 

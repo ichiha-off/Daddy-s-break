@@ -17,3 +17,35 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+// 画像プレビュー機能
+$(function(){
+  $('#comment_image').on('change', function (e) {
+    var reader = new FileReader();
+    reader.onload = function (e) {
+      $(".image").attr('src', e.target.result);
+      $(".image").attr('style', 'width: 100px; height: 100px;');
+    }
+    reader.readAsDataURL(e.target.files[0]);
+  });
+});
+
+// TOP画面へボタン
+$(document).on('turbolinks:load', function() {
+  var pagetop = $('#page_top');   
+  pagetop.hide();
+  $(window).scroll(function () {
+      if ($(this).scrollTop() > 100) {  //100pxスクロールしたら表示
+          pagetop.fadeIn();
+      } else {
+          pagetop.fadeOut();
+      }
+  });
+  pagetop.click(function () {
+      $('body,html').animate({
+          scrollTop: 0
+      }, 500); //0.5秒かけてトップへ移動
+      return false;
+  });
+});
+

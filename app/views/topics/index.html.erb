@@ -15,6 +15,12 @@
                 <%= topic.title %>
               <% end %>
             </td>
+            <td>By
+              <%= topic.user.name %>
+            </td>
+            <td>
+              <%= link_to "#{topic.comments.count} コメント", topic_path(topic.id) %>
+            </td>
           </tr>
         <% end %>
       </table>
