@@ -22,6 +22,21 @@
   font-family: 'Noto Sans JP', sans-serif;
 }
 
+.logo {
+  font-size: 30px;
+  font-family: 'Playfair Display', serif;
+}
+
+.header-user-icon {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+}
+
+.dropdown-toggle::after {
+  display: none;
+}
+
 .btn-bule {
   color: white;
   background-color: #2080C0;
@@ -42,13 +57,7 @@ a:hover{
   color: white;
 }
 
-.navbar-center {
-  margin: 0 auto;
-}
-
 .navbar-link {
-  display: inline-block;
-  line-height: 70px;
   font-size: 16px;
   margin: 0 0 0 10px;
   color: white;
