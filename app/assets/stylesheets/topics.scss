@@ -5,7 +5,6 @@
 .topic-index {
   background-color: white;
   margin-top: 30px;
-  margin-right: 50px;
 }
 
 .topic-index > .list-group {
@@ -39,7 +38,7 @@
 }
 
 .topic-create-button > a {
-  font-size: 16px;
+  font-size: 14px;
   color: white;
 }
 
@@ -86,4 +85,8 @@
 
 .topic-edit-btn, .topic-destroy-btn {
   margin: 15px;
+}
+
+.topic-index-created {
+  font-size: 10px;
 }

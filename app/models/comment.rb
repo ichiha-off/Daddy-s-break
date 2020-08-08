@@ -15,4 +15,8 @@ class Comment < ApplicationRecord
     favorites.where(user_id: user.id).exists?
   end
 
+  def replited?(comment)
+    replies.where(comment_id: comment.id).exists?
+  end
+
 end

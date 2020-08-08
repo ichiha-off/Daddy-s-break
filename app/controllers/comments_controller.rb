@@ -1,5 +1,12 @@
 class CommentsController < ApplicationController
 
+  def show
+    @topic = Topic.find(params[:topic_id])
+    @comment = Comment.find(params[:id])
+    @reply = Reply.new
+    @replies = @comment.replies
+  end
+
   def create
     topic = Topic.find(params[:topic_id])
     comment = current_user.comments.new(comment_params)

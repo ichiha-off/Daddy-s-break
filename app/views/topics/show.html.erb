@@ -16,7 +16,7 @@
 
       <div class="row">
         <div class="col-sm-5 topic-comment-count">
-          <span class="far fa-comment-dots"> <%= @topic.comments.count %> コメント <%= @topic.created_at.strftime('%Y/%m/%d %H:%M') %></span>
+          <span class="fas fa-comment-dots"> <%= @topic.comments.count %> コメント <%= @topic.created_at.strftime('%Y/%m/%d %H:%M') %></span>
         </div>
         <div class="col-sm-7 comment-to">
           <%= link_to "コメントする", '#comment-form', class: "btn btn-lg btn-bule" %>
@@ -66,6 +66,11 @@
               <%= attachment_image_tag(comment, :image, style: "width: 200px; height: 200px;") %>
             </div>
             <div class="comment-comment"><%= comment.comment %></div>
+            <div class="comment-reply-button">
+              <%= link_to topic_comment_path(comment.topic, comment), class: "reply-button" do %>
+                <i class="fas fa-reply"> 返信する　<%= comment.replies.count %>件</i>
+              <% end %>
+            </div>
             <div id="favorites_buttons_<%= comment.id %>" class="comment-favorite">
               <%= render 'favorites/favorites', comment: comment %>
             </div>
@@ -77,7 +82,7 @@
 
       <%= form_with model:[@topic, @comment], id: "comment-form", local: true do |f| %>
         <%= f.text_area :comment, rows:'5', class: "form-control", placeholder: "コメントを書く" %>
-        <div class="comment-image">
+        <div class="add-image">
           <span class="fas fa-camera fa-3x"></span> <%= f.attachment_field :image %>
           <p>画像を選択</p>
         </div>

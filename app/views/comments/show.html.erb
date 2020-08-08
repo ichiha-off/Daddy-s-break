@@ -1,0 +1,101 @@
+<div class="container">
+
+  <div class="comment-show">
+
+    <div class="row topic-title">
+
+      <div class="col-sm-2">
+        <%= attachment_image_tag(@topic, :image, size: "100x100", fallback: "no_image.jpg") %>
+      </div>
+
+      <div class="col-sm-10">
+
+        <div class="row">
+          <div class="col-sm-8 title">
+            <%= @topic.title %>
+          </div>
+          <div class="col-sm-4 comment-show-count">
+            <span class="fas fa-comment-dots"> <%= @topic.comments.count %> コメント <%= @topic.created_at.strftime('%Y/%m/%d %H:%M') %></span>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12">
+            <%= @topic.body %>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="border"></div>
+
+    <div class="row">
+
+      <div class="col-sm-12 comment-user">
+        <%= attachment_image_tag(@comment.user, :profile_image_id, style: "width: 60px; height: 60px;", fallback: "no_image.jpg") %>
+        <a href="#"><%= @comment.user.name %></a>
+        <%= @comment.created_at.strftime('%Y/%m/%d %H:%M') %>
+      </div>
+
+      <div class="col-sm-12 comment-view-image">
+        <%= attachment_image_tag(@comment, :image, style: "width: 200px; height: 200px;") %>
+      </div>
+      <div class="col-sm-12 comment-comment"><%= @comment.comment %></div>
+      <div id="favorites_buttons_<%= @comment.id %>" class="col-sm-12 comment-favorite">
+        <%= render 'favorites/favorites', comment: @comment %>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="reply-form">
+    <div class="row">
+
+      <%= form_with model:[@topic, @comment, @reply], class: "col-sm-12", local: true do |f| %>
+        <%= f.text_area :reply, rows:'5', class: "col-sm-12 form-control", placeholder: "返信する内容を書く" %>
+        <div class="add-image">
+          <span class="fas fa-camera fa-3x"></span> <%= f.attachment_field :image %>
+          <p>画像を選択</p>
+        </div>
+        <img class='image preview'>
+        <div class="row justify-content-center reply-button">
+          <%= f.submit "返信する", class: "btn btn-lg btn-bule col-sm-8" %>
+        </div>
+      <% end %>
+
+    </div>
+
+    <div class="border"></div>
+
+    <div class="row">
+
+        <% @replies.each do |reply| %>
+            <div class="col-sm-9">
+              <%= attachment_image_tag(reply.user, :profile_image_id, style: "width: 60px; height: 60px;", fallback: "no_image.jpg") %>
+              <a href="#"><%= reply.user.name %></a>
+              <%= reply.created_at.strftime('%Y/%m/%d %H:%M') %>
+            </div>
+            <% if current_user == reply.user %>
+              <div class="col-sm-3">
+                <%= link_to "削除する", topic_comment_reply_path(reply.comment.topic, reply.comment, reply), method: :delete, class: "btn btn-danger" %>
+              </div>
+            <% end %>
+            <div class="col-sm-12 replied-user-name">
+              >> <%= reply.comment.user.name %>
+            </div>
+            <div class="col-sm-12">
+              <%= attachment_image_tag(reply, :image, style: "width: 200px; height: 200px;") %>
+            </div>
+            <div class="col-sm-12 reply-reply"><%= reply.reply %></div>
+            <div class="border"></div>
+        <% end %>
+
+    </div>
+  </div>
+
+</div>
+
+

@@ -1,3 +1,31 @@
 // Place all the styles related to the replies controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.reply-form {
+  margin-top: 30px;
+  padding: 30px;
+  background-color: white;
+}
+
+.reply-button {
+  margin-bottom: 30px;
+}
+
+.replied-user-name {
+  font-size: 24px;
+  line-height: 40px;
+  color: #2080C0;
+}
+
+.reply-reply {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #2080C0;
+}
+
+.comment-reply-button {
+  margin-top: 50px;
+  font-size: 12px;
+}
