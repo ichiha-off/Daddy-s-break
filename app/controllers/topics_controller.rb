@@ -29,7 +29,7 @@ class TopicsController < ApplicationController
   def show
     @topic = Topic.find(params[:id])
     @comment = Comment.new
-    @comments = @topic.comments.page(params[:page]).reverse_order
+    @comments = @topic.comments.page(params[:page])
   end
 
   def edit

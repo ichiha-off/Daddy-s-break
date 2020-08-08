@@ -2,6 +2,47 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.topic-index {
+  background-color: white;
+  margin-top: 30px;
+  margin-right: 50px;
+}
+
+.topic-index > .list-group {
+  margin: 0;
+}
+
+.topic-index-title > a {
+  font-size: 20px;
+ }
+
+.topic-index-title > .row {
+  margin-top: 50px;
+}
+
+.topic-index-image {
+  border-radius: 5px;
+}
+
+.topic-index .topic-list-item {
+  padding: 20px 0px 20px 0px;
+}
+
+.topic-create-button {
+  height: 50px;
+  margin-top: 30px;
+  line-height: 50px;
+  opacity: 1.2;
+  text-align: center;
+  border-radius: 50px;
+  background: #2080C0;
+}
+
+.topic-create-button > a {
+  font-size: 16px;
+  color: white;
+}
+
 .topic-new {
   padding: 50px;
 }

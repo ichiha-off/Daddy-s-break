@@ -52,20 +52,23 @@
       <ul>
         <% @comments.each do |comment| %>
           <li class="comment-li">
-            <p>
+            <div class="comment-user">
               <%= attachment_image_tag(comment.user, :profile_image_id, style: "width: 60px; height: 60px;", fallback: "no_image.jpg") %>
               <a href="#"><%= comment.user.name %></a>
               <%= comment.created_at.strftime('%Y/%m/%d %H:%M') %>
-            </p>
-            <div class="comment-view-image">
-              <%= attachment_image_tag(comment, :image, style: "width: 200px; height: 200px;") %>
             </div>
-            <div class="comment-comment"><%= comment.comment %></div>
             <% if current_user == comment.user %>
               <div class="comment-destroy">
                 <%= link_to "削除する", topic_comment_path(comment.topic, comment), method: :delete, class: "btn btn-danger" %>
               </div>
             <% end %>
+            <div class="comment-view-image">
+              <%= attachment_image_tag(comment, :image, style: "width: 200px; height: 200px;") %>
+            </div>
+            <div class="comment-comment"><%= comment.comment %></div>
+            <div id="favorites_buttons_<%= comment.id %>" class="comment-favorite">
+              <%= render 'favorites/favorites', comment: comment %>
+            </div>
           </li>
         <% end %>
       </ul>

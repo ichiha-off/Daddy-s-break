@@ -28,6 +28,12 @@
   border-bottom: 1px solid #e3e3e3;
 }
 
+.comment-user {
+  width: 49%;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
 .comment-comment {
   font-size: 20px;
   font-weight: 600;
@@ -77,5 +83,8 @@
 }
 
 .comment-destroy {
+  width: 50%;
+  display: inline-block;
   text-align: right;
 }
+
