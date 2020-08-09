@@ -1,0 +1,19 @@
+<table class="table">
+
+  <thead>
+    <th>カテゴリ一覧</th>
+  </thead>
+
+  <tbody>
+    <% categories.each do |category| %>
+      <tr>
+        <td>
+          <%= link_to topics_path(category_id: category.id) do %>
+            <%= category.name %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+
+</table>

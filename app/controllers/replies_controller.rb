@@ -1,5 +1,7 @@
 class RepliesController < ApplicationController
 
+  before_action :authenticate_user!
+
   def create
     topic = Topic.find(params[:topic_id])
     comment = Comment.find(params[:comment_id])

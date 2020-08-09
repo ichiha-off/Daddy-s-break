@@ -15,7 +15,7 @@
         <% if user_signed_in? %>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-              <%= attachment_image_tag(current_user, :profile_image_id, fallback: "no_image.jpg", class: "header-user-icon") %>
+              <%= attachment_image_tag(current_user, :profile_image, fallback: "no_image.jpg", class: "header-user-icon") %>
             </a>
               <div class="dropdown-menu">
                 <%= link_to user_path(current_user), class: 'dropdown-item' do %>

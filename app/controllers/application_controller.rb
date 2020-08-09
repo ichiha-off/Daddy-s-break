@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource)
     if resource == Admin
-      topics_path
+        topics_path
     else resource == User
         topics_path
     end
@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
     if resource == Admin
         topics_path
     else resource == User
-        topics_path
+        new_user_session_path
     end
   end
 

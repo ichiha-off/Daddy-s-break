@@ -27,6 +27,12 @@
   font-family: 'Playfair Display', serif;
 }
 
+.nav {
+  a, a:visited, a:hover, a:active {
+    color: inherit;
+    text-decoration: none;
+  }
+}
 .header-user-icon {
   height: 60px;
   width: 60px;
@@ -37,6 +43,27 @@
   display: none;
 }
 
+.dropdown {
+  .dropdown-menu {
+      color: #2080C0;
+      transition: all 0.5s;
+      overflow: hidden;
+      transform-origin: top center;
+      transform: scale(1,0);
+      display: block;
+  }
+  &:hover {
+      .dropdown-menu {
+          transform: scale(1);
+      }
+  }
+}
+
+.dropdown-item {
+  color: #2080C0;
+  font-size: 16px;
+}
+
 .btn-bule {
   color: white;
   background-color: #2080C0;
@@ -45,7 +72,7 @@
 
 body {
   background-color: #E0F0F0;
-  padding-top: 85px;
+  padding-top: 76px;
 }
 
 a:hover{
@@ -55,15 +82,13 @@ a:hover{
 .navbar {
   background-color: #2080C0;
   color: white;
+  padding: 0px;
+  height: 76px;
 }
 
 .navbar-link {
   font-size: 16px;
   margin: 0 0 0 10px;
-  color: white;
-}
-
-.navbar-link > i:hover, .navbar-link > span:hover {
   color: white;
 }
 

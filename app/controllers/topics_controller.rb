@@ -1,7 +1,11 @@
 class TopicsController < ApplicationController
 
+  before_action :authenticate_user!
+
   def index
-    @topics = Topic.all
+    @topics = Topic.all.reverse_order
+    @categories = Category.where(is_active: "有効")
+    @category_topics = Topic.where(category_id: params[:category_id])
   end
 
   def ranking_index

@@ -23,11 +23,13 @@
         </div>
       </div>
 
-      <% if current_user.id == @topic.user_id%>
-        <div class="row justify-content-end">
-          <%= link_to "編集する", edit_topic_path(@topic), class: "btn btn-primary topic-edit-btn" %>
-          <%= link_to "削除する", topic_path(@topic), method: :delete, class: "btn btn-danger topic-destroy-btn" %>
-        </div>
+      <% if user_signed_in? %>
+        <% if current_user.id == @topic.user_id%>
+          <div class="row justify-content-end">
+            <%= link_to "編集する", edit_topic_path(@topic), class: "btn btn-primary topic-edit-btn" %>
+            <%= link_to "削除する", topic_path(@topic), method: :delete, class: "btn btn-danger topic-destroy-btn" %>
+          </div>
+        <% end %>
       <% end %>
 
     </div>
@@ -53,7 +55,7 @@
         <% @comments.each do |comment| %>
           <li class="comment-li">
             <div class="comment-user">
-              <%= attachment_image_tag(comment.user, :profile_image_id, style: "width: 60px; height: 60px;", fallback: "no_image.jpg") %>
+              <%= attachment_image_tag(comment.user, :profile_image, style: "width: 60px; height: 60px;", fallback: "no_image.jpg") %>
               <a href="#"><%= comment.user.name %></a>
               <%= comment.created_at.strftime('%Y/%m/%d %H:%M') %>
             </div>

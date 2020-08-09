@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row user-quit justify-content-center">
+
+    <h2><b>本当に退会しますか？</b></h2>
+
+    <div class="user-quit-text col-sm-12">
+      退会する場合は、「退会する」をクリックしてください。
+      <br>現在の投稿しているスレッドやコメント、フォローやフォロワーも削除されますのでご注意ください。
+    </div>
+
+  </div>
+
+  <div class="row user-quit-button">
+    <%= link_to "退会しない", user_path(@user), class: 'btn btn-primary col-md-2 offset-md-3 quit-btn' %>
+    <%= link_to "退会する", users_quit_update_path, class: 'btn btn-danger col-md-2 offset-md-2 quit-btn', method: :patch %>
+  </div>
+
+
+</div>

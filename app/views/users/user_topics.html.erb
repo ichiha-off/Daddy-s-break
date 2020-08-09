@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row user-topics">
+
+    <div class="col-sm-7 user-topics-image">
+      <%= attachment_image_tag(@user, :profile_image, size: "75x75", fallback: "no_image.jpg") %>
+      <%= @user.name %>'s Threads
+      <%= link_to :back do %>
+        <i class="fas fa-arrow-circle-left"></i>
+      <% end %>
+    </div>
+
+      <%= render 'topics/index', topics: @topics %>
+
+  </div>
+</div>

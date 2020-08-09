@@ -34,7 +34,7 @@
     <div class="row">
 
       <div class="col-sm-12 comment-user">
-        <%= attachment_image_tag(@comment.user, :profile_image_id, style: "width: 60px; height: 60px;", fallback: "no_image.jpg") %>
+        <%= attachment_image_tag(@comment.user, :profile_image, style: "width: 60px; height: 60px;", fallback: "no_image.jpg") %>
         <a href="#"><%= @comment.user.name %></a>
         <%= @comment.created_at.strftime('%Y/%m/%d %H:%M') %>
       </div>
@@ -74,7 +74,7 @@
 
         <% @replies.each do |reply| %>
             <div class="col-sm-9">
-              <%= attachment_image_tag(reply.user, :profile_image_id, style: "width: 60px; height: 60px;", fallback: "no_image.jpg") %>
+              <%= attachment_image_tag(reply.user, :profile_image, style: "width: 60px; height: 60px;", fallback: "no_image.jpg") %>
               <a href="#"><%= reply.user.name %></a>
               <%= reply.created_at.strftime('%Y/%m/%d %H:%M') %>
             </div>

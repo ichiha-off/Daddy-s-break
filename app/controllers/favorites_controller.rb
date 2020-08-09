@@ -1,5 +1,7 @@
 class FavoritesController < ApplicationController
 
+  before_action :authenticate_user!
+
   def create
     @comment = Comment.find(params[:comment_id])
     favorites = current_user.favorites.new(comment_id: params[:comment_id])

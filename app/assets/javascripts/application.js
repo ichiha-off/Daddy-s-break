@@ -19,12 +19,20 @@
 //= require_tree .
 
 // 画像プレビュー機能
-$(function(){
+$(document).on('turbolinks:load',function(){
   $('#comment_image').on('change', function (e) {
     var reader = new FileReader();
     reader.onload = function (e) {
       $(".image").attr('src', e.target.result);
       $(".image").attr('style', 'width: 100px; height: 100px;');
+    }
+    reader.readAsDataURL(e.target.files[0]);
+  });
+  $('#user_profile_image').on('change', function (e) {
+    var reader = new FileReader();
+    reader.onload = function (e) {
+      $(".image").attr('src', e.target.result);
+      $(".image").attr('style', 'width: 200px; height: 200px;');
     }
     reader.readAsDataURL(e.target.files[0]);
   });

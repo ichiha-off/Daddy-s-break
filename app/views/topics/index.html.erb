@@ -5,39 +5,27 @@
       <%= link_to new_topic_path do %>
         <i class="fas fa-plus"> 新しいスレッドを投稿する</i>
       <% end %>
-    </div>
 
-    <div class="col-lg-8 col-sm-12 topic-index">
-      <div class="row list-group list-group-flush">
-        <% @topics.each do |topic| %>
-          <div class="col-sm-12 list-group-item topic-list-item">
-            <div class="row">
-              <div class="col-sm-3 topic-index-image">
-                <%= link_to topic_path(topic) do %>
-                  <%= attachment_image_tag(topic, :image, size: "100x100", fallback: "no_image.jpg") %>
-                <% end %>
-              </div>
-              <div class="col-sm-9 topic-index-title">
-                <%= link_to topic_path(topic) do %>
-                  <%= topic.title %>
-                <% end %>
-                <div class="row align-items-end">
-                  <div class="col-sm-4 topic-index-username">
-                    By <%= topic.user.name %>
-                  </div>
-                  <div class="col-sm-4 topic-index-commentcount">
-                    <%= link_to " #{topic.comments.count} コメント", topic_path(topic.id), class: "fas fa-comment-dots" %>
-                  </div>
-                  <div class="col-sm-4 topic-index-created">
-                    <%= topic.created_at.strftime('%Y/%m/%d %H:%M') %>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        <% end %>
+      <div class="row">
+
+        <div class="col-sm-12 category-search">
+
+          <%= render 'layouts/category_search', categories: @categories %>
+
+        </div>
+
       </div>
+
     </div>
+    <% if params[:category_id].blank? %>
+
+      <%= render 'index', topics: @topics %>
+
+    <% else %>
+
+      <%= render 'index', topics: @category_topics %>
+
+    <% end %>
 
   </div>
 </div>

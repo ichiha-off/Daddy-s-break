@@ -20,7 +20,7 @@
   line-height: 200px;
   display: inline-block;
   text-align: left;
-  margin-top: 75px;
+  margin-top: 30px;
 }
 
 .about-main-text > p {
@@ -31,19 +31,36 @@
 }
 
 .about-section-left, .about-section-right {
-  border: 0.1em none black;
-  background-color: white;
+  border: 0.1em none;
   width: 48%;
-  height: 300px;
+  height: 400px;
   border-radius: 50px;
-  margin-top: 150px;
-  margin-bottom: 150px;
+  margin: 160px 0px;
+  background-color:rgba(255,255,255,0.9);
+  text-align: center;
+  padding: 150px 0px;
 }
 
-.about-section-left > h3 p, .about-section-right > h3 p {
-  text-align: center;
-  margin-top: 30px;
-  margin-bottom: 30px;
+.about-section-left, .about-section-right {
+h3 {
+    text-shadow: 3px 2px 0px rgba(255, 255, 255, 0.72);
+    span {
+    display: block;
+    transform: rotate(-7.5deg);
+    }
+  }
+}
+
+.about-section-left {
+  background-image: image-url("homes/about-section-left.jpg");
+  background-size: cover;
+  background-blend-mode:lighten;
+}
+
+.about-section-right {
+  background-image: image-url("homes/about-section-right.jpg");
+  background-size: cover;
+  background-blend-mode:lighten;
 }
 
 .about-section-image {
