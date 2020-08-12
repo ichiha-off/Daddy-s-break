@@ -18,12 +18,16 @@
 
     </div>
     <% if params[:category_id].blank? %>
-
-      <%= render 'index', topics: @topics %>
+    
+      <div class="col-lg-8 col-sm-12 topic-index">
+        <%= render 'index', topics: @topics %>
+      </div>
 
     <% else %>
 
-      <%= render 'index', topics: @category_topics %>
+      <div class="col-lg-8 col-sm-12 topic-index">
+        <%= render 'index', topics: @category_topics %>
+      </div>
 
     <% end %>
 

@@ -18,6 +18,49 @@
 //= require turbolinks
 //= require_tree .
 
+// ヘッダー部分のアニメーション
+$(document).on('turbolinks:load', function() {
+  var _window = $(window),
+    _header = $('.header');
+    _header.hide();
+  _window.on('scroll',function(){
+    if (_window.scrollTop() > 200) {
+      _header.fadeIn();
+      _header.addClass('fixed');
+      }
+    else {
+      _header.fadeOut();
+      _header.removeClass('fixed');
+      }
+  });
+});
+
+// login画面
+$(document).on('turbolinks:load',function () {
+  $("#login-images").skippr({
+    // スライドショーの変化 ("fade" or "slide")
+    transition : 'slide',
+    // 変化に係る時間(ミリ秒)
+    speed : 1000,
+    // easingの種類
+    easing : 'easeOutQuart',
+    // ナビゲーションの形("block" or "bubble")
+    navType : "block",
+    // 子要素の種類("div" or "img")
+    childrenElementType : 'div',
+    // ナビゲーション矢印の表示(trueで表示)
+    arrows : true,
+    // スライドショーの自動再生(falseで自動再生なし)
+    autoPlay : true,
+    // 自動再生時のスライド切替間隔(ミリ秒)
+    autoPlayDuration : 3000,
+    // キーボードの矢印キーによるスライド送りの設定(trueで有効)
+    keyboardOnAlways : false,
+    // 一枚目のスライド表示時に戻る矢印を表示するかどうか(falseで非表示)
+    hidePrevious : false
+  });
+});
+ 
 // 画像プレビュー機能
 $(document).on('turbolinks:load',function(){
   $('#comment_image').on('change', function (e) {
@@ -59,7 +102,7 @@ $(document).on('turbolinks:load', function() {
   var pagetop = $('#page_top');   
   pagetop.hide();
   $(window).scroll(function () {
-      if ($(this).scrollTop() > 100) {  //100pxスクロールしたら表示
+      if ($(this).scrollTop() > 200) {  //100pxスクロールしたら表示
           pagetop.fadeIn();
       } else {
           pagetop.fadeOut();
@@ -72,3 +115,10 @@ $(document).on('turbolinks:load', function() {
       return false;
   });
 });
+
+// 検索バーのアニメーション
+$('.search-input').focus(function(){
+  $(this).parent().addClass('focus');
+}).blur(function(){
+  $(this).parent().removeClass('focus');
+})

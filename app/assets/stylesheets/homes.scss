@@ -20,7 +20,7 @@
   line-height: 200px;
   display: inline-block;
   text-align: left;
-  margin-top: 30px;
+  margin-top: 15px;
 }
 
 .about-main-text > p {
@@ -28,6 +28,17 @@
   text-align: center;
   margin-top: 50px;
   margin-bottom: 50px;
+}
+
+.about-login {
+  text-align: center;
+  font-size: 48px;
+  a{
+    color: black;
+  }
+  i {
+    font-style: oblique;
+  }
 }
 
 .about-section-left, .about-section-right {

@@ -1,0 +1,23 @@
+<div class="container">
+
+  <% if @range == 'topic' %>
+  
+    <div class="row">
+
+      <div class="col-sm-12 topic-index">
+        <%= render 'topics/index', topics: @topic %>
+      </div>
+
+    </div>
+
+  <% elsif @range == 'user' %>
+
+    <div class="row">
+
+      <%= render 'users/index', users: @user %>
+
+    </div>
+
+  <% end %>
+
+</div>

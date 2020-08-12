@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   root 'homes#about'
   get 'user/topics/index' => 'users#user_topics'
+  get 'search' => 'searches#search'
 
   devise_for :users, controllers: {
     registrations: 'users/registrations',

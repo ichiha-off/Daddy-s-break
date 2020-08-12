@@ -1,4 +1,4 @@
-<header class="nav navbar fixed-top">
+<header class="nav navbar header">
   <div class="container">
     <nav class='nav justify-content-center'>
       <%= link_to topics_path, class: 'navbar-link' do %>
@@ -7,6 +7,40 @@
           Daddy's break
           <i class="fas fa-crown"></i>
         </div>
+      <% end %>
+    </nav>
+
+    <nav class="nav search-bar">
+      <% if user_signed_in? %>
+          <%= form_with url: search_path, method: :get, class: "search-form", local: true do |f| %>
+            <div class="row">
+
+              <%= f.text_field :word, class: "search-input", placeholder: "Search" %>
+              <%= button_tag type: 'submit', class: "search-button" do %>
+                <i class="fas fa-search edit-pen-title"></i>
+              <% end %>
+
+              <div class="search-option">
+
+                <div>
+                  <%= f.radio_button :range, :user %>
+                  <%= f.label :range do %>
+                    <i id="users" class="fas fa-users edit-pen-title"></i>
+                    <span>Users</span>
+                  <% end %>
+                </div>
+                <div>
+                  <%= f.radio_button :range, :topic %>
+                  <%= f.label :range do %>
+                    <i id="threads" class="far fa-clipboard edit-pen-title"></i>
+                    <span>Threads</span>
+                  <% end %>
+                </div>
+                
+              </div>
+              
+            </div>
+          <% end %>
       <% end %>
     </nav>
 

@@ -22,6 +22,26 @@
   font-family: 'Noto Sans JP', sans-serif;
 }
 
+#error_explanation {
+  h2 {
+    font-size: 16px;
+  }
+}
+
+.header{
+  background: #fff;
+  display: flex;
+  padding: 20px;
+  position: absolute;
+  justify-content: space-between;
+  width: 100%;
+  z-index: 10;
+}
+.header.fixed{
+  position: fixed;
+  top: 0;
+}
+
 .logo {
   font-size: 30px;
   font-family: 'Playfair Display', serif;
@@ -37,6 +57,11 @@
   height: 60px;
   width: 60px;
   border-radius: 50%;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  &:hover {
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.3);
+  }
 }
 
 .dropdown-toggle::after {
@@ -72,7 +97,6 @@
 
 body {
   background-color: #E0F0F0;
-  padding-top: 76px;
 }
 
 a:hover{
@@ -167,4 +191,150 @@ a:hover{
   left: 0;
   margin: auto;
   text-align: center;
+}
+
+// ログイン画面
+#login-visual {
+  position: relative;
+  .login-form-area {
+    color: white;
+    padding: 15px;
+    float: left;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    z-index: 10;
+    h1 {
+      font-size: 84px;
+      margin: 30px 0;
+    }
+    h2 {
+      text-align: center;
+    }
+  }
+}
+
+#login-images {
+  width: 100%;
+  height: 700px;
+  margin: 0 auto 30px;
+  div::before{
+    content: ' ';
+    background-color: rgba(0,0,0,.5);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+.login-image1 {
+  background-image: image-url("login/login-image1.jpg");
+  background-position: cover;
+}
+
+.login-image2 {
+  background-image: image-url("login/login-image2.jpg");
+  background-position: cover;
+}
+
+.login-image3 {
+  background-image: image-url("login/login-image3.jpg");
+  background-position: cover;
+}
+
+.login-image4 {
+  background-image: image-url("login/login-image4.jpg");
+  background-position: cover;
+}
+
+.login-form {
+  min-height: 10rem;
+  margin: auto;
+  max-width: 75%;
+  padding: .5rem;
+}
+
+.login-text {
+  color: white;
+  font-size: 1.5rem;
+  margin: 0 auto;
+  max-width: 50%;
+  padding: .5rem;
+  text-align: center;
+  .fa-stack-1x {
+    color: black;
+  }
+}
+
+.login-user-name, .login-password {
+  background: transparent;
+  border: 0 solid;
+  border-bottom: 1px solid rgba(white, .5);
+  color: white;
+  display: block;
+  margin: 1rem;
+  padding: .5rem;
+  transition: 250ms ease-in;
+  width: calc(100% - 3rem);
+  &:focus {
+    background: white;
+    color: black;
+    transition: 250ms ease-in;
+  }
+}
+
+.login-links {
+  bottom: 5%;
+  color: white;
+  cursor: pointer;
+  display: block;
+  font-size: 75%;
+  left: 0;
+  opacity: 0.6;
+  margin: 10px 0px;
+  padding: .5rem;
+  text-align: center;
+  width: 100%;
+  &:hover {
+    opacity: 1;
+  }
+}
+.login-submit {
+  border: 1px solid white;
+  background: transparent;
+  color: white;
+  display: block;
+  margin: 1rem auto;
+  min-width: 1px;
+  padding: .25rem;
+  transition: 250ms ease-in;
+  &:hover, &:focus {
+    background: white;
+    color: black;
+    transition: 250ms ease-in;
+  }
+}
+
+@mixin placeholder($color) {
+  &::placeholder {
+    color: $color;
+  }
+
+  // IE
+  &:-ms-input-placeholder {
+    color: $color;
+  }
+
+  // Edge
+  &::-ms-input-placeholder {
+    color: $color;
+  }
+}
+
+.login-form input {
+  @include placeholder(white);
+  opacity: 0.6;
 }
