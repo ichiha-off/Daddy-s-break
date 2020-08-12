@@ -56,7 +56,9 @@
           <li class="comment-li">
             <div class="comment-user">
               <%= attachment_image_tag(comment.user, :profile_image, style: "width: 60px; height: 60px;", fallback: "no_image.jpg") %>
-              <a href="#"><%= comment.user.name %></a>
+              <%= link_to user_path(comment.user) do %>
+                <%= comment.user.name %>
+              <% end %>
               <%= comment.created_at.strftime('%Y/%m/%d %H:%M') %>
             </div>
             <% if current_user == comment.user %>

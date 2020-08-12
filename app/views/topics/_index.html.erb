@@ -21,7 +21,9 @@
               <% end %>
               <div class="row align-items-end">
                 <div class="col-sm-4 topic-index-username">
-                  By <%= topic.user.name %>
+                  <%= link_to user_path(topic.user) do %>
+                    By <%= topic.user.name %>
+                  <% end %>
                 </div>
                 <div class="col-sm-4 topic-index-commentcount">
                   <%= link_to " #{topic.comments.count} コメント", topic_path(topic.id), class: "fas fa-comment-dots" %>

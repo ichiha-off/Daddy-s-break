@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  get 'about' => 'homes#about'
+  root 'homes#about'
   get 'user/topics/index' => 'users#user_topics'
 
   devise_for :users, controllers: {
@@ -21,8 +21,8 @@ Rails.application.routes.draw do
   patch 'users/quit_update' => 'users#quit_update'
   resources :users, only: [:show, :edit, :update] do
     resource :relationships, only: [:create, :destroy]
-    get 'follows' => 'relationships#following', as: 'follows'
-    get 'followers' => 'relationships#followed', as: 'followers'
+    get 'follows' => 'relationships#follows', as: 'follows'
+    get 'followers' => 'relationships#followers', as: 'followers'
   end
 
   get 'topics/ranking_index' => 'topics#ranking_index' 

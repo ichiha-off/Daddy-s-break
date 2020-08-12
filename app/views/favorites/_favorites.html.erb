@@ -2,14 +2,14 @@
 
   <%= button_to topic_comment_favorites_path(comment.topic, comment), method: :delete, style: "background-color:white; border: none;", remote: true do %>
     <i class="fas fa-heart" aria-hidden="true" style="color:red;"></i>
-    <%= comment.favorites.count %>いいね！
+    <span class="comment-favorite-text"><%= comment.favorites.count %></span>
   <% end %>
 
 <% else %>
 
   <%= button_to topic_comment_favorites_path(comment.topic, comment), method: :post, style: "background-color:white; border: none;", remote: true do %>
     <i class="fas fa-heart" aria-hidden="true"></i>
-    <%= comment.favorites.count %> いいね！
+    <span class="comment-favorite-text"><%= comment.favorites.count %></span>
   <% end %>
 
 <% end %>

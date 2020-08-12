@@ -36,6 +36,22 @@ $(document).on('turbolinks:load',function(){
     }
     reader.readAsDataURL(e.target.files[0]);
   });
+  $('#reply_image').on('change', function (e) {
+    var reader = new FileReader();
+    reader.onload = function (e) {
+      $(".image").attr('src', e.target.result);
+      $(".image").attr('style', 'width: 100px; height: 100px;');
+    }
+    reader.readAsDataURL(e.target.files[0]);
+  });
+  $('#topic_image').on('change', function (e) {
+    var reader = new FileReader();
+    reader.onload = function (e) {
+      $(".image").attr('src', e.target.result);
+      $(".image").attr('style');
+    }
+    reader.readAsDataURL(e.target.files[0]);
+  });
 });
 
 // TOP画面へボタン

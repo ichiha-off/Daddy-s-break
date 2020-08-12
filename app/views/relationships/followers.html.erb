@@ -1,0 +1,11 @@
+<div class="container">
+  <% if @users.blank? %>
+
+    <h3 class="no-relationships-text"><b>フォロワーはいません</b></h3>
+
+  <% else %>
+
+    <%= render 'users/index', users: @users %>
+
+  <% end %>
+</div>
