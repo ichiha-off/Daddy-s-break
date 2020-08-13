@@ -28,18 +28,39 @@
   }
 }
 
-.header{
-  background: #fff;
+.navbar {
+  background-color: #2080C0;
+  color: white;
+  padding: 0px;
+  height: 76px;
+}
+
+.navbar-link {
+  font-size: 16px;
+  margin: 0 0 0 10px;
+  color: white;
+}
+
+.scroll_header{
   display: flex;
-  padding: 20px;
   position: absolute;
   justify-content: space-between;
   width: 100%;
   z-index: 10;
 }
-.header.fixed{
+.scroll_header.fixed{
   position: fixed;
   top: 0;
+}
+
+.header {
+  background-color: white;
+}
+
+.header-logo {
+  font-size: 30px;
+  font-family: 'Playfair Display', serif;
+  color: #2080C0;
 }
 
 .logo {
@@ -103,21 +124,9 @@ a:hover{
   text-decoration: none;
 }
 
-.navbar {
-  background-color: #2080C0;
-  color: white;
-  padding: 0px;
-  height: 76px;
-}
-
-.navbar-link {
-  font-size: 16px;
-  margin: 0 0 0 10px;
-  color: white;
-}
-
 .flash {
   text-align: center;
+  margin: 0;
 }
 
 .border {

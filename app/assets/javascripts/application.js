@@ -21,16 +21,16 @@
 // ヘッダー部分のアニメーション
 $(document).on('turbolinks:load', function() {
   var _window = $(window),
-    _header = $('.header');
+    _header = $('.scroll_header');
     _header.hide();
   _window.on('scroll',function(){
-    if (_window.scrollTop() > 200) {
-      _header.fadeIn();
+    if (_window.scrollTop() > 300) {
       _header.addClass('fixed');
+      _header.slideDown();
       }
     else {
-      _header.fadeOut();
       _header.removeClass('fixed');
+      _header.slideUp();
       }
   });
 });
@@ -102,7 +102,7 @@ $(document).on('turbolinks:load', function() {
   var pagetop = $('#page_top');   
   pagetop.hide();
   $(window).scroll(function () {
-      if ($(this).scrollTop() > 200) {  //100pxスクロールしたら表示
+      if ($(this).scrollTop() > 200) {  //200pxスクロールしたら表示
           pagetop.fadeIn();
       } else {
           pagetop.fadeOut();

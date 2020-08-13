@@ -4,6 +4,8 @@
   
     <div class="row">
 
+      <h2 class="search-headline">スレッド検索結果</h2>
+
       <div class="col-sm-12 topic-index">
         <%= render 'topics/index', topics: @topic %>
       </div>
@@ -13,6 +15,8 @@
   <% elsif @range == 'user' %>
 
     <div class="row">
+
+      <h2 class="search-headline">ユーザー検索結果</h2>
 
       <%= render 'users/index', users: @user %>
 
