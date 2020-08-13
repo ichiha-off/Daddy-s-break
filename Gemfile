@@ -50,6 +50,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   # 今回追加分①
   gem 'rubocop', require: false
+  gem 'rubocop-rails', require: false
 end
 
 group :test do
