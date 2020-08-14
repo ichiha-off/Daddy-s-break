@@ -1,0 +1,29 @@
+<div class="container">
+  
+  <h2 class="ranking-headline"><b><i class="fas fa-fire-alt"></i> Today's Ranking <i class="fas fa-fire-alt"></i></b></h2>
+  
+  <div class="row">
+
+    <div class="col-lg-3 offset-lg-1 col-sm-12 topic-create-button">
+      <%= link_to new_topic_path do %>
+        <i class="fas fa-plus"> 新しいスレッドを投稿する</i>
+      <% end %>
+
+      <div class="row">
+
+        <div class="col-sm-12 category-search d-md-none d-lg-block">
+
+          <%= render 'layouts/category_search', categories: @categories %>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="col-lg-8 col-sm-12 order-lg-first topic-index">
+      <%= render 'ranking_index', topics: @today_ranking %>
+    </div>
+
+  </div>
+</div>

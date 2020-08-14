@@ -26,7 +26,8 @@ Rails.application.routes.draw do
     get 'followers' => 'relationships#followers', as: 'followers'
   end
 
-  get 'topics/ranking_index' => 'topics#ranking_index' 
+  get 'topics/today_ranking' => 'topics#today_ranking'
+  get 'topics/weekly_ranking' => 'topics#weekly_ranking' 
   resources :topics do
     resources :comments, only: [:show, :create, :destroy] do
       resource :favorites, only: [:create, :destroy]

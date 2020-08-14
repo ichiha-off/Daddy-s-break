@@ -2,14 +2,32 @@ class TopicsController < ApplicationController
 
   before_action :authenticate_user!
 
+  impressionist :actions => [:show], :unique => [:impressionable_id, :ip_address]
+
   def index
     @topics = Topic.all.reverse_order
     @categories = Category.where(is_active: "有効")
     @category_topics = Topic.where(category_id: params[:category_id])
   end
 
-  def ranking_index
-    
+  def today_ranking
+    @today = Time.current
+    # DESC = 大きい方から小さい方に並ぶ(降順)
+    @today_ranking = Topic.order('impressions_count DESC')
+                  .where("? <= created_at", @today.yesterday)
+                  .where("created_at <= ?", @today).take(10)
+    @categories = Category.where(is_active: "有効")
+    @category_topics = Topic.where(category_id: params[:category_id])
+  end
+
+  def weekly_ranking
+    @today = Time.current
+    # DESC = 大きい方から小さい方に並ぶ(降順)
+    @weekly_ranking = Topic.order('impressions_count DESC')
+                  .where("? <= created_at", @today.ago(7.days))
+                  .where("created_at <= ?", @today).take(10)
+    @categories = Category.where(is_active: "有効")
+    @category_topics = Topic.where(category_id: params[:category_id])
   end
 
   def new
@@ -32,6 +50,7 @@ class TopicsController < ApplicationController
 
   def show
     @topic = Topic.find(params[:id])
+    @topic.impressionist_count(:filter=>:ip_address)
     @comment = Comment.new
     @comments = @topic.comments.page(params[:page])
   end

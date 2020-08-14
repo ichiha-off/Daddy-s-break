@@ -18,7 +18,7 @@ class RepliesController < ApplicationController
 
   def destroy
     reply = Reply.find_by(id: params[:id], comment_id: params[:comment_id]).destroy
-    flash[:notice] = "コメントを削除しました。"
+    flash[:notice] = "返信内容を削除しました。"
     redirect_to topic_comment_path(params[:topic_id], params[:comment_id])
   end
 

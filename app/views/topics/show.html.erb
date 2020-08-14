@@ -16,7 +16,9 @@
 
       <div class="row">
         <div class="col-sm-5 topic-comment-count">
-          <span class="fas fa-comment-dots"> <%= @topic.comments.count %> コメント <%= @topic.created_at.strftime('%Y/%m/%d %H:%M') %></span>
+          <span class="fas fa-comment-dots"> <%= @topic.comments.count %></span>
+          <span class="fas fa-shoe-prints"><%= @topic.impressionist_count %></span>
+          <span><%= @topic.created_at.strftime('%Y/%m/%d %H:%M') %></span>
         </div>
         <div class="col-sm-7 comment-to">
           <%= link_to "コメントする", '#comment-form', class: "btn btn-lg btn-bule" %>
