@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_13_053200) do
+ActiveRecord::Schema.define(version: 2020_08_14_134820) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -99,6 +99,8 @@ ActiveRecord::Schema.define(version: 2020_08_13_053200) do
     t.string "image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "re_reply_id"
+    t.index ["re_reply_id"], name: "index_replies_on_re_reply_id"
   end
 
   create_table "topics", force: :cascade do |t|

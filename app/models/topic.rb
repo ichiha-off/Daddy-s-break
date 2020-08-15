@@ -10,4 +10,7 @@ class Topic < ApplicationRecord
 
   is_impressionable counter_cache: true
 
+  validates :body, presence: true
+  validates :title, presence: true
+
 end

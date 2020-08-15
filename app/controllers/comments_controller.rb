@@ -4,6 +4,9 @@ class CommentsController < ApplicationController
     @topic = Topic.find(params[:topic_id])
     @comment = Comment.find(params[:id])
     @reply = Reply.new
+    unless params[:reply].blank?
+      @re_reply = Reply.find(params[:reply])
+    end
     @replies = @comment.replies
   end
 

@@ -6,6 +6,8 @@
 
   <div class="row list-group list-group-flush">
 
+    <%= paginate topics %>
+
     <% topics.each do |topic| %>
       <div class="col-sm-12 list-group-item topic-list-item">
         <div class="row">
@@ -43,6 +45,8 @@
         </div>
       </div>
     <% end %>
+
+    <%= paginate topics %>
 
   </div>
 

@@ -5,9 +5,9 @@ class TopicsController < ApplicationController
   impressionist :actions => [:show], :unique => [:impressionable_id, :ip_address]
 
   def index
-    @topics = Topic.all.reverse_order
+    @topics = Topic.page(params[:page]).reverse_order
     @categories = Category.where(is_active: "有効")
-    @category_topics = Topic.where(category_id: params[:category_id])
+    @category_topics = Topic.where(category_id: params[:category_id]).page(params[:page]).reverse_order
   end
 
   def today_ranking
@@ -38,11 +38,13 @@ class TopicsController < ApplicationController
   def create
     @topic = Topic.new(topic_params)
     @topic.user_id = current_user.id
-    if @topic.save!
+    if @topic.save
       flash[:notice] = "新しくスレッドを作成しました！"
       redirect_to action: :index
     else
-      @topics = Topic.all
+      @topics = Topic.page(params[:page]).reverse_order
+      @categories = Category.where(is_active: "有効")
+      @category_topics = Topic.where(category_id: params[:category_id])
       flash[:alert] = "エラーが発生しました。"
       render :index
     end

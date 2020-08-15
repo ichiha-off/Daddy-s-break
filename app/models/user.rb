@@ -17,6 +17,9 @@ class User < ApplicationRecord
   has_many :replies, dependent: :destroy
   has_many :favorites, dependent: :destroy
 
+  has_many :active_notifications, class_name: 'Notification', foreign_key: 'visitor_id', dependent: :destroy
+  has_many :passive_notifications, class_name: 'Notification', foreign_key: 'visited_id', dependent: :destroy
+
   has_many :following, class_name: "Relationship", foreign_key: "following_id", dependent: :destroy # フォロー取得
   has_many :followed, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy # フォロワー取得
   has_many :following_user, through: :following, source: :followed # 自分がフォローしている人
@@ -37,7 +40,8 @@ class User < ApplicationRecord
     following_user.include?(user)
   end
 
-  has_many :active_notifications, class_name: 'Notification', foreign_key: 'visitor_id', dependent: :destroy
-  has_many :passive_notifications, class_name: 'Notification', foreign_key: 'visited_id', dependent: :destroy
+  def active_for_authentication?
+    super && (self.is_active == "有効")
+  end
 
 end

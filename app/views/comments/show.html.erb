@@ -56,16 +56,35 @@
   <div class="reply-form">
     <div class="row">
 
-      <%= form_with model:[@topic, @comment, @reply], class: "col-sm-12", local: true do |f| %>
-        <%= f.text_area :reply, rows:'5', class: "col-sm-12 form-control", placeholder: ">>#{ @comment.user.name }" %>
-        <div class="add-image">
-          <span class="fas fa-camera fa-3x"></span> <%= f.attachment_field :image %>
-          <p>画像を選択</p>
-        </div>
-        <img class='image preview'>
-        <div class="row justify-content-center reply-button">
-          <%= f.submit "返信する", class: "btn btn-lg btn-bule col-sm-8" %>
-        </div>
+      <% if params[:reply].blank? %>
+
+        <%= form_with model:[@topic, @comment, @reply], class: "col-sm-12", local: true do |f| %>
+          <%= f.text_area :reply, rows:'5', class: "col-sm-12 form-control", placeholder: ">>#{ @comment.user.name }" %>
+          <div class="add-image">
+            <span class="fas fa-camera fa-3x"></span> <%= f.attachment_field :image %>
+            <p>画像を選択</p>
+          </div>
+          <img class='image preview'>
+          <div class="row justify-content-center reply-button">
+            <%= f.submit "返信する", class: "btn btn-lg btn-bule col-sm-8" %>
+          </div>
+        <% end %>
+
+      <% else %>
+
+        <%= form_with model:[@topic, @comment, @reply], class: "col-sm-12", local: true do |f| %>
+          <%= f.text_area :reply, rows:'5', class: "col-sm-12 form-control", placeholder: ">>#{ @re_reply.user.name }" %>
+          <%= f.hidden_field :re_reply_id, value: @re_reply.id %>
+          <div class="add-image">
+            <span class="fas fa-camera fa-3x"></span> <%= f.attachment_field :image %>
+            <p>画像を選択</p>
+          </div>
+          <img class='image preview'>
+          <div class="row justify-content-center reply-button">
+            <%= f.submit "返信する", class: "btn btn-lg btn-bule col-sm-8" %>
+          </div>
+        <% end %>
+
       <% end %>
 
     </div>
@@ -88,12 +107,24 @@
               </div>
             <% end %>
             <div class="col-sm-12 replied-user-name">
-              >> <%= reply.comment.user.name %>
+
+              <%# コメントへの返信か返信への返信か %>
+              <% if reply.re_reply_id.blank? %>
+                  >> <%= reply.comment.user.name %>
+              <% else %>
+                  >> <%= reply.re_reply.user.name %>
+              <% end %>
+
             </div>
             <div class="col-sm-12">
               <%= attachment_image_tag(reply, :image, style: "width: 200px; height: 200px;") %>
             </div>
             <div class="col-sm-12 reply-reply"><%= reply.reply %></div>
+            <div class="comment-reply-button">
+              <%= link_to topic_comment_path(reply.comment.topic, reply.comment, reply: reply.id), class: "reply-button" do %>
+                <i class="fas fa-reply"> 返信する</i>
+              <% end %>
+            </div>
             <div class="border"></div>
         <% end %>
 

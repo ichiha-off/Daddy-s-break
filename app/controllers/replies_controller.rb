@@ -8,7 +8,7 @@ class RepliesController < ApplicationController
     reply = current_user.replies.new(reply_params)
     reply.comment_id = comment.id
     if reply.save
-      flash[:notice] = "コメントに返信しました！"
+      flash[:notice] = "返信しました！"
       redirect_to topic_comment_path(topic, comment)
     else
       flash[:alert] = "エラーが発生しました。"
@@ -27,6 +27,7 @@ class RepliesController < ApplicationController
   def reply_params
     params.require(:reply).permit(
       :reply,
+      :re_reply_id,
       :image
     )
   end

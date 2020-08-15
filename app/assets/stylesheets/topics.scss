@@ -8,7 +8,7 @@
 
 .topic-index {
   background-color: white;
-  margin-top: 30px;
+  margin: 30px 0;
 }
 
 .topic-index > .list-group {
@@ -33,6 +33,10 @@
 
 .topic-index-count {
   color: #2080C0;
+}
+
+.topic-index-kaminari {
+  margin-top: 15px;
 }
 
 .topic-create-button {
