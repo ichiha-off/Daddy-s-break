@@ -3,19 +3,19 @@
 
     <div class="row user-edit">
 
-      <div class="col-sm-4 user-edit-image">
+      <div class="col-sm-12 col-lg-4 user-edit-image">
         <%= attachment_image_tag(@user, :profile_image, size: "200x200", class: "image preview", fallback: "no_image.jpg") %>
-        <button class="add-image">
+        <div class="add-image">
           <span class="fas fa-camera fa-3x"></span> <%= f.attachment_field :profile_image %>
           <p>画像を選択</p>
-        </button>
+        </div>
       </div>
 
-      <div class="col-sm-8 user-edit-form">
+      <div class="col-sm-12 col-lg-8 user-edit-form">
         <%= f.text_field :name, class: "form-control", placeholder: "名前を入力してください" %>
         <%= f.email_field :email, class: "form-control", placeholder: "メールアドレスを入力してください" %>
         <%= f.text_area :introduction, class: "form-control", placeholder: "自己紹介文を書いてみましょう（50字以内）" %>
-        <%= f.submit "保存する", class: 'btn btn-success btn-lg' %>
+        <%= f.submit "保存する", class: 'btn btn-white btn-lg' %>
 
         <div class="col-sm-2 offset-sm-10 quit-link">
           <%= link_to "退会 >>", users_quit_path %>

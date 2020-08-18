@@ -16,7 +16,7 @@
 
 .topic-comment-count span {
   font-size:  16px;
-  color: #2080C0;
+  color: #05204A;
   padding-top: 20px;
 }
 .comment-to a {
@@ -38,44 +38,11 @@
   font-size: 20px;
   font-weight: 600;
   line-height: 1.5;
-  color: #2080C0;
+  color: #05204A;
 }
 
 .reply-button, .comment-button {
   margin-top: 10px;
-}
-
-.add-image {
-  display: inline-block;
-  position: relative;
-  box-sizing: border-box;
-  width: 150px;
-  margin-top: 20px;
-  padding: 7px 0;
-  text-align: center;
-  border: 1px solid #ced4da;
-  border-radius: 100px;
-  background: white;
-}
-
-.add-image span {
-  font-size: 24px;
-  color: #2080C0;
-}
-
-.add-image p {
-  font-size: 12px;
-  line-height: 18px;
-  margin-top: 2px;
-}
-
-.add-image input {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
 }
 
 .preview {
@@ -89,7 +56,7 @@
 }
 
 .comment-favorite {
-  color: #2080C0;
+  color: #05204A;
 }
 
 .comment-show {
@@ -100,6 +67,6 @@
 
 .comment-show-count span {
   font-size:  12px;
-  color: #2080C0;
+  color: #05204A;
 }
 

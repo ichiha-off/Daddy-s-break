@@ -29,7 +29,6 @@ $(document).on('turbolinks:load', function() {
       _header.slideDown();
       }
     else {
-      _header.removeClass('fixed');
       _header.slideUp();
       }
   });

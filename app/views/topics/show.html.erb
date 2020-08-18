@@ -21,7 +21,7 @@
           <span><%= @topic.created_at.strftime('%Y/%m/%d %H:%M') %></span>
         </div>
         <div class="col-sm-7 comment-to">
-          <%= link_to "コメントする", '#comment-form', class: "btn btn-lg btn-bule" %>
+          <%= link_to "コメントする", '#comment-form', class: "btn btn-lg btn-white" %>
         </div>
       </div>
 
@@ -96,7 +96,7 @@
         <img class='image preview' >
 
         <div class="row justify-content-center comment-button">
-          <%= f.submit "コメントを投稿する", class: "btn btn-lg btn-bule col-sm-8" %>
+          <%= f.submit "コメントを投稿する", class: "btn btn-lg btn-white col-sm-8" %>
         </div>
       <% end %>
 

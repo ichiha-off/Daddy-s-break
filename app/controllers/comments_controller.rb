@@ -4,8 +4,8 @@ class CommentsController < ApplicationController
     @topic = Topic.find(params[:topic_id])
     @comment = Comment.find(params[:id])
     @reply = Reply.new
-    unless params[:reply].blank?
-      @re_reply = Reply.find(params[:reply])
+    unless params[:re_reply].blank?
+      @re_reply = Reply.find(params[:re_reply])
     end
     @replies = @comment.replies
   end
@@ -14,7 +14,9 @@ class CommentsController < ApplicationController
     topic = Topic.find(params[:topic_id])
     comment = current_user.comments.new(comment_params)
     comment.topic_id = topic.id
+    comment_topic = comment.topic
     if comment.save
+      comment_topic.create_notification_comment(current_user, comment.id)
       flash[:notice] = "コメントを投稿しました！"
       redirect_to topic_path(topic)
     else

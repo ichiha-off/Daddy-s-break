@@ -26,13 +26,13 @@
 .user-index-name {
   font-size: 16px;
   font-weight: bold;
-  color: #2080C0;
+  color: #05204A;
 }
 
 .user-index-introduction {
   font-size: 16px;
   margin-top: 10px;
-  color: #2080C0;
+  color: #05204A;
 }
 
 .user-index-follow-action > a {
@@ -41,7 +41,7 @@
 
 .user-show {
   margin: 30px 0px;
-  color: black;
+  color: #05204A;
 }
 
 .user-show-image::after {
@@ -61,18 +61,10 @@
   border-radius: 10px;
   transition: box-shadow 0.5s;
   box-shadow:
-  15px 15px 50px #c3d1d1,
-  -15px -15px 50px #fdffff,
-  inset 20px 20px 60px transparent,
-  inset -20px -20px 60px transparent;
-}
-
-.user-show-image:hover {
-  box-shadow:
-    15px 15px 50px transparent,
-    -15px -15px 50px transparent,
-    inset 15px 15px 50px #c3d1d1,
-    inset -15px -15px 50px #fdffff,;
+    17px 17px 34px #d1d1d1, 
+    -17px -17px 34px #ffffff,
+    inset 17px 17px 34px transparent,
+    inset -17px -17px 34px transparent;
 }
 
 .user-show-image > img {
@@ -97,27 +89,28 @@
 }
 
 .neumorphism {
-  background-color: rgb(224, 240, 240);
+  background-color: white;
   padding: 50px;
 }
 .neumorphism .user-show-profile {
-  border-radius: 10px;
+  border-radius: 50px;
 }
 .neumorphism .user-show-profile {
-  background-color: rgb(224, 240, 240);
+  background-color: white;
   transition: box-shadow 0.5s;
   box-shadow:
-    15px 15px 50px #c3d1d1,
-    -15px -15px 50px #fdffff,
-    inset 20px 20px 60px transparent,
-    inset -20px -20px 60px transparent;
+    40px 40px 80px #d9d9d9, 
+    -40px -40px 80px #ffffff,
+    inset 40px 40px 80px transparent,
+    inset -40px -40px 80px transparent;
 }
+
 .neumorphism .user-show-profile:hover {
   box-shadow:
-    15px 15px 50px transparent,
-    -15px -15px 50px transparent,
-    inset 15px 15px 50px #c3d1d1,
-    inset -15px -15px 50px #fdffff,;
+    40px 40px 80px transparent,
+    -40px -40px 80px transparent,
+    inset 40px 40px 80px #d9d9d9, 
+    inset -40px -40px 80px #ffffff;
 }
 
 .user-show > .user-show-image {
@@ -169,7 +162,7 @@
   padding: 15px;
   border: none solid;
   border-radius: 50%;
-  background-color: #2080C0;
+  background-color: #05204A;
   box-shadow: 10px 10px 30px rgba(18, 47, 61, 0.5);
 }
 
@@ -195,6 +188,10 @@
 .user-edit {
   margin: 30px 0px;
   padding: 10px;
+  .add-image {
+    margin: 15px auto 15px auto;
+    display: block
+  }
 }
 
 .user-edit-image {

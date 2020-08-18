@@ -39,6 +39,7 @@ class TopicsController < ApplicationController
     @topic = Topic.new(topic_params)
     @topic.user_id = current_user.id
     if @topic.save
+      @topic.create_notification_topic(current_user, @topic.id)
       flash[:notice] = "新しくスレッドを作成しました！"
       redirect_to action: :index
     else

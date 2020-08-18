@@ -5,7 +5,9 @@ class Notification < ApplicationRecord
   belongs_to :comment, optional: true
   belongs_to :reply, optional: true
 
-  belongs_to :vistor, class_name: 'User', foreign_key: 'visitor_id', optional: true
-  belongs_to :visted, class_name: 'User', foreign_key: 'visited_id', optional: true
+  belongs_to :visitor, class_name: 'User', foreign_key: 'visitor_id', optional: true
+  belongs_to :visited, class_name: 'User', foreign_key: 'visited_id', optional: true
+
+  enum action: {"fav": 0, "comment": 1, "reply": 2, "follow": 3, "topic": 4}
   
 end

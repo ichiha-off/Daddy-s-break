@@ -1,7 +1,8 @@
 class RelationshipsController < ApplicationController
 
   def create
-    if current_user.follow(params[:user_id])
+    if @user = current_user.follow(params[:user_id])
+      @user.create_notification_follow(current_user)
       flash[:notice] = 'ユーザーをフォローしました'
       redirect_back(fallback_location: root_path)
     else

@@ -5,6 +5,7 @@ class FavoritesController < ApplicationController
   def create
     @comment = Comment.find(params[:comment_id])
     favorites = current_user.favorites.new(comment_id: params[:comment_id])
+    @comment.create_notification_like(current_user)
     favorites.save
   end
 

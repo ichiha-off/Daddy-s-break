@@ -32,7 +32,7 @@
 }
 
 .topic-index-count {
-  color: #2080C0;
+  color: #05204A;
 }
 
 .topic-index-kaminari {
@@ -43,15 +43,27 @@
   height: 50px;
   margin-top: 30px;
   line-height: 50px;
-  opacity: 1.2;
   text-align: center;
   border-radius: 50px;
-  background: #2080C0;
+  transition: box-shadow 0.5s;
+  box-shadow:
+    5px 5px 10px #d9d9d9, 
+    -5px -5px 10px #ffffff,
+    inset 5px 5px 10px transparent,
+    inset -5px -5px 10px transparent;
+}
+
+.topic-create-button:hover {
+  box-shadow:
+    5px 5px 10px transparent,
+    -5px -5px 10px transparent,
+    inset 5px 5px 10px #d9d9d9, 
+    inset -5px -5px 10px #ffffff;
 }
 
 .topic-create-button > a {
   font-size: 14px;
-  color: white;
+  color: #05204A;
 }
 
 .topic-new {
@@ -110,12 +122,24 @@
   width: 100%;
   margin-top: 30px;
   line-height: 50px;
-  opacity: 1.2;
   text-align: center;
   border-radius: 50px;
-  background: #2080C0;
-  color: white;
+  color: #05204A;
   display: inline-block;
+  transition: box-shadow 0.5s;
+  box-shadow:
+    5px 5px 10px #d9d9d9, 
+    -5px -5px 10px #ffffff,
+    inset 5px 5px 10px transparent,
+    inset -5px -5px 10px transparent;
+}
+
+.ranking-action:hover {
+  box-shadow:
+    5px 5px 10px transparent,
+    -5px -5px 10px transparent,
+    inset 5px 5px 10px #d9d9d9, 
+    inset -5px -5px 10px #ffffff;
 }
 
 .ranking-headline {
@@ -133,8 +157,7 @@
 }
 
 .topic-ranking-number {
-  color: #2080C0;
-  opacity: 1.5;
+  color: #05204A;
   font-family: 'Playfair Display', serif;
 }
 

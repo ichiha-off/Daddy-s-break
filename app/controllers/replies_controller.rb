@@ -8,6 +8,11 @@ class RepliesController < ApplicationController
     reply = current_user.replies.new(reply_params)
     reply.comment_id = comment.id
     if reply.save
+      if reply.re_reply.blank?
+        reply.create_notification_reply(current_user, comment.id, reply.id, comment.user.id)
+      else
+        reply.create_notification_reply(current_user, comment.id, reply.id, reply.re_reply.user.id)
+      end
       flash[:notice] = "返信しました！"
       redirect_to topic_comment_path(topic, comment)
     else

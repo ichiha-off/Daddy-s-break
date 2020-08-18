@@ -6,10 +6,10 @@
         <%= attachment_image_tag(@topic, :image, fallback: "no_image.jpg", size: "300x300" ) %>
         <div class="row justify-content-center">
 
-          <button class="add-image">
+          <div class="add-image">
             <span class="fas fa-camera fa-3x"></span> <%= f.attachment_field :image %>
             <p>画像を選択</p>
-          </button>
+          </div>
 
         </div>
       </div>
@@ -29,7 +29,7 @@
           </tr>
 
           <tr class="text-center">
-            <td><%= f.submit "新規登録", class: 'btn btn-success btn-lg' %></td>
+            <td><%= f.submit "新規登録", class: 'btn btn-white btn-lg' %></td>
           </tr>
         </table>
       </div>
