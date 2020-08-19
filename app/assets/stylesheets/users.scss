@@ -3,7 +3,6 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .user-index {
-  background-color: white;
   margin-top: 30px;
   padding: 0px 10px;
   .list-group {
@@ -26,13 +25,13 @@
 .user-index-name {
   font-size: 16px;
   font-weight: bold;
-  color: #05204A;
+  color: #3F8EFC;
 }
 
 .user-index-introduction {
   font-size: 16px;
   margin-top: 10px;
-  color: #05204A;
+  color: #3F8EFC;
 }
 
 .user-index-follow-action > a {
@@ -40,77 +39,45 @@
 }
 
 .user-show {
-  margin: 30px 0px;
-  color: #05204A;
-}
-
-.user-show-image::after {
-  content: '';
-  display: block;
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  margin: 30px 0px 100px 0;
+  color: #3F8EFC;
 }
 
 .user-show-image {
   margin-bottom: 100px;
   position: relative;
-  border-radius: 10px;
-  transition: box-shadow 0.5s;
+  border-radius: 50px;
   box-shadow:
-    17px 17px 34px #d1d1d1, 
-    -17px -17px 34px #ffffff,
-    inset 17px 17px 34px transparent,
-    inset -17px -17px 34px transparent;
+    8px 8px 16px #cacbce, 
+    -8px -8px 16px #ffffff,
 }
 
 .user-show-image > img {
-  border-radius: 10px;
+  border-radius: 50px;
   width: 100%;
   height: 100%;
 }
 
 .user-show-profile {
   padding-top: 50px;
-}
-
-.user-show-profile::after {
-  content: '';
-  display: block;
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.neumorphism {
-  background-color: white;
-  padding: 50px;
-}
-.neumorphism .user-show-profile {
   border-radius: 50px;
 }
-.neumorphism .user-show-profile {
-  background-color: white;
-  transition: box-shadow 0.5s;
+.user-show-profile {
+  background-color: #EBECF0;
+  transition: box-shadow 0.5s ease-in-out;
   box-shadow:
-    40px 40px 80px #d9d9d9, 
-    -40px -40px 80px #ffffff,
-    inset 40px 40px 80px transparent,
-    inset -40px -40px 80px transparent;
+    8px 8px 16px #cacbce, 
+    -8px -8px 16px #ffffff,
+    inset 8px 8px 16px transparent,
+    inset -8px -8px 16px transparent;
 }
 
-.neumorphism .user-show-profile:hover {
+.user-show-profile:hover {
   box-shadow:
-    40px 40px 80px transparent,
-    -40px -40px 80px transparent,
-    inset 40px 40px 80px #d9d9d9, 
-    inset -40px -40px 80px #ffffff;
+    8px 8px 16px transparent,
+    -8px -8px 16px transparent,
+    inset 8px 8px 16px #cacbce, 
+    inset -8px -8px 16px #ffffff;
 }
 
 .user-show > .user-show-image {
@@ -122,7 +89,9 @@
 .user-show-name {
   font-size: 48px;
   text-align: center;
-  text-shadow: 5px 4px 0px rgba(18, 47, 61, 0.15);
+  text-shadow:
+    4px 4px 8px #cacbce, 
+    -4px -4px 8px #ffffff;
     span {
     display: block;
     transform: rotate(-7.5deg);
@@ -154,6 +123,31 @@
   text-align: right;
 }
 
+.user-edit-form-area {
+  margin-bottom: 30px;
+  .user-edit-form {
+    background-color: #EBECF0;
+    border: none;
+    transition: box-shadow 0.5s ease-in-out;
+    box-shadow:
+    4px 4px 8px #c8c9cc, 
+    -4px -4px 8px #ffffff,
+    inset 4px 4px 8px transparent,
+    inset -4px -4px 8px transparent;
+    &:hover,  &:focus-within {
+      background-color: #EBECF0;
+      box-shadow:
+      4px 4px 8px transparent, 
+      -4px -4px 8px transparent,
+      inset 4px 4px 8px #c8c9cc, 
+      inset -4px -4px 8px #ffffff;
+    }
+    &:-webkit-autofill {
+      transition: background-color 5000s ease-in-out 0s;
+    }
+  }
+}
+
 .user-edit-button {
   position: absolute;
   bottom: -80px;
@@ -162,7 +156,7 @@
   padding: 15px;
   border: none solid;
   border-radius: 50%;
-  background-color: #05204A;
+  background-color: #3F8EFC;
   box-shadow: 10px 10px 30px rgba(18, 47, 61, 0.5);
 }
 

@@ -7,31 +7,28 @@
         <div class="row justify-content-center">
 
           <div class="add-image">
-            <span class="fas fa-camera fa-3x"></span> <%= f.attachment_field :image %>
-            <p>画像を選択</p>
+            <span class="fas fa-camera"></span> <%= f.attachment_field :image %>
           </div>
 
         </div>
       </div>
 
       <div class="col-sm-12 col-lg-6">
-        <table class="table">
-          <tr>
-            <td><%= f.text_field :title, placeholder: "タイトルを記入してください", class: "topic-form form-control" %></td>
-          </tr>
+          <div class="topic-form-area">
+            <%= f.text_field :title, placeholder: "タイトルを記入してください", class: "topic-form form-control" %>
+          </div>
 
-          <tr>
-            <td><%= f.text_area :body, placeholder: "本文を記入してください", class: "topic-form form-control" %></td>
-          </tr>
+          <div class="topic-form-area">
+            <%= f.text_area :body, placeholder: "本文を記入してください", class: "topic-form form-control" %>
+          </div>
 
-          <tr>
-            <td><%= f.collection_select :category_id, @categories, :id, :name, {:prompt => 'カテゴリ選択'}, {class: 'custom-select'} %></td>
-          </tr>
+          <div class="topic-form-area">
+            <%= f.collection_select :category_id, @categories, :id, :name, {:prompt => 'カテゴリ選択'}, {class: 'topic-form custom-select'} %>
+          </div>
 
-          <tr class="text-center">
-            <td><%= f.submit "新規登録", class: 'btn btn-white btn-lg' %></td>
-          </tr>
-        </table>
+          <div class="text-center">
+            <%= f.submit "新規登録", class: 'btn btn-white btn-lg' %>
+          </div>
       </div>
       
     </div>

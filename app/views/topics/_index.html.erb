@@ -4,9 +4,9 @@
 
 <% else %>
 
-  <div class="row list-group list-group-flush">
+  <%= paginate topics %>
 
-    <%= paginate topics %>
+  <div class="row list-group list-group-flush">
 
     <% topics.each do |topic| %>
       <div class="col-sm-12 list-group-item topic-list-item">
@@ -46,8 +46,8 @@
       </div>
     <% end %>
 
-    <%= paginate topics %>
-
   </div>
-
+  
+  <%= paginate topics %>
+  
 <% end %>

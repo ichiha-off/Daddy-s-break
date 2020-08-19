@@ -2,154 +2,350 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.header {
+  $color: #ffffff;
 
-$color: #05204A;
-
-.search-headline {
-  margin-top: 30px;
-}
-
-.search-bar .edit-pen-title {
-  color: #5a6674;
-}
-
-.search-form {
-  position: relative;
-  width: 350px;
-  height: 40px;
-  border-radius: 40px;
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
-  background: #fff;
-  transition: all 0.3s ease;
-  &.hover {
-    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.3);
+  .search-headline {
+    margin-top: 30px;
   }
-}
 
-.search-input {
-  position: absolute;
-  top: 10px;
-  left: 38px;
-  font-size: 14px;
-  background: none;
-  color: #5a6674;
-  width: 195px;
-  height: 20px;
-  border: none;
-  appearance: none;
-  outline: none;
-
-  &::-webkit-search-cancel-button {
-    appearance: none;
+  .search-bar .edit-pen-title {
+    color: #ffffff;
   }
-}
 
-.search-button {
-  position: absolute;
-  top: 10px;
-  left: 15px;
-  height: 20px;
-  width: 20px;
-  padding: 0;
-  margin: 0;
-  border: none;
-  background: none;
-  outline: none!important;
-  cursor: pointer;
-  
-  & i {
-    width: 20px;
-    height: 20px;
-    fill: #5a6674;
-  }
-}
 
-.search-option {
-  position: absolute;
-  text-align: right;
-  top: 10px;
-  right: 15px;
-
-  div {
+  .search-form {
     position: relative;
-    display: inline-block;
-    margin: 0 1px;
+    width: 350px;
+    height: 40px;
+    border-radius: 40px;
+    transition: box-shadow 0.5s ease-in-out;
+    box-shadow:
+    4px 4px 8px #3679d6, 
+    -4px -4px 8px #48a3ff,
+    inset 4px 4px 8px transparent, 
+    inset -4px -4px 8px transparent;
+  &:hover, &:focus-within {
+    box-shadow: 
+    4px 4px 8px transparent, 
+    -4px -4px 8px transparent,
+    inset 4px 4px 8px #3679d6, 
+    inset -4px -4px 8px #48a3ff;
+  }
+}
+
+  .search-input {
+    position: absolute;
+    top: 10px;
+    left: 38px;
+    font-size: 14px;
+    background: none;
+    color: #ffffff;
+    width: 195px;
+    height: 20px;
+    border: none;
+    appearance: none;
+    outline: none;
+    &:hover {
+      color: #ffffff;
+    }
+    &::-webkit-search-cancel-button {
+      appearance: none;
+    }
+  }
+
+  .search-button {
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    height: 20px;
+    width: 20px;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: none;
+    outline: none!important;
     cursor: pointer;
     
-    input {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      opacity: 0.01;
-      cursor: pointer;
+    & i {
+      width: 20px;
+      height: 20px;
+      fill: #ffffff;
     }
-    
-    span {
-      position: absolute;
-      display: block;
-      text-align: center;
-      left: 50%;
-      transform: translateX(-50%);
-      opacity: 0;
-      background: #929AA3;
-      color: #fff;
-      font-size: 9px;
-      letter-spacing: 1px;
-      line-height: 1;
-      text-transform: uppercase;
-      padding: 4px 7px;
-      border-radius: 12px;
-      top: -18px;
-      transition: all .2s ease-in-out;
+  }
+
+  .search-option {
+    position: absolute;
+    text-align: right;
+    top: 10px;
+    right: 15px;
+
+    div {
+      position: relative;
+      display: inline-block;
+      margin: 0 1px;
+      cursor: pointer;
       
-      &::after {
-        content: '';
+      input {
         position: absolute;
-        bottom: -3px;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        opacity: 0.01;
+        cursor: pointer;
+      }
+      
+      span {
+        position: absolute;
+        display: block;
+        text-align: center;
         left: 50%;
         transform: translateX(-50%);
-        border-top: 4px solid #929AA3;
-        border-left: 4px solid transparent;
-        border-right: 4px solid transparent;
+        opacity: 0;
+        background: #fff;
+        color: #3F8EFC;
+        font-size: 9px;
+        letter-spacing: 1px;
+        line-height: 1;
+        text-transform: uppercase;
+        padding: 4px 7px;
+        border-radius: 12px;
+        top: -18px;
         transition: all .2s ease-in-out;
+        
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: -3px;
+          left: 50%;
+          transform: translateX(-50%);
+          border-top: 4px solid #929AA3;
+          border-left: 4px solid transparent;
+          border-right: 4px solid transparent;
+          transition: all .2s ease-in-out;
+        }
+      }
+      
+      &:hover span {
+        opacity: 1;
+        top: -21px;
+      }
+      
+      label {
+        display: block;
+        cursor: pointer;
+      }
+      
+      i {
+        height: 20px;
+        width: 20px;
+        fill: #ffffff;
+        opacity: 0.4;
+        transition: all .2s ease-in-out;
+        pointer-events: none;
+      }
+      
+      &:hover i {
+        opacity: 1;
+      }
+      
+      input:checked + label i {
+        color: $color;
+        opacity: 1;
+      }
+      
+      input:checked + label span {
+        background: $color;
+        
+        &::after {
+          border-top-color: $color;
+        }
       }
     }
-    
-    &:hover span {
-      opacity: 1;
-      top: -21px;
-    }
-    
-    label {
-      display: block;
-      cursor: pointer;
-    }
-    
-    i {
-      height: 20px;
-      width: 20px;
-      fill: #5a6674;
-      opacity: 0.6;
-      transition: all .2s ease-in-out;
-      pointer-events: none;
-    }
-    
-    &:hover i {
-      opacity: 1;
-    }
-    
-    input:checked + label i {
+  }
+  @mixin placeholder($color) {
+    &::placeholder {
       color: $color;
-      opacity: .9;
     }
+  
+    // IE
+    &:-ms-input-placeholder {
+      color: $color;
+    }
+  
+    // Edge
+    &::-ms-input-placeholder {
+      color: $color;
+    }
+  }
+  
+  input {
+    @include placeholder(#ffffff);
+    opacity: 0.6;
+  }
+}
+
+// スクロールした後の固定ヘッダー
+.scroll_header {
+  $color: #3F8EFC;
+
+  .search-headline {
+    margin-top: 30px;
+  }
+  
+  .search-bar .edit-pen-title {
+    color: #3F8EFC;
+  }
+  
+  
+  .search-form {
+    position: relative;
+    width: 350px;
+    height: 40px;
+    border-radius: 40px;
+    transition: box-shadow 0.5s ease-in-out;
+    box-shadow:
+      4px 4px 8px #c8c9cc, 
+      -4px -4px 8px #ffffff,
+      inset 4px 4px 8px transparent, 
+      inset -4px -4px 8px transparent;
+    &:hover, &:focus-within {
+      box-shadow: 
+      4px 4px 8px transparent, 
+      -4px -4px 8px transparent,
+      inset 4px 4px 8px #c8c9cc, 
+      inset -4px -4px 8px #ffffff;
+    }
+  }
+  
+  .search-input {
+    position: absolute;
+    top: 10px;
+    left: 38px;
+    font-size: 14px;
+    background: none;
+    color: #3F8EFC;
+    width: 195px;
+    height: 20px;
+    border: none;
+    appearance: none;
+    outline: none;
+    &:hover {
+      color: #3F8EFC;
+    }
+    &::-webkit-search-cancel-button {
+      appearance: none;
+    }
+  }
+  
+  .search-button {
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    height: 20px;
+    width: 20px;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: none;
+    outline: none!important;
+    cursor: pointer;
     
-    input:checked + label span {
-      background: $color;
+    & i {
+      width: 20px;
+      height: 20px;
+      fill: #3F8EFC;
+    }
+  }
+  
+  .search-option {
+    position: absolute;
+    text-align: right;
+    top: 10px;
+    right: 15px;
+  
+    div {
+      position: relative;
+      display: inline-block;
+      margin: 0 1px;
+      cursor: pointer;
       
-      &::after {
-        border-top-color: $color;
+      input {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        opacity: 0.01;
+        cursor: pointer;
+      }
+      
+      span {
+        position: absolute;
+        display: block;
+        text-align: center;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        background: #3F8EFC;
+        color: #ffffff;
+        font-size: 9px;
+        letter-spacing: 1px;
+        line-height: 1;
+        text-transform: uppercase;
+        padding: 4px 7px;
+        border-radius: 12px;
+        top: -18px;
+        transition: all .2s ease-in-out;
+        
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: -3px;
+          left: 50%;
+          transform: translateX(-50%);
+          border-top: 4px solid #929AA3;
+          border-left: 4px solid transparent;
+          border-right: 4px solid transparent;
+          transition: all .2s ease-in-out;
+        }
+      }
+      
+      &:hover span {
+        opacity: 1;
+        top: -21px;
+      }
+      
+      label {
+        display: block;
+        cursor: pointer;
+      }
+      
+      i {
+        height: 20px;
+        width: 20px;
+        fill: #3F8EFC;
+        opacity: 0.4;
+        transition: all .2s ease-in-out;
+        pointer-events: none;
+      }
+      
+      &:hover i {
+        opacity: 1;
+      }
+      
+      input:checked + label i {
+        color: $color;
+        opacity: 1;
+      }
+      
+      input:checked + label span {
+        background: $color;
+        
+        &::after {
+          border-top-color: $color;
+        }
       }
     }
   }

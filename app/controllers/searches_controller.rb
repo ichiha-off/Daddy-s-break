@@ -7,7 +7,10 @@ class SearchesController < ApplicationController
     word = params[:word]
     if word.blank?
       redirect_back(fallback_location: root_path)
-      flash[:alert] = "未入力です。"
+      flash[:alert] = "未入力です"
+    elsif @range.blank?
+      redirect_back(fallback_location: root_path)
+      flash[:alert] = "未選択です"
     elsif @range == 'topic'
       @topic = search_topic(word)
     elsif @range == 'user'

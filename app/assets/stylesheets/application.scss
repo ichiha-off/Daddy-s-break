@@ -22,8 +22,12 @@
   font-family: 'Noto Sans JP', sans-serif;
 }
 
+body {
+  background-color: #EBECF0;
+}
+
 a {
-  color: #090909;
+  color: #3F8EFC;
 }
 
 #error_explanation {
@@ -43,7 +47,7 @@ a {
 }
 
 .header {
-  background-color: #05204A;
+  background-color: #3F8EFC;
 }
 
 .scroll_header{
@@ -52,9 +56,9 @@ a {
   justify-content: space-between;
   width: 100%;
   z-index: 10;
-  background-color: #FFFFFF;
+  background-color: #EBECF0;
   .header-logo {
-    color: #02020A;
+    color: #3F8EFC;
   }
 }
 .scroll_header.fixed{
@@ -91,7 +95,7 @@ a {
 
 .dropdown {
   .dropdown-menu {
-      color: #05204A;
+      color: #3F8EFC;
       transition: all 0.5s;
       overflow: hidden;
       transform-origin: top center;
@@ -106,65 +110,58 @@ a {
 }
 
 .dropdown-item {
-  color: #05204A;
+  color: #3F8EFC;
   font-size: 16px;
 }
 
 .btn-white {
   line-height: 2;
-  color: #05204A;
-  background-color: white;
-  transition: box-shadow 0.5s ease-in-out;
+  color: rgba(63, 142, 252, 0.8);
+  background-color: #EBECF0;
+  transition: all 0.5s ease-in-out;
   box-shadow:
-    5px 5px 10px #d9d9d9, 
+    5px 5px 10px #c8c9cc, 
     -5px -5px 10px #ffffff,
-    inset 0 0 5px rgba(255, 255, 255, 0), 
-    inset 0 0 10px rgba(255, 255, 255, 0),
-    inset 0px 0px 2px rgba(255, 255, 255, 0.2),
     inset 5px 5px 10px transparent,
     inset -5px -5px 10px transparent;
 }
 
  .btn-white:hover {
+  color: #3F8EFC;
   box-shadow:
-    5px 5px 10px rgba(255, 255, 255, 0.2), 
-    -5px -5px 10px white,
-    inset 5px 5px 10px rgba(217, 217, 217, 0.3),
+    5px 5px 10px transparent,
+    -5px -5px 10px transparent,
+    inset 5px 5px 10px #c8c9cc, 
     inset -5px -5px 10px #ffffff;
 }
 
 .add-image {
+  font-size: 24px;
+  color: rgba(63, 142, 252, 0.6);
   display: inline-block;
   position: relative;
   box-sizing: border-box;
-  width: 150px;
+  width: 80px;
+  padding: 10px 0;
   margin-top: 20px;
-  padding: 7px 0;
   text-align: center;
   border-radius: 100px;
-  background: white;
-  transition: box-shadow 0.5s ease-in-out;
+  background: #EBECF0;
+  transition: all 0.5s ease-in-out;
   box-shadow:
-    8px 8px 15px #d9d9d9, 
-    -8px -8px 15px #ffffff,
-    inset 0 0 8px rgba(255, 255, 255, 0), 
-    inset 0 0 15px rgba(255, 255, 255, 0),
-    inset 0px 0px 4px rgba(255, 255, 255, 0.2),
-    inset 8px 8px 15px transparent,
-    inset -8px -8px 15px transparent;
+    5px 5px 10px #c8c9cc, 
+    -5px -5px 10px #ffffff,
+    inset 5px 5px 10px transparent,
+    inset -5px -5px 10px transparent;
 }
 
  .add-image:hover {
+  color: #3F8EFC;
   box-shadow:
-    8px 8px 15px rgba(255, 255, 255, 0.2), 
-    -8px -8px 15px white,
-    inset 8px 8px 15px rgba(217, 217, 217, 0.3),
-    inset -8px -8px 15px #ffffff;
-}
-
-.add-image span {
-  font-size: 24px;
-  color: #05204A;
+    5px 5px 10px transparent,
+    -5px -5px 10px transparent,
+    inset 5px 5px 10px #c8c9cc, 
+    inset -5px -5px 10px #ffffff;
 }
 
 .add-image p {
@@ -197,44 +194,68 @@ a:hover{
   border-bottom: 1px solid #e3e3e3;
 }
 
-footer {
-  background-color: #05204A;
+.footer {
+  background-color: #3F8EFC;
   color: white;
   font-size: 12px;
   width: 100%;
   height: 50px;
-  position: absolute;
+  display: block;
 }
 
-/*ページネーション自体のデザイン*/
+/*kaminariのデザイン*/
 .pagination {
   justify-content: center;
+  &:first-child .page-link {
+    border-radius: 15px;
+  }
 }
 
 .pagination>li>a {
   border: none;     /*枠線をなくす*/
-  color: #696969;   /*文字の色を変える*/
+  color: rgba(63, 142, 252, 0.6);   /*文字の色を変える*/
+}
+
+.pagination>li>a {
+  background-color: #EBECF0;
+  border-radius: 15px;
+  margin: 0 10px;
+  transition: all 0.5s ease-in-out;
+  box-shadow:
+  4px 4px 8px #c8c9cc, 
+  -4px -4px 8px #ffffff,
+  inset 4px 4px 8px transparent,
+  inset -4px -4px 8px transparent;
+}
+
+/*ホバー時のデザイン*/
+.pagination>li>a:hover {
+  color: #3F8EFC;
+  box-shadow:
+  4px 4px 8px transparent, 
+  -4px -4px 8px transparent,
+  inset 4px 4px 8px #c8c9cc, 
+  inset -4px -4px 8px #ffffff;
 }
 
 /* 表示しているページ番号のデザイン */
 .pagination>.page-item.active>.page-link {     
-  background: #05204A;     /*背景の色を変える*/
-  opacity: 0.6;
+  background: #EBECF0;     /*背景の色を変える*/
   border-radius: 15px;     /*角を丸くする*/
+  color: #3F8EFC;
+  box-shadow:
+    inset 4px 4px 8px #c8c9cc, 
+    inset -4px -4px 8px #ffffff;
 }
 
-/*ホバー時のデザイン*/
-.pagination>li>a:hover {        
-  border-radius: 15px;    /*角を丸くする*/
-}
-
+// 画面TOPに戻るボタン
 #page_top{
   width: 90px;
   height: 90px;
   position: fixed;
   right: 50px;
   bottom: 50px;
-  background: #05204A;
+  background: #3F8EFC;
   opacity: 0.8;
   border-radius: 50%;
 }
@@ -427,7 +448,7 @@ footer {
   height: 50px;
   position: fixed;
   display: block;
-  background: #ffffff;
+  background: #EBECF0;
   bottom: 0;
   left: 0;
   right: 0;
@@ -452,7 +473,7 @@ footer {
   align-items: center;
   padding: 10px;
   height: 50px;
-  color: #05204A;
+  color: #3F8EFC;
 }
 
 .bottom-sticky-nav ul li a:hover,

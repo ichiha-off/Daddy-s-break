@@ -2,13 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.no-topics-text {
-  margin: 30px;
-}
+// .no-topics-text {
+//   margin: 30px;
+// }
 
 .topic-index {
-  background-color: white;
   margin: 30px 0;
+  .list-group-item {
+    background-color: #EBECF0;
+  }
 }
 
 .topic-index > .list-group {
@@ -32,7 +34,7 @@
 }
 
 .topic-index-count {
-  color: #05204A;
+  color: #3F8EFC;
 }
 
 .topic-index-kaminari {
@@ -45,25 +47,27 @@
   line-height: 50px;
   text-align: center;
   border-radius: 50px;
-  transition: box-shadow 0.5s;
+  transition: box-shadow 0.5s ease-in-out;
   box-shadow:
-    5px 5px 10px #d9d9d9, 
+    5px 5px 10px #c8c9cc, 
     -5px -5px 10px #ffffff,
     inset 5px 5px 10px transparent,
     inset -5px -5px 10px transparent;
+  a {
+    display: block;
+  }
 }
 
 .topic-create-button:hover {
   box-shadow:
     5px 5px 10px transparent,
     -5px -5px 10px transparent,
-    inset 5px 5px 10px #d9d9d9, 
+    inset 5px 5px 10px #c8c9cc, 
     inset -5px -5px 10px #ffffff;
 }
 
 .topic-create-button > a {
   font-size: 14px;
-  color: #05204A;
 }
 
 .topic-new {
@@ -78,8 +82,29 @@
   text-align: center;
 }
 
-.topic-form {
-  width: 100%;
+.topic-form-area {
+  margin-bottom: 30px;
+  .topic-form {
+    background-color: #EBECF0;
+    border: none;
+    transition: box-shadow 0.5s ease-in-out;
+    box-shadow:
+    4px 4px 8px #c8c9cc, 
+    -4px -4px 8px #ffffff,
+    inset 4px 4px 8px transparent,
+    inset -4px -4px 8px transparent;
+    &:hover,  &:focus-within {
+      background-color: #EBECF0;
+      box-shadow:
+      4px 4px 8px transparent, 
+      -4px -4px 8px transparent,
+      inset 4px 4px 8px #c8c9cc, 
+      inset -4px -4px 8px #ffffff;
+    }
+    &:-webkit-autofill {
+      transition: background-color 5000s ease-in-out 0s;
+    }
+  }
 }
 
 .topic-show {
@@ -128,17 +153,20 @@
   display: inline-block;
   transition: box-shadow 0.5s;
   box-shadow:
-    5px 5px 10px #d9d9d9, 
+    5px 5px 10px #c8c9cc, 
     -5px -5px 10px #ffffff,
     inset 5px 5px 10px transparent,
     inset -5px -5px 10px transparent;
+  a {
+    display: block;
+  }
 }
 
 .ranking-action:hover {
   box-shadow:
     5px 5px 10px transparent,
     -5px -5px 10px transparent,
-    inset 5px 5px 10px #d9d9d9, 
+    inset 5px 5px 10px #c8c9cc, 
     inset -5px -5px 10px #ffffff;
 }
 
@@ -162,15 +190,15 @@
 }
 
 .topic-ranking-number-1 {
-  font-size: 28px;
-}
-
-.topic-ranking-number-2 {
   font-size: 24px;
 }
 
-.topic-ranking-number-3 {
+.topic-ranking-number-2 {
   font-size: 20px;
+}
+
+.topic-ranking-number-3 {
+  font-size: 16px;
 }
 
 .ranking-icon1 {

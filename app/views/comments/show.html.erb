@@ -61,8 +61,7 @@
         <%= form_with model:[@topic, @comment, @reply], class: "col-sm-12", local: true do |f| %>
           <%= f.text_area :reply, rows:'5', class: "col-sm-12 form-control", placeholder: ">>#{ @comment.user.name }" %>
           <div class="add-image">
-            <span class="fas fa-camera fa-3x"></span> <%= f.attachment_field :image %>
-            <p>画像を選択</p>
+            <div class="fas fa-camera"></div> <%= f.attachment_field :image %>
           </div>
           <img class='image preview'>
           <div class="row justify-content-center reply-button">
@@ -76,8 +75,7 @@
           <%= f.text_area :reply, rows:'5', class: "col-sm-12 form-control", placeholder: ">>#{ @re_reply.user.name }" %>
           <%= f.hidden_field :re_reply_id, value: @re_reply.id %>
           <div class="add-image">
-            <span class="fas fa-camera fa-3x"></span> <%= f.attachment_field :image %>
-            <p>画像を選択</p>
+            <div class="fas fa-camera"></div> <%= f.attachment_field :image %>
           </div>
           <img class='image preview'>
           <div class="row justify-content-center reply-button">
