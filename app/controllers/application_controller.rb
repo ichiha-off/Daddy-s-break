@@ -6,19 +6,16 @@ class ApplicationController < ActionController::Base
   protected
 
   def after_sign_in_path_for(resource)
-    if resource == Admin
-        topics_path
-    else resource == User
-        topics_path
+    case resource
+    when Admin
+      admins_categories_path
+    when User
+      topics_path
     end
   end
 
   def after_sign_out_path_for(resource)
-    if resource == Admin
-        topics_path
-    else resource == User
-        new_user_session_path
-    end
+    new_user_session_path
   end
 
   def configure_permitted_parameters

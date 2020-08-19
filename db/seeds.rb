@@ -8,6 +8,7 @@
 
 # 管理者用アカウント
 Admin.create!(
-  email: "admin@admin.com",
+  email: "admin@admin",
+  name: "admin",
   password: "administrator"
 )

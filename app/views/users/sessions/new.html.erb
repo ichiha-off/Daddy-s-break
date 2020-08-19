@@ -1,44 +1,52 @@
-<div id="login-visual">
+<% if admin_signed_in? %>
 
-  <div id="login-images">
-    <div class="login-image1"></div>
-    <div class="login-image2"></div>
-    <div class="login-image3"></div>
-    <div class="login-image4"></div>
-  </div>
+  <h2>管理者アカウントでログインしています。ログアウトしてからやり直してください</h2>
 
-  <div class="login-form-area">
+<% else %>
 
-    <h1><b>Daddy's break</b></h1>
+  <div id="login-visual">
 
-    <h2>Log in</h2>
+    <div id="login-images">
+      <div class="login-image1"></div>
+      <div class="login-image2"></div>
+      <div class="login-image3"></div>
+      <div class="login-image4"></div>
+    </div>
 
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "login-form" }) do |f| %>
+    <div class="login-form-area">
 
-      <p class="login-text">
-        <span class="fa-stack fa-lg">
-          <i class="fa fa-circle fa-stack-2x"></i>
-          <i class="fa fa-lock fa-stack-1x"></i>
-        </span>
-      </p>
+      <h1><b>Daddy's break</b></h1>
 
-      <%= f.text_field :name, autocomplete: "name", placeholder: "Name", class: "login-user-name" %>
+      <h2>Log in</h2>
 
-      <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password", class: "login-password" %>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "login-form" }) do |f| %>
 
-      <% if devise_mapping.rememberable? %>
-          <%= f.check_box :remember_me %>
-          <%= f.label :remember_me, "Keep login" %>
+        <p class="login-text">
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-lock fa-stack-1x"></i>
+          </span>
+        </p>
+
+        <%= f.text_field :name, autocomplete: "name", placeholder: "Name", class: "login-user-name" %>
+
+        <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password", class: "login-password" %>
+
+        <% if devise_mapping.rememberable? %>
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me, "Keep login" %>
+        <% end %>
+
+        <%= f.submit "Log in", class: "login-submit" %>
+
       <% end %>
 
-      <%= f.submit "Log in", class: "login-submit" %>
+      <div class="row">
+        <%= render "users/shared/links" %>
+      </div>
 
-    <% end %>
-
-    <div class="row">
-      <%= render "users/shared/links" %>
     </div>
 
   </div>
 
-</div> 
+<% end %>

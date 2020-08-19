@@ -1,39 +1,26 @@
-    <nav>
-      <ul class="nav justify-content-end">
-        <% if user_signed_in? %>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-              <%= attachment_image_tag(current_user, :profile_image, fallback: "no_image.jpg", class: "header-user-icon") %>
-              <% if unchecked_notifications.any? %>
-                <i class="fas fa-circle notifications-circle"></i>
-              <% end %>
-            </a>
-              <div class="dropdown-menu">
-                <%= link_to user_path(current_user), class: 'dropdown-item' do %>
-                  <i class="fas fa-address-card"> マイページ</i>
-                <% end %>
-                <%= link_to destroy_user_session_path, method: :delete, class: 'dropdown-item' do %>
-                  <i class="fas fa-sign-out-alt"> ログアウト</i>
-                <% end %>
-                <%= link_to notifications_path, class: 'dropdown-item' do %>
-                  <i class="fas fa-bell"> 通知</i>
-                  <% if unchecked_notifications.any? %>
-                    <i class="fas fa-circle in-notifications-circle"></i>
-                  <% end %>
-                <% end %>
-              </div>
-          </li>
-        <% else %>
-          <li class="nav-item">
-            <%= link_to root_path, class: 'navbar-link' do %>
-              <i class="far fa-bookmark"> 初めての方はこちら</i> 
-            <% end %>
-          </li>
-          <li class="nav-item">
-            <%= link_to new_user_session_path, class: 'navbar-link' do %>
-              <i class="fas fa-sign-in-alt"> ログイン</i>
-            <% end %>
-          </li>
+<nav>
+  <ul class="nav justify-content-end">
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+        <%= attachment_image_tag(current_user, :profile_image, fallback: "no_image.jpg", class: "header-user-icon") %>
+        <% if unchecked_notifications.any? %>
+          <i class="fas fa-circle notifications-circle"></i>
         <% end %>
-      </ul>
-    </nav>
+      </a>
+        <div class="dropdown-menu">
+          <%= link_to user_path(current_user), class: 'dropdown-item' do %>
+            <i class="fas fa-address-card"> マイページ</i>
+          <% end %>
+          <%= link_to destroy_user_session_path, method: :delete, class: 'dropdown-item' do %>
+            <i class="fas fa-sign-out-alt"> ログアウト</i>
+          <% end %>
+          <%= link_to notifications_path, class: 'dropdown-item' do %>
+            <i class="fas fa-bell"> 通知</i>
+            <% if unchecked_notifications.any? %>
+              <i class="fas fa-circle in-notifications-circle"></i>
+            <% end %>
+          <% end %>
+        </div>
+    </li>
+  </ul>
+</nav>
