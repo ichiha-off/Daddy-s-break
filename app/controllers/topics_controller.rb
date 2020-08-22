@@ -60,14 +60,13 @@ class TopicsController < ApplicationController
 
   def edit
     @topic = Topic.find(params[:id])
-    @categories = Category.where(is_active: "有効" )
   end
 
   def update
     @topic = Topic.find(params[:id])
     if @topic.update(topic_params)
       flash[:notice] = "内容を変更しました。"
-      redirect_to action: :edit
+      redirect_to topic_path(@topic)
     else
       flash[:alert] = "エラーが発生しました。"
       render :edit

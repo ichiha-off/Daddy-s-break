@@ -2,29 +2,34 @@
   <%= form_with model: @topic, local: true do |f| %>
     <div class="row topic-new">
 
-      <div class="col-sm-12 col-lg-6">
-        <%= attachment_image_tag(@topic, :image, fallback: "no_image.jpg",size: "300x300" ) %>
-        <br><%= f.attachment_field :image %>
+      <div class="col-12 col-lg-6 text-center">
+        <%= attachment_image_tag(@topic, :image, fallback: "no_image.jpg", class: "image_preview", size: "300x300" ) %>
+        <div class="row justify-content-center">
+
+          <div class="add-image">
+            <span class="fas fa-camera"></span> <%= f.attachment_field :image %>
+          </div>
+
+        </div>
       </div>
 
-      <div class="col-sm-12 col-lg-6">
-        <table class="table">
-          <tr>
-            <td><%= f.text_field :title, class: "topic-form" %></td>
-          </tr>
+      <div class="col-12 col-lg-6">
+        <div class="topic-form-area">
+          <%= f.text_field :title, placeholder: "タイトルを記入してください", class: "form-control neumorphism-form" %>
+        </div>
 
-          <tr>
-            <td><%= f.text_area :body, class: "topic-form" %></td>
-          </tr>
+        <div class="topic-form-area">
+          <%= f.text_area :body, placeholder: "本文を記入してください", class: "form-control neumorphism-form" %>
+        </div>
 
-          <tr>
-            <td><%= f.collection_select :category_id, @categories, :id, :name, :prompt => 'カテゴリ選択', class: "topic-form" %></td>
-          </tr>
+        <div class="topic-form-area">
+          <%= f.collection_select :category_id, Category.where(is_active: "有効"), :id, :name, {:prompt => 'カテゴリ選択'}, {class: 'custom-select neumorphism-form'} %>
+        </div>
 
-          <tr class="text-center">
-            <td><%= f.submit "内容を更新する", class: 'btn btn-success btn-lg' %></td>
-          </tr>
-        </table>
+        <div class="text-center">
+          <%= f.submit "内容を更新する", class: 'btn btn-white btn-lg' %>
+        </div>
+
       </div>
       
     </div>

@@ -8,13 +8,15 @@
 
 .topic-index {
   margin: 30px 0;
+  .list-group {
+    margin: 0;
+  }
   .list-group-item {
     background-color: #EBECF0;
   }
-}
-
-.topic-index > .list-group {
-  margin: 0;
+  h2 {
+    color: #3F8EFC;
+  }
 }
 
 .topic-index-title > a {
@@ -184,7 +186,7 @@
 
 .ranking-icon1 {
   position: absolute;
-  background-image: image-url('topics/no.1-crown.png');
+  background-image: image-url('ranking/no.1-crown.png');
   height: 32px;
   width: 32px;
   transform: translate(-50%, -50%);
@@ -194,7 +196,7 @@
 
 .ranking-icon2 {
   position: absolute;
-  background-image: image-url('topics/no.2-crown.png');
+  background-image: image-url('ranking/no.2-crown.png');
   height: 32px;
   width: 32px;
   transform: translate(-50%, -50%);
@@ -205,7 +207,7 @@
 
 .ranking-icon3 {
   position: absolute;
-  background-image: image-url('topics/no.3-crown.png');
+  background-image: image-url('ranking/no.3-crown.png');
   height: 32px;
   width: 32px;
   transform: translate(-50%, -50%);

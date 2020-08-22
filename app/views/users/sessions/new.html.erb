@@ -4,44 +4,46 @@
 
 <% else %>
 
-  <div id="login-visual">
+  <div id="devise-visual">
 
-    <div id="login-images">
-      <div class="login-image1"></div>
-      <div class="login-image2"></div>
-      <div class="login-image3"></div>
-      <div class="login-image4"></div>
+    <div id="devise-images">
+      <div class="devise-image1"></div>
+      <div class="devise-image2"></div>
+      <div class="devise-image3"></div>
+      <div class="devise-image4"></div>
     </div>
 
-    <div class="login-form-area">
+    <div class="devise-form-area">
+
+      <%= image_tag 'Daddy_s_logo_white.svg', alt: "logo" %>
 
       <h1><b>Daddy's break</b></h1>
 
       <h2>Log in</h2>
 
-      <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "login-form" }) do |f| %>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "devise-form" }) do |f| %>
 
-        <p class="login-text">
+        <div class="devise-text">
           <span class="fa-stack fa-lg">
             <i class="fa fa-circle fa-stack-2x"></i>
             <i class="fa fa-lock fa-stack-1x"></i>
           </span>
-        </p>
+        </div>
 
-        <%= f.text_field :name, autocomplete: "name", placeholder: "Name", class: "login-user-name" %>
+        <%= f.text_field :name, autocomplete: "name", placeholder: "Name", class: "devise-user-field" %>
 
-        <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password", class: "login-password" %>
+        <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password", class: "devise-password" %>
 
         <% if devise_mapping.rememberable? %>
             <%= f.check_box :remember_me %>
             <%= f.label :remember_me, "Keep login" %>
         <% end %>
 
-        <%= f.submit "Log in", class: "login-submit" %>
+        <%= f.submit "Log in", class: "devise-submit" %>
 
       <% end %>
 
-      <div class="row">
+      <div class="row mb-5">
         <%= render "users/shared/links" %>
       </div>
 

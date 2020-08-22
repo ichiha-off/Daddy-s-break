@@ -1,16 +1,38 @@
-<h2>Forgot your password?</h2>
+<div id="devise-visual">
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "users/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <div id="devise-images">
+    <div class="devise-image1"></div>
+    <div class="devise-image2"></div>
+    <div class="devise-image3"></div>
+    <div class="devise-image4"></div>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
-<% end %>
+  <div class="devise-form-area">
 
-<%= render "users/shared/links" %>
+    <%= image_tag 'Daddy_s_logo_white.svg', alt: "logo" %>
+
+    <h1><b>Daddy's break</b></h1>
+
+    <h2>Forgot your password?</h2>
+
+    <p>入力したメールアドレスにリセット用のURLを送信します。</p>
+
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { class: "devise-form", method: :post }) do |f| %>
+      <%= render "users/shared/error_messages", resource: resource %>
+
+      <div class="field">
+        <%= f.email_field :email, autocomplete: "email", placeholder: "Email", class: "devise-user-field" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Send mail", class: "devise-submit" %>
+      </div>
+    <% end %>
+
+    <div class="row">
+      <%= render "users/shared/links" %>
+    </div>
+
+  </div>
+
+</div>
