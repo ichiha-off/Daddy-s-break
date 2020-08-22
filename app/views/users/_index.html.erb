@@ -4,28 +4,28 @@
 
 <% else %>
 
-  <div class="col-sm-12 user-index">
-    <div class="row list-group list-group-flush">
+  <div class="col-12 user-index mb-5">
+    <div class="row">
 
     <% users.each do |user| %>
-      <div class="col-sm-12 list-group-item user-index-item">
+      <div class="col-sm-12">
         <div class="row">
 
-          <div class="col-sm-3 user-index-image">
+          <div class="col-md-3 col-12 user-index-image">
             <%= attachment_image_tag(user, :profile_image, fallback: "no_image.jpg") %>
           </div>
 
-          <div class="col-sm-9 user-index-profile">
+          <div class="col-md-9 col-12 user-index-profile">
 
             <div class="row">
 
-              <div class="col-sm-8">
+              <div class="col-md-8 col-6">
                 <%= link_to user_path(user), class: "user-index-name" do %>
                   <%= user.name %>
                 <% end %>
               </div>
 
-              <div class="col-sm-3 user-index-follow-action">
+              <div class="col-md-3 col-6 text-right user-index-follow-action">
                 <% if current_user != user %>
                   <% if current_user.following?(user) %>
                     <%= link_to 'フォロー中', user_relationships_path(user.id), class: "btn btn-outline-primary", method: :delete %>
@@ -39,7 +39,7 @@
 
             <div class="row">
 
-              <div class="col-sm-12 user-index-introduction">
+              <div class="col-12 user-index-introduction">
                 <%= user.introduction %>
               </div>
 
@@ -48,6 +48,7 @@
           </div>
 
         </div>
+        <div class="border"></div>
       </div>
     <% end %>
 

@@ -4,7 +4,7 @@
     <div class="row user-edit">
 
       <div class="col-sm-12 col-lg-4 user-edit-image">
-        <%= attachment_image_tag(@user, :profile_image, size: "200x200", class: "image preview", fallback: "no_image.jpg") %>
+        <%= attachment_image_tag(@user, :profile_image, size: "200x200", class: "image_preview", fallback: "no_image.jpg") %>
         <div class="add-image">
           <div class="fas fa-camera"></div> <%= f.attachment_field :profile_image %>
         </div>
@@ -12,15 +12,15 @@
 
       <div class="col-sm-12 col-lg-8">
         <div class="user-edit-form-area">
-          <%= f.text_field :name, class: "user-edit-form form-control", placeholder: "名前を入力してください" %>
+          <%= f.text_field :name, class: "form-control neumorphism-form", placeholder: "名前を入力してください" %>
         </div>
 
         <div class="user-edit-form-area">
-          <%= f.email_field :email, class: "user-edit-form form-control", placeholder: "メールアドレスを入力してください" %>
+          <%= f.email_field :email, class: "form-control neumorphism-form", placeholder: "メールアドレスを入力してください" %>
         </div>
 
         <div class="user-edit-form-area">
-          <%= f.text_area :introduction, rows:'5', class: "user-edit-form form-control", placeholder: "自己紹介文を書いてみましょう（50字以内）" %>
+          <%= f.text_area :introduction, rows:'5', class: "form-control neumorphism-form", placeholder: "自己紹介文を書いてみましょう（50字以内）" %>
         </div>
 
         <div class="text-center">

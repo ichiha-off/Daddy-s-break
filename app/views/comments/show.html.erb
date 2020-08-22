@@ -4,23 +4,25 @@
 
     <div class="row topic-title">
 
-      <div class="col-sm-2">
-        <%= attachment_image_tag(@topic, :image, size: "100x100", fallback: "no_image.jpg") %>
+      <div class="col-md-3 col-12 text-center">
+        <%= attachment_image_tag(@topic, :image, size: "120x120", fallback: "no_image.jpg") %>
       </div>
 
-      <div class="col-sm-10">
+      <div class="col-md-9 col-12">
 
         <div class="row">
-          <div class="col-sm-8 title">
+          <div class="col-md-8 col-12 title mt-4 mt-md-0">
             <%= @topic.title %>
           </div>
-          <div class="col-sm-4 comment-show-count">
-            <span class="fas fa-comment-dots"> <%= @topic.comments.count %> コメント <%= @topic.created_at.strftime('%Y/%m/%d %H:%M') %></span>
+          <div class="col-md-4 col-12 comment-show-count">
+            <span class="fas fa-comment-dots"> <%= @topic.comments.count %></span>
+            <span class="fas fa-shoe-prints"> <%= @topic.impressionist_count %></span>
+            <span><%= @topic.created_at.strftime('%Y/%m/%d %H:%M') %></span>
           </div>
         </div>
 
         <div class="row">
-          <div class="col-sm-12">
+          <div class="col-12 mt-4 mt-md-0">
             <%= @topic.body %>
           </div>
         </div>
@@ -33,18 +35,18 @@
 
     <div class="row">
 
-      <div class="col-sm-12 comment-user">
-        <%= attachment_image_tag(@comment.user, :profile_image, style: "width: 60px; height: 60px;", fallback: "no_image.jpg") %>
+      <div class="col-12 comment-user">
+        <%= attachment_image_tag(@comment.user, :profile_image, style: "width: 60px; height: 60px; border-radius: 50%;", fallback: "no_image.jpg") %>
         <%= link_to user_path(@comment.user) do %>
           <%= @comment.user.name %>
         <% end %>
         <%= @comment.created_at.strftime('%Y/%m/%d %H:%M') %>
       </div>
 
-      <div class="col-sm-12 comment-view-image">
+      <div class="col-12 comment-view-image">
         <%= attachment_image_tag(@comment, :image, style: "width: 200px; height: 200px;") %>
       </div>
-      <div class="col-sm-12 comment-comment"><%= @comment.comment %></div>
+      <div class="col-12 comment-comment"><%= @comment.comment %></div>
       <div id="favorites_buttons_<%= @comment.id %>" class="col-sm-12 comment-favorite">
         <%= render 'favorites/favorites', comment: @comment %>
       </div>
@@ -53,81 +55,44 @@
 
   </div>
 
-  <div class="reply-form">
+  <div class="reply-form-area">
     <div class="row">
 
       <% if params[:re_reply].blank? %>
 
-        <%= form_with model:[@topic, @comment, @reply], class: "col-sm-12", local: true do |f| %>
-          <%= f.text_area :reply, rows:'5', class: "col-sm-12 form-control", placeholder: ">>#{ @comment.user.name }" %>
+        <%= form_with model:[@topic, @comment, @reply], class: "col-12", id: "reply-form", local: true do |f| %>
+          <%= f.text_area :reply, rows:'5', class: "col-12 form-control neumorphism-form", placeholder: ">>#{ @comment.user.name }" %>
           <div class="add-image">
             <div class="fas fa-camera"></div> <%= f.attachment_field :image %>
           </div>
-          <img class='image preview'>
+          <img class='image_preview'>
           <div class="row justify-content-center reply-button">
-            <%= f.submit "返信する", class: "btn btn-lg btn-white col-sm-8" %>
+            <%= f.submit "返信する", class: "btn btn-lg btn-white col-8" %>
           </div>
         <% end %>
 
       <% else %>
 
-        <%= form_with model:[@topic, @comment, @reply], class: "col-sm-12", local: true do |f| %>
-          <%= f.text_area :reply, rows:'5', class: "col-sm-12 form-control", placeholder: ">>#{ @re_reply.user.name }" %>
+        <%= form_with model:[@topic, @comment, @reply], class: "col-12", id: "reply-form", local: true do |f| %>
+          <%= f.text_area :reply, rows:'5', class: "col-12 form-control", placeholder: ">>#{ @re_reply.user.name }" %>
           <%= f.hidden_field :re_reply_id, value: @re_reply.id %>
           <div class="add-image">
             <div class="fas fa-camera"></div> <%= f.attachment_field :image %>
           </div>
-          <img class='image preview'>
+          <img class='image_preview'>
           <div class="row justify-content-center reply-button">
-            <%= f.submit "返信する", class: "btn btn-lg btn-white col-sm-8" %>
+            <%= f.submit "返信する", class: "btn btn-lg btn-white col-8" %>
           </div>
         <% end %>
 
       <% end %>
 
     </div>
-
-    <div class="border"></div>
-
-    <div class="row">
-
-        <% @replies.each do |reply| %>
-            <div class="col-sm-9">
-              <%= attachment_image_tag(reply.user, :profile_image, style: "width: 60px; height: 60px;", fallback: "no_image.jpg") %>
-              <%= link_to user_path(reply.user) do %>
-                <%= reply.user.name %>
-              <% end %>
-              <%= reply.created_at.strftime('%Y/%m/%d %H:%M') %>
-            </div>
-            <% if current_user == reply.user %>
-              <div class="col-sm-3">
-                <%= link_to "削除する", topic_comment_reply_path(reply.comment.topic, reply.comment, reply), method: :delete, class: "btn btn-danger" %>
-              </div>
-            <% end %>
-            <div class="col-sm-12 replied-user-name">
-
-              <%# コメントへの返信か返信への返信か %>
-              <% if reply.re_reply_id.blank? %>
-                  >> <%= reply.comment.user.name %>
-              <% else %>
-                  >> <%= reply.re_reply.user.name %>
-              <% end %>
-
-            </div>
-            <div class="col-sm-12">
-              <%= attachment_image_tag(reply, :image, style: "width: 200px; height: 200px;") %>
-            </div>
-            <div class="col-sm-12 reply-reply"><%= reply.reply %></div>
-            <div class="comment-reply-button">
-              <%= link_to topic_comment_path(reply.comment.topic, reply.comment, re_reply: reply.id), class: "reply-button" do %>
-                <i class="fas fa-reply"> 返信する</i>
-              <% end %>
-            </div>
-            <div class="border"></div>
-        <% end %>
-
-    </div>
   </div>
+
+  <div class="border"></div>
+
+  <%= render 'index', replies: @replies %>
 
 </div>
 

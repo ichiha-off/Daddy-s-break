@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
     unless params[:re_reply].blank?
       @re_reply = Reply.find(params[:re_reply])
     end
-    @replies = @comment.replies
+    @replies = @comment.replies.where(re_reply_id: nil)
   end
 
   def create

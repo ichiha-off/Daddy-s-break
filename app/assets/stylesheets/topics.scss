@@ -84,31 +84,10 @@
 
 .topic-form-area {
   margin-bottom: 30px;
-  .topic-form {
-    background-color: #EBECF0;
-    border: none;
-    transition: box-shadow 0.5s ease-in-out;
-    box-shadow:
-    4px 4px 8px #c8c9cc, 
-    -4px -4px 8px #ffffff,
-    inset 4px 4px 8px transparent,
-    inset -4px -4px 8px transparent;
-    &:hover,  &:focus-within {
-      background-color: #EBECF0;
-      box-shadow:
-      4px 4px 8px transparent, 
-      -4px -4px 8px transparent,
-      inset 4px 4px 8px #c8c9cc, 
-      inset -4px -4px 8px #ffffff;
-    }
-    &:-webkit-autofill {
-      transition: background-color 5000s ease-in-out 0s;
-    }
-  }
 }
 
 .topic-show {
-  background-color: white;
+  background-color: #EBECF0;
   margin: 30px;
   padding: 30px;
   padding-left: 30px;
@@ -124,9 +103,11 @@
 .topic-title {
   padding-top: 15px;
   padding-bottom: 30px;
+  color: #3F8EFC;
 }
 
 .topic-title .title {
+  font-weight: bold;
   font-size: 24px;
   padding-bottom: 30px;
 }
@@ -149,7 +130,7 @@
   line-height: 50px;
   text-align: center;
   border-radius: 50px;
-  color: #05204A;
+  color: #3F8EFC;
   display: inline-block;
   transition: box-shadow 0.5s;
   box-shadow:
@@ -178,14 +159,14 @@
 }
 
 .ranking-image {
-  text-align: right;
+  text-align: center;
   a {
     margin-left: 10px;
   }
 }
 
 .topic-ranking-number {
-  color: #05204A;
+  color: #3F8EFC;
   font-family: 'Playfair Display', serif;
 }
 
@@ -207,7 +188,8 @@
   height: 32px;
   width: 32px;
   transform: translate(-50%, -50%);
-  left: 15%;
+  top: 0;
+  right: 32%;
 }
 
 .ranking-icon2 {
@@ -216,8 +198,9 @@
   height: 32px;
   width: 32px;
   transform: translate(-50%, -50%);
-  left: 15%;
-  top: 12%;
+  top: 0;
+  right: 32%;
+
 }
 
 .ranking-icon3 {
@@ -226,6 +209,6 @@
   height: 32px;
   width: 32px;
   transform: translate(-50%, -50%);
-  left: 15%;
-  top: 12%;
+  top: 0;
+  right: 32%;
 }

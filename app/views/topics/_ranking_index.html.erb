@@ -4,53 +4,54 @@
 
 <% else %>
 
-  <div class="row list-group list-group-flush">
+  <div class="row">
 
     <%# i　にランキング順位を代入 %>
     <% topics.each.with_index(1) do |topic, i| %>
-      <div class="col-sm-12 list-group-item topic-list-item">
+      <div class="col-sm-12 col-12">
         <div class="row">
 
-          <div class="col-sm-3 topic-index-image ranking-image">
+          <div class="col-sm-4 col-4 topic-index-image ranking-image">
             <span class="topic-ranking-number topic-ranking-number-<%= i %>"><%= i %></span>
             <%= link_to topic_path(topic) do %>
               <%= attachment_image_tag(topic, :image, size: "100x100", fallback: "no_image.jpg") %>
             <% end %>
-          </div>
           
-          <%# 1〜3位にのみ王冠を付与 %>
-          <% if i == 1 %>
+            <%# 1〜3位にのみ王冠を付与 %>
+            <% if i == 1 %>
 
-            <div class="ranking-icon1"></div>
+              <div class="ranking-icon1"></div>
 
-          <% elsif i == 2 %>
+            <% elsif i == 2 %>
 
-            <div class="ranking-icon2"></div>
+              <div class="ranking-icon2"></div>
 
-          <% elsif i == 3 %>
+            <% elsif i == 3 %>
 
-            <div class="ranking-icon3"></div>
+              <div class="ranking-icon3"></div>
 
-          <% end %>
+            <% end %>
+          
+          </div>
 
-          <div class="col-sm-9 topic-index-title">
+          <div class="col-sm-8 col-8 topic-index-title">
             <%= link_to topic_path(topic) do %>
               <%= topic.title %>
             <% end %>
             <div class="row align-items-end">
 
-              <div class="col-sm-4 topic-index-username">
+              <div class="col-sm-4 col-4 topic-index-username">
                 <%= link_to user_path(topic.user) do %>
                   By <%= topic.user.name %>
                 <% end %>
               </div>
 
-              <div class="col-sm-5 topic-index-count">
+              <div class="col-sm-5 col-5 topic-index-count">
                 <%= link_to " #{topic.comments.count} コメント", topic_path(topic.id), class: "fas fa-comment-dots" %> 
                 <i class="fas fa-shoe-prints"></i> <%= topic.impressionist_count %>
               </div>
 
-              <div class="col-sm-3 topic-index-created">
+              <div class="col-sm-3 col-3 topic-index-created">
                 <%= topic.created_at.strftime('%Y/%m/%d %H:%M') %>
               </div>
 
@@ -58,6 +59,7 @@
           </div>
 
         </div>
+        <div class="border"></div>
       </div>
     <% end %>
 

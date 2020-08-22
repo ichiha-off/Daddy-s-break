@@ -65,24 +65,24 @@ $(document).on('turbolinks:load',function(){
   $('#comment_image').on('change', function (e) {
     var reader = new FileReader();
     reader.onload = function (e) {
-      $(".image").attr('src', e.target.result);
-      $(".image").attr('style', 'width: 100px; height: 100px;');
+      $(".image_preview").attr('src', e.target.result);
+      $(".image_preview").attr('style', 'width: 100px; height: 100px; margin: 15px;');
     }
     reader.readAsDataURL(e.target.files[0]);
   });
   $('#user_profile_image').on('change', function (e) {
     var reader = new FileReader();
     reader.onload = function (e) {
-      $(".image").attr('src', e.target.result);
-      $(".image").attr('style', 'width: 200px; height: 200px;');
+      $(".image_preview").attr('src', e.target.result);
+      $(".image_preview").attr('style', 'width: 200px; height: 200px;');
     }
     reader.readAsDataURL(e.target.files[0]);
   });
   $('#reply_image').on('change', function (e) {
     var reader = new FileReader();
     reader.onload = function (e) {
-      $(".image").attr('src', e.target.result);
-      $(".image").attr('style', 'width: 100px; height: 100px;');
+      $(".image_preview").attr('src', e.target.result);
+      $(".image_preview").attr('style', 'width: 100px; height: 100px; margin: 15px;');
     }
     reader.readAsDataURL(e.target.files[0]);
   });
@@ -121,3 +121,24 @@ $('.search-input').focus(function(){
 }).blur(function(){
   $(this).parent().removeClass('focus');
 })
+
+// aboutページのアニメーション
+$(window).scroll(function() {
+  var windowH = $(window).height(),
+  scrollY = $(window).scrollTop();
+  
+  $('.about-section-image').each(function() {
+    var elPosition = $(this).offset().top;
+    if (scrollY > elPosition - windowH) {
+      $(this).addClass("scroll-fade-image");
+    }
+  });
+
+  $('.about-section-text').each(function () {
+    var elPosition = $(this).offset().top;
+    if (scrollY > elPosition - windowH) {
+      $(this).addClass("scroll-fade-text");
+    }
+  });
+
+});

@@ -1,10 +1,10 @@
 <div class="container">
   <div class="row flex-row-reverse">
 
-    <div class="col-lg-3 offset-lg-1 col-sm-12">
+    <div class="col-lg-3 offset-lg-1 col-12">
       <div class="row">
 
-        <div class="col-sm-12 topic-create-button">
+        <div class="col-12 topic-create-button">
           <%= link_to new_topic_path do %>
             <i class="fas fa-plus"> 新しいスレッドを投稿する</i>
           <% end %>
@@ -14,19 +14,19 @@
 
       <div class="row">
 
-        <div class="col-lg-12 px-0 d-md-none d-lg-block topic-create-button">
+        <div class="col-lg-12 px-0 d-none d-lg-block topic-create-button">
           <%= link_to topics_today_ranking_path do %>
             <i class="fas fa-crown"> Today's Ranking</i>
           <% end %>
         </div>
 
-        <div class="col-lg-12 px-0 d-md-none d-lg-block topic-create-button">
+        <div class="col-lg-12 px-0 d-none d-lg-block topic-create-button">
           <%= link_to topics_weekly_ranking_path do %>
             <i class="fas fa-crown"> Weekly Ranking</i>
           <% end %>
         </div>
 
-        <div class="col-sm-12 category-search d-md-none d-lg-block">
+        <div class="col-sm-12 category-search d-none d-lg-block">
 
           <%= render 'layouts/category_search', categories: @categories %>
 
@@ -38,13 +38,14 @@
 
     <% if params[:category_id].blank? %>
     
-      <div class="col-lg-8 col-sm-12 topic-index">
+      <div class="col-lg-8 col-12 topic-index">
         <%= render 'index', topics: @topics %>
       </div>
 
     <% else %>
 
-      <div class="col-lg-8 col-sm-12 topic-index">
+      <div class="col-lg-8 col-12 topic-index">
+        <h2 style="color: #3F8EFC;"><b>「<%= Category.find_by(params[:category_id]).name %>」</b></h2>
         <%= render 'index', topics: @category_topics %>
       </div>
 

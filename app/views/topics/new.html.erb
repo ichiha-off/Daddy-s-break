@@ -15,15 +15,15 @@
 
       <div class="col-sm-12 col-lg-6">
           <div class="topic-form-area">
-            <%= f.text_field :title, placeholder: "タイトルを記入してください", class: "topic-form form-control" %>
+            <%= f.text_field :title, placeholder: "タイトルを記入してください", class: "form-control neumorphism-form" %>
           </div>
 
           <div class="topic-form-area">
-            <%= f.text_area :body, placeholder: "本文を記入してください", class: "topic-form form-control" %>
+            <%= f.text_area :body, placeholder: "本文を記入してください", class: "form-control neumorphism-form" %>
           </div>
 
           <div class="topic-form-area">
-            <%= f.collection_select :category_id, @categories, :id, :name, {:prompt => 'カテゴリ選択'}, {class: 'topic-form custom-select'} %>
+            <%= f.collection_select :category_id, @categories, :id, :name, {:prompt => 'カテゴリ選択'}, {class: 'custom-select neumorphism-form'} %>
           </div>
 
           <div class="text-center">

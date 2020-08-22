@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 
   def user_topics
     @user = User.find(params[:user])
-    @topics = Topic.where(user_id: params[:user] )
+    @topics = Topic.where(user_id: params[:user]).page(params[:page]).reverse_order
   end
 
   def quit

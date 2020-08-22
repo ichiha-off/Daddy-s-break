@@ -5,12 +5,6 @@
 .user-index {
   margin-top: 30px;
   padding: 0px 10px;
-  .list-group {
-    margin: 0px;
-    .user-index-item {
-      padding: 50px 0px;
-    }
-  }
 }
 
 .user-index-image {
@@ -23,14 +17,14 @@
 }
 
 .user-index-name {
-  font-size: 16px;
+  font-size: 24px;
   font-weight: bold;
   color: #3F8EFC;
 }
 
 .user-index-introduction {
   font-size: 16px;
-  margin-top: 10px;
+  margin-top: 20px;
   color: #3F8EFC;
 }
 
@@ -125,27 +119,6 @@
 
 .user-edit-form-area {
   margin-bottom: 30px;
-  .user-edit-form {
-    background-color: #EBECF0;
-    border: none;
-    transition: box-shadow 0.5s ease-in-out;
-    box-shadow:
-    4px 4px 8px #c8c9cc, 
-    -4px -4px 8px #ffffff,
-    inset 4px 4px 8px transparent,
-    inset -4px -4px 8px transparent;
-    &:hover,  &:focus-within {
-      background-color: #EBECF0;
-      box-shadow:
-      4px 4px 8px transparent, 
-      -4px -4px 8px transparent,
-      inset 4px 4px 8px #c8c9cc, 
-      inset -4px -4px 8px #ffffff;
-    }
-    &:-webkit-autofill {
-      transition: background-color 5000s ease-in-out 0s;
-    }
-  }
 }
 
 .user-edit-button {

@@ -56,7 +56,10 @@
     <% if user_signed_in? %>
       <footer class="footer mt-auto py-3 d-sm-none d-lg-block">
         <div class="container">
-          <p >Place sticky footer content here.</p>
+          <div class="row">
+            <div class="col-6">@CopyRight Daddy's break.inc</div>
+            <div class="col-6 text-right"><%= link_to "What's Daddy's break?", root_path, style: "color: white;" %></div>
+        </div>
         </div>
       </footer>
     <% end %>

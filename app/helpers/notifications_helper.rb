@@ -16,7 +16,7 @@ module NotificationsHelper
           tag.a(@visitor.name, href:user_path(@visitor), style:"font-weight: bold;")+"が"+tag.a('あなたの投稿', href:topic_path(@visitor_topic), style:"font-weight: bold;")+"にコメントしました"
       when "reply" then
           @reply = Reply.find_by(id: @visitor_reply)&.reply
-          tag.a(@visitor.name, href:user_path(@visitor), style:"font-weight: bold;")+"が"+tag.a('あなたに', href:topic_comment_path(@visitor_reply.comment.topic, @visitor_comment), style:"font-weight: bold;")+"に返信しました"
+          tag.a(@visitor.name, href:user_path(@visitor), style:"font-weight: bold;")+"が"+tag.a('あなたに', href:topic_comment_path(@visitor_reply.comment.topic, @visitor_comment)+'#'+@visitor_reply.id.to_s, style:"font-weight: bold;")+"に返信しました"
       when "topic" then
           @topic = Topic.find_by(id: @visitor_topic)&.title
           tag.a(@visitor.name, href:user_path(@visitor), style:"font-weight: bold;")+"が"+tag.a('新しくスレッド', href:topic_path(@visitor_topic), style:"font-weight: bold;")+"を投稿しました"
@@ -28,3 +28,4 @@ module NotificationsHelper
   end
 
 end
+

@@ -1,4 +1,17 @@
 <div class="container">
+
+    <div class="row user-topics">
+
+    <div class="col-md-6 col-10 text-center user-topics-image">
+      <%= attachment_image_tag(@user, :profile_image, size: "75x75", fallback: "no_image.jpg") %>
+      <%= @user.name %>'s follows
+      <%= link_to :back do %>
+        <i class="fas fa-arrow-circle-left"></i>
+      <% end %>
+    </div>
+
+  </div>
+
   <% if @users.blank? %>
 
     <h3 class="no-relationships-text"><b>フォローしているユーザーはいません</b></h3>

@@ -48,6 +48,10 @@ a {
 
 .header {
   background-color: #3F8EFC;
+  .Daddy-s-logo {
+    max-width: 100%;
+    height: 50px;
+  }  
 }
 
 .scroll_header{
@@ -60,6 +64,10 @@ a {
   .header-logo {
     color: #3F8EFC;
   }
+  .Daddy-s-logo {
+    max-width: 100%;
+    height: 50px;
+  }  
 }
 .scroll_header.fixed{
   position: fixed;
@@ -95,12 +103,12 @@ a {
 
 .dropdown {
   .dropdown-menu {
-      color: #3F8EFC;
-      transition: all 0.5s;
-      overflow: hidden;
-      transform-origin: top center;
-      transform: scale(1,0);
-      display: block;
+    color: #3F8EFC;
+    transition: all 0.5s;
+    overflow: hidden;
+    transform-origin: top center;
+    transform: scale(1,0);
+    display: block;
   }
   &:hover {
       .dropdown-menu {
@@ -115,6 +123,7 @@ a {
 }
 
 .btn-white {
+  font-weight: bold;
   line-height: 2;
   color: rgba(63, 142, 252, 0.8);
   background-color: #EBECF0;
@@ -191,7 +200,25 @@ a:hover{
 .border {
   width: 100%;
   margin: 30px 0px;
-  border-bottom: 1px solid #e3e3e3;
+}
+
+.neumorphism-form {
+  background-color: #EBECF0;
+  border: none;
+  transition: box-shadow 0.5s ease-in-out;
+  box-shadow:
+  4px 4px 8px #c8c9cc, 
+  -4px -4px 8px #ffffff,
+  inset 4px 4px 8px transparent,
+  inset -4px -4px 8px transparent;
+  &:hover,  &:focus-within {
+    background-color: #EBECF0;
+    box-shadow:
+    4px 4px 8px transparent, 
+    -4px -4px 8px transparent,
+    inset 4px 4px 8px #c8c9cc, 
+    inset -4px -4px 8px #ffffff;
+  }
 }
 
 .footer {
@@ -445,6 +472,7 @@ a:hover{
 
 // ボトムナビゲーション
 .bottom-sticky-nav {
+  border-top: 1px #dee2e6 solid;
   height: 50px;
   position: fixed;
   display: block;
