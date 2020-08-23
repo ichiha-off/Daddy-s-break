@@ -2,6 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.notifications-headline {
+  color: #3F8EFC;
+}
+
+.notifications-index {
+  font-size: 20px;
+}
+
 .notifications-circle {
   position: absolute;
   right: 18%;
@@ -21,4 +29,5 @@
 .notifications-destroy-all {
   width: 100%;
   margin: 20px 0;
+  padding-right: 15px;
 }

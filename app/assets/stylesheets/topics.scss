@@ -21,6 +21,7 @@
 
 .topic-index-title > a {
   font-size: 20px;
+  font-weight: bold;
  }
 
 .topic-index-title > .row {
@@ -43,10 +44,9 @@
   margin-top: 15px;
 }
 
-.topic-create-button {
-  height: 50px;
+.topic-index-button {
   margin-top: 30px;
-  line-height: 50px;
+  padding: 20px;
   text-align: center;
   border-radius: 50px;
   transition: box-shadow 0.5s ease-in-out;
@@ -60,7 +60,7 @@
   }
 }
 
-.topic-create-button:hover {
+.topic-index-button:hover {
   box-shadow:
     5px 5px 10px transparent,
     -5px -5px 10px transparent,
@@ -68,8 +68,9 @@
     inset -5px -5px 10px #ffffff;
 }
 
-.topic-create-button > a {
-  font-size: 14px;
+.topic-index-button > a {
+  font-size: 20px;
+  line-height: 0;
 }
 
 .topic-new {
@@ -126,33 +127,6 @@
   font-size: 10px;
 }
 
-.ranking-action {
-  width: 100%;
-  margin-top: 30px;
-  line-height: 50px;
-  text-align: center;
-  border-radius: 50px;
-  color: #3F8EFC;
-  display: inline-block;
-  transition: box-shadow 0.5s;
-  box-shadow:
-    5px 5px 10px #c8c9cc, 
-    -5px -5px 10px #ffffff,
-    inset 5px 5px 10px transparent,
-    inset -5px -5px 10px transparent;
-  a {
-    display: block;
-  }
-}
-
-.ranking-action:hover {
-  box-shadow:
-    5px 5px 10px transparent,
-    -5px -5px 10px transparent,
-    inset 5px 5px 10px #c8c9cc, 
-    inset -5px -5px 10px #ffffff;
-}
-
 .ranking-headline {
   margin-top: 15px;
   i {
@@ -168,6 +142,7 @@
 }
 
 .topic-ranking-number {
+  font-weight: bold;
   color: #3F8EFC;
   font-family: 'Playfair Display', serif;
 }

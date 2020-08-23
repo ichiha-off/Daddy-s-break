@@ -1,39 +1,45 @@
-<div class="container">
+<div class="container-lg">
   <div class="row flex-row-reverse">
 
-    <div class="col-lg-3 offset-lg-1 col-12">
+    <div class="col-lg-4 col-12 pl-lg-5 mt-lg-5">
       <div class="row">
 
-        <div class="col-12 topic-create-button">
-          <%= link_to new_topic_path do %>
-            <i class="fas fa-plus"> 新しいスレッドを投稿する</i>
-          <% end %>
+        <div class="col-12">
+          <div class="topic-index-button">
+            <%= link_to new_topic_path do %>
+              <i class="fas fa-plus"> New Threads</i>
+            <% end %>
+          </div>
+
+          <div class="row">
+
+            <div class="col-lg-12 d-none d-lg-block">
+              <div class="topic-index-button">
+                <%= link_to topics_today_ranking_path do %>
+                  <i class="fas fa-crown"> Today's Ranking</i>
+                <% end %>
+              </div>
+            </div>
+
+            <div class="col-lg-12 d-none d-lg-block">
+              <div class="topic-index-button">
+                <%= link_to topics_weekly_ranking_path do %>
+                  <i class="fas fa-crown"> Weekly Ranking</i>
+                <% end %>
+              </div>
+            </div>
+
+            <div class="col-12 category-search d-none d-lg-block">
+
+              <%= render 'layouts/category_search', categories: @categories %>
+
+            </div>
+
+          </div>
+
         </div>
 
       </div>
-
-      <div class="row">
-
-        <div class="col-lg-12 px-0 d-none d-lg-block topic-create-button">
-          <%= link_to topics_today_ranking_path do %>
-            <i class="fas fa-crown"> Today's Ranking</i>
-          <% end %>
-        </div>
-
-        <div class="col-lg-12 px-0 d-none d-lg-block topic-create-button">
-          <%= link_to topics_weekly_ranking_path do %>
-            <i class="fas fa-crown"> Weekly Ranking</i>
-          <% end %>
-        </div>
-
-        <div class="col-sm-12 category-search d-none d-lg-block">
-
-          <%= render 'layouts/category_search', categories: @categories %>
-
-        </div>
-
-      </div>
-
     </div>
 
     <% if params[:category_id].blank? %>

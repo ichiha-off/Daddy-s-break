@@ -1,6 +1,6 @@
 <% visitor = notification.visitor %>
 
-<div class="col-12">
+<div class="col-12 notifications-index">
   <div class="row">
 
     <div class="col-10">
@@ -18,21 +18,21 @@
 
   </div>
 
-<br>
-  <div class="row">
-    <div class="col-12">
-      <% if notification.action == "comment"  %>
-        <p class="moderate-font text-center" style="color: #3F8EFC;"><%= @comment %></p>
+  <br>
+    <div class="row">
+      <div class="col-12">
+        <% if notification.action == "comment"  %>
+          <p class="moderate-font text-center" style="color: #3F8EFC;"><%= @comment %></p>
 
-      <% elsif notification.action == "reply" %>
-        <p class="moderate-font text-center" style="color: #3F8EFC;"><%= @reply %></p>
-      
-      <% elsif notification.action == "topic" %>
-        <p class="moderate-font text-center" style="color: #3F8EFC;"><%= @topic %></p>
+        <% elsif notification.action == "reply" %>
+          <p class="moderate-font text-center" style="color: #3F8EFC;"><%= @reply %></p>
+        
+        <% elsif notification.action == "topic" %>
+          <p class="moderate-font text-center" style="color: #3F8EFC;"><%= @topic %></p>
 
-      <% end %>
+        <% end %>
+      </div>
     </div>
-  </div>
 
 </div>
 

@@ -21,11 +21,11 @@ class SearchesController < ApplicationController
   private
 
   def search_user(word)
-    User.where("name LIKE?","%#{word}%")
+    User.where("name LIKE?","%#{word}%").page(params[:page]).reverse_order
   end
 
   def search_topic(word)
-    Topic.where("title LIKE?","%#{word}%")
+    Topic.where("title LIKE?","%#{word}%").page(params[:page]).reverse_order
   end
 
 end

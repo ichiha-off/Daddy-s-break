@@ -20,9 +20,9 @@
 
           <div class="col-sm-9 col-9 topic-index-title">
             <%= link_to topic_path(topic) do %>
-              <b><%= topic.title %></b>
+              <%= topic.title %>
             <% end %>
-            <div class="row align-items-end">
+            <div class="row align-items-end topic-index-info">
 
               <div class="col-sm-4 col-4 topic-index-username">
                 <%= link_to user_path(topic.user) do %>
