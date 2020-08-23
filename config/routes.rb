@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  get '/' => 'homes#about'
+  root 'homes#about'
   get 'user/topics/index' => 'users#user_topics'
   get 'search' => 'searches#search'
 
