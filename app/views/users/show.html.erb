@@ -1,9 +1,9 @@
-<div class="container mt-5">
+<div class="container-lg mt-5">
   <div class="row user-show justify-content-around">
 
-    <div class="col-lg-5 col-10 user-show-image mb-5 mb-lg-0">
+    <div class="col-lg-4 col-12 user-show-image mb-5 mb-lg-0 p-0 text-center">
 
-      <%= attachment_image_tag(@user, :profile_image, fallback: "no_image.jpg") %>
+      <%= attachment_image_tag(@user, :profile_image, fallback: "no_image.jpg", size: "300x300") %>
 
         <% if current_user == @user %>
           <div class="user-edit-button">
@@ -15,11 +15,11 @@
 
       </div>
 
-    <div class="col-lg-5 col-10 user-show-profile mt-5 mt-lg-0">
+    <div class="col-lg-7 col-10 user-show-profile mt-5 mt-lg-0">
 
       <div class="row align-items-center">
 
-        <div class="col-12 font-weight-bold text-break user-show-name">
+        <div class="col-10 font-weight-bold text-break user-show-name">
           <%= @user.name %>
         </div>
 
