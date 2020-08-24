@@ -7,32 +7,48 @@
     <div class="devise-image4"></div>
   </div>
 
-  <div class="devise-form-area">
+  <div class="container-fluid devise-form-area">
+    <div class="row justify-content-center">
 
-    <%= image_tag asset_path('Daddy_s_logo_white.svg'), alt: "logo" %>
+        <div class="col-12 d-none d-lg-block">
+          <%= image_tag asset_path('Daddy_s_logo_white.svg'), alt: "logo", size: "150x150" %>
 
-    <h1><b>Daddy's break</b></h1>
+          <h1><b>Daddy's break</b></h1>
 
-    <h2>Sign up</h2>
+          <h2>Sign up</h2>
+        </div>
 
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "devise-form" }) do |f| %>
-      <%= render "users/shared/error_messages", resource: resource %>
+        <div class="col-12 d-block d-lg-none">
+          <%= image_tag asset_path('Daddy_s_logo_white.svg'), alt: "logo", size:"100x100" %>
 
-        <%= f.text_field :name, autocomplete: "name", placeholder: "Name", class: "devise-user-field" %>
+          <h3><b>Daddy's break</b></h3>
 
-        <%= f.email_field :email, autocomplete: "email", placeholder: "Email", class: "devise-user-field" %>
+          <h4>Sign up</h4>
+        </div>
 
-        <%= f.password_field :password, autocomplete: "new-password", placeholder: "Password", class: "devise-password" %>
+        <div class="col-12 col-sm-8 col-lg-6">
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "devise-form" }) do |f| %>
+            <%= render "users/shared/error_messages", resource: resource %>
 
-        <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Password confirmation", class: "devise-password" %>
+              <%= f.text_field :name, autocomplete: "name", placeholder: "Name", class: "devise-user-field" %>
 
-        <%= f.submit "Sign up", class: "devise-submit" %>
-    <% end %>
+              <%= f.email_field :email, autocomplete: "email", placeholder: "Email", class: "devise-user-field" %>
 
-    <div class="row mb-5">
-      <%= render "users/shared/links" %>
-    </div>
+              <%= f.password_field :password, autocomplete: "new-password", placeholder: "Password", class: "devise-password" %>
+
+              <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Password confirmation", class: "devise-password" %>
+
+              <%= f.submit "Sign up", class: "devise-submit" %>
+          <% end %>
+
+          <div class="row mb-5">
+            <%= render "users/shared/links" %>
+          </div>
+        </div>
+
+      </div>
   
+    </div>
   </div>
 
 </div>

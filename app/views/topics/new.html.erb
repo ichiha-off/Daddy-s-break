@@ -1,10 +1,10 @@
 <div class="container-lg">
   <%= form_with model: @topic, local: true do |f| %>
-    <div class="row topic-new">
+    <div class="row my-5">
 
-      <div class="col-12 col-lg-6 topic-new-image">
+      <div class="col-12 col-lg-6 p-0 topic-new-image">
         <%= attachment_image_tag(@topic, :image, fallback: "no_image.jpg", size: "300x300" ) %>
-        <div class="row justify-content-center">
+        <div class="row justify-content-center mb-4">
 
           <div class="add-image">
             <span class="fas fa-camera"></span> <%= f.attachment_field :image %>
@@ -26,7 +26,7 @@
           <%= f.collection_select :category_id, @categories, :id, :name, {:prompt => 'カテゴリ選択'}, {class: 'custom-select neumorphism-form'} %>
         </div>
 
-        <div class="text-center">
+        <div class="text-center my-5 my-lg-0">
           <%= f.submit "新規登録", class: 'btn btn-white btn-lg' %>
         </div>
       </div>

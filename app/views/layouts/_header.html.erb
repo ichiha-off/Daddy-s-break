@@ -7,42 +7,16 @@
           Daddy's break
         </div>
       <% end %>
-      <%= link_to topics_path, class: 'navbar-link ml-5 d-lg-none d-block' do %>
+      <%= link_to topics_path, class: 'navbar-link d-lg-none d-block' do %>
         <div class="header-logo nav-item">
-          <%= image_tag asset_path("Daddy_s_logo_white.svg"), class: "Daddy-s-logo" %>
+          <%= image_tag asset_path("Daddy_s_logo_white.svg"), size: "50x75", class: "pt-2" %>
         </div>
       <% end %>
     </nav>
 
-    <nav class="nav search-bar d-none d-md-block">
-      <%= form_with url: search_path, method: :get, class: "search-form", local: true do |f| %>
-        <div class="row">
-
-          <%= f.text_field :word, class: "search-input", placeholder: "Search" %>
-          <%= button_tag type: 'submit', class: "search-button" do %>
-            <i class="fas fa-search edit-pen-title"></i>
-          <% end %>
-
-          <div class="search-option">
-            <div>
-              <%= f.radio_button :range, :user %>
-              <%= f.label :range do %>
-                <i id="users" class="fas fa-users edit-pen-title"></i>
-                <span>Users</span>
-              <% end %>
-            </div>
-            <div>
-              <%= f.radio_button :range, :topic %>
-              <%= f.label :range do %>
-                <i id="threads" class="far fa-clipboard edit-pen-title"></i>
-                <span>Threads</span>
-              <% end %>
-            </div>
-          </div>
-              
-        </div>
-      <% end %>
-    </nav>
+    <div class="d-none d-md-block">
+      <%= render 'layouts/searchbar' %>
+    </div>
 
     <%= render 'layouts/nav_dropdown' %>
 

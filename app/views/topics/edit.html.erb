@@ -1,6 +1,6 @@
 <div class="container-lg">
   <%= form_with model: @topic, local: true do |f| %>
-    <div class="row topic-new">
+    <div class="row my-5">
 
       <div class="col-12 col-lg-6 text-center">
         <%= attachment_image_tag(@topic, :image, fallback: "no_image.jpg", class: "image_preview", size: "300x300" ) %>
@@ -13,7 +13,7 @@
         </div>
       </div>
 
-      <div class="col-12 col-lg-6">
+      <div class="col-12 col-lg-6 mb-5 mb-lg-0">
         <div class="topic-form-area">
           <%= f.text_field :title, placeholder: "タイトルを記入してください", class: "form-control neumorphism-form" %>
         </div>

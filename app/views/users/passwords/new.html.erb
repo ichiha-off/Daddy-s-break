@@ -7,32 +7,48 @@
     <div class="devise-image4"></div>
   </div>
 
-  <div class="devise-form-area">
+  <div class="container-fluid devise-form-area">
+    <div class="row justify-content-center">
 
-    <%= image_tag asset_path('Daddy_s_logo_white.svg'), alt: "logo" %>
+      <div class="col-12 d-none d-lg-block">
+        <%= image_tag asset_path('Daddy_s_logo_white.svg'), alt: "logo", size: "150x150" %>
 
-    <h1><b>Daddy's break</b></h1>
+        <h1><b>Daddy's break</b></h1>
 
-    <h2>Forgot your password?</h2>
+        <h2>Forgot your password?</h2>
 
-    <p>入力したメールアドレスにリセット用のURLを送信します。</p>
-
-    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { class: "devise-form", method: :post }) do |f| %>
-      <%= render "users/shared/error_messages", resource: resource %>
-
-      <div class="field">
-        <%= f.email_field :email, autocomplete: "email", placeholder: "Email", class: "devise-user-field" %>
+        <p>入力したアドレスにリセット用のURLを送信します。</p>
       </div>
 
-      <div class="actions">
-        <%= f.submit "Send mail", class: "devise-submit" %>
-      </div>
-    <% end %>
+      <div class="col-10 d-block d-lg-none">
+        <%= image_tag asset_path('Daddy_s_logo_white.svg'), alt: "logo", size:"100x100" %>
 
-    <div class="row">
-      <%= render "users/shared/links" %>
+        <h3><b>Daddy's break</b></h3>
+
+        <h4>Forgot your password?</h4>
+
+        <p>入力したアドレスにリセット用のURLを送信します。</p>
+      </div>
+
+      <div class="col-12 col-sm-8 col-lg-6">
+        <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { class: "devise-form", method: :post }) do |f| %>
+          <%= render "users/shared/error_messages", resource: resource %>
+
+          <div class="field">
+            <%= f.email_field :email, autocomplete: "email", placeholder: "Email", class: "devise-user-field" %>
+          </div>
+
+          <div class="actions">
+            <%= f.submit "Send mail", class: "devise-submit" %>
+          </div>
+        <% end %>
+
+        <div class="row">
+          <%= render "users/shared/links" %>
+        </div>
+      </div>
+
     </div>
-
   </div>
 
 </div>

@@ -1,6 +1,6 @@
 <div class="container-lg">
   <h3 class="mt-5 text-center notifications-headline"><b>Notifications</b></h3>
-  <div class="mt-3 row">
+  <div class="my-5 row">
     
     <% if @notifications.exists? %>
       <div class="notifications-destroy-all text-right">
@@ -13,7 +13,7 @@
 
     <% else %>
 
-      <p>通知はありません</p>
+      <p class="text-center d-block w-100 font-weight-bold">通知はありません</p>
 
     <% end %>
 

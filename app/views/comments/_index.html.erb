@@ -1,22 +1,32 @@
 <% replies.each do |reply| %>
-  <div id="<%= reply.id %>" class="row">
+  <div id="<%= reply.id %>" class="row px-3 px-lg-0">
 
     <% unless reply.re_reply.blank? %>
-      <div class="col-1 re-reply-icon fa-2x">
+      <div class="col-1 re-reply-icon fa-2x p-0 text-center">
         <i class="fas fa-arrow-alt-circle-up"></i>
       </div>
     <% end %>
 
     <div class="col">
       <div class="row">
+
         <div class="col-12 reply-users">
-          <%= attachment_image_tag(reply.user, :profile_image, style: "width: 60px; height: 60px; border-radius: 50%;", fallback: "no_image.jpg") %>
-          <%= link_to user_path(reply.user) do %>
-            <%= reply.user.name %>
-          <% end %>
-          <%= reply.created_at.strftime('%Y/%m/%d %H:%M') %>
+          <div class="d-lg-inline d-block">
+              <%= attachment_image_tag(reply.user, :profile_image, style: "width: 60px; height: 60px; border-radius: 50%;", fallback: "no_image.jpg") %>
+          </div>
+
+          <div class="d-lg-inline d-block">
+            <%= link_to user_path(reply.user) do %>
+              <%= reply.user.name %>
+            <% end %>
+          </div>
+
+          <div class="d-lg-inline d-block">
+            <%= reply.created_at.strftime('%Y/%m/%d %H:%M') %>
+          </div>
         </div>
-        <div class="col-12 replied-user-name">
+
+        <div class="col-12 replied-user-name text-break">
           <% unless reply.re_reply.blank? %>
             >> <%= reply.re_reply.user.name %>
           <% else %>
@@ -26,8 +36,8 @@
         <div class="col-12">
           <%= attachment_image_tag(reply, :image, class: "my-5", style: "width: 200px; height: 200px;") %>
         </div>
-        <div class="col-12 reply-reply"><%= reply.reply %></div>
-        <div class="comment-reply-button">
+        <div class="col-12 reply-reply my-3"><%= reply.reply %></div>
+        <div class="col-12 text-left comment-reply-button">
           <%= link_to topic_comment_path(reply.comment.topic, reply.comment, re_reply: reply.id) + "#reply-form", class: "reply-button" do %>
             <i class="fas fa-reply"> 返信する</i>
           <% end %>
@@ -35,13 +45,15 @@
       </div>
 
     </div>
+
     <% if current_user == reply.user %>
-      <div class="col-2">
+      <div class="col-2 p-0 text-right">
         <%= link_to topic_comment_reply_path(reply.comment.topic, reply.comment, reply), method: :delete, class: "btn btn-danger" do %>
           <i class="far fa-trash-alt"></i>
         <% end %>
       </div>
     <% end %>
+
     <div class="border"></div>
   
   </div>

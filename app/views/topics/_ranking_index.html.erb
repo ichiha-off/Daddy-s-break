@@ -11,7 +11,7 @@
       <div class="col-sm-12 col-12">
         <div class="row">
 
-          <div class="col-sm-4 col-4 topic-index-image ranking-image">
+          <div class="col-sm-4 col-6 p-0 topic-index-image ranking-image">
             <span class="topic-ranking-number topic-ranking-number-<%= i %>"><%= i %></span>
             <%= link_to topic_path(topic) do %>
               <%= attachment_image_tag(topic, :image, size: "100x100", fallback: "no_image.jpg") %>
@@ -34,24 +34,24 @@
           
           </div>
 
-          <div class="col-sm-8 col-8 topic-index-title">
+          <div class="col-sm-8 col-6 p-1 text-break topic-index-title">
             <%= link_to topic_path(topic) do %>
               <%= topic.title %>
             <% end %>
-            <div class="row align-items-end topic-index-info">
+            <div class="row align-items-end topic-index-info m-0 pt-5">
 
-              <div class="col-sm-4 col-4 topic-index-username">
+              <div class="col-sm-4 col-10 col-10 my-2 m-sm-0 p-0 text-break topic-index-username">
                 <%= link_to user_path(topic.user) do %>
                   By <%= topic.user.name %>
                 <% end %>
               </div>
 
-              <div class="col-sm-5 col-5 topic-index-count">
-                <%= link_to " #{topic.comments.count} コメント", topic_path(topic.id), class: "fas fa-comment-dots" %> 
+              <div class="col-sm-5 col-10 col-10 my-2 m-sm-0 p-0 topic-index-count">
+                <%= link_to " #{topic.comments.count}", topic_path(topic.id), class: "fas fa-comment-dots" %> 
                 <i class="fas fa-shoe-prints"></i> <%= topic.impressionist_count %>
               </div>
 
-              <div class="col-sm-3 col-3 topic-index-created">
+              <div class="col-sm-3 col-10 col-10 my-2 m-sm-0 p-0 topic-index-created">
                 <%= topic.created_at.strftime('%Y/%m/%d %H:%M') %>
               </div>
 

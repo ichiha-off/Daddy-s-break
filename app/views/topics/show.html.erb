@@ -1,55 +1,51 @@
 <div class="container-lg">
-  <div class="topic-show">
+  <div class="row topic-title">
 
-    <div class="row topic-title">
-
-      <div class="col-md-3 col-5 text-center">
-        <%= attachment_image_tag(@topic, :image, size: "120x120", fallback: "no_image.jpg") %>
-      </div>
-
-      <div class="col-md-9 col-7">
-
-        <div class="row">
-          <div class="col-12 title">
-            <%= @topic.title %>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-5 col-sm-12 col-12 topic-comment-count">
-            <span class="fas fa-comment-dots"> <%= @topic.comments.count %></span>
-            <span class="fas fa-shoe-prints"><%= @topic.impressionist_count %></span>
-            <span><%= @topic.created_at.strftime('%Y/%m/%d %H:%M') %></span>
-          </div>
-          <div class="col-md-7 col-sm-12 col-12 comment-to mt-3 mt-md-0">
-            <%= link_to "コメントする", '#comment-form', class: "btn btn-lg btn-white" %>
-          </div>
-        </div>
-
-        <% if user_signed_in? %>
-          <% if current_user.id == @topic.user_id%>
-            <div class="row justify-content-end">
-              <%= link_to "編集する", edit_topic_path(@topic), class: "btn btn-primary topic-edit-btn" %>
-              <%= link_to topic_path(@topic), method: :delete, class: "btn btn-danger topic-destroy-btn", data: { confirm: '削除するとコメント、関連する通知等、全て消えてしまいますがよろしいでしょうか？' } do %>
-                <i class="far fa-trash-alt"></i>
-              <% end %>
-            </div>
-          <% end %>
-        <% end %>
-
-      </div>
-
+    <div class="col-md-3 col-12 text-center">
+      <%= attachment_image_tag(@topic, :image, size: "120x120", fallback: "no_image.jpg") %>
     </div>
 
-    <div class="row topic-body">
-      <div class="col-12">
-        <%= @topic.body %>
+    <div class="col-md-9 col-12">
+
+      <div class="row">
+        <div class="col-12 title">
+          <%= @topic.title %>
+        </div>
       </div>
+
+      <div class="row">
+        <div class="col-md-6 col-12 topic-comment-count">
+          <span class="fas fa-comment-dots"> <%= @topic.comments.count %></span>
+          <span class="fas fa-shoe-prints"><%= @topic.impressionist_count %></span>
+          <span><%= @topic.created_at.strftime('%Y/%m/%d %H:%M') %></span>
+        </div>
+        <div class="col-md-6 col-12 comment-to mt-3 mt-md-0">
+          <%= link_to "コメントする", '#comment-form', class: "btn btn-lg btn-white" %>
+        </div>
+      </div>
+
+      <% if user_signed_in? %>
+        <% if current_user.id == @topic.user_id%>
+          <div class="row justify-content-end">
+            <%= link_to "編集する", edit_topic_path(@topic), class: "btn btn-primary topic-edit-btn" %>
+            <%= link_to topic_path(@topic), method: :delete, class: "btn btn-danger topic-destroy-btn", data: { confirm: '削除するとコメント、関連する通知等、全て消えてしまいますがよろしいでしょうか？' } do %>
+              <i class="far fa-trash-alt"></i>
+            <% end %>
+          </div>
+        <% end %>
+      <% end %>
+
     </div>
 
   </div>
 
-  <div class="topic-comments">
+  <div class="row topic-body m-0">
+    <div class="col-12">
+      <%= @topic.body %>
+    </div>
+  </div>
+
+  <div class="mb-5 m-lg-0">
 
     <div class="row">
       
@@ -94,7 +90,7 @@
     </div>
 
     <div class="row">
-      <div class="col-12 mb-3 mb-sm-5 mb-lg-0">
+      <div class="col-12 mb-5">
         <%= form_with model:[@topic, @comment], id: "comment-form", local: true do |f| %>
           <%= f.text_area :comment, rows:'5', class: "form-control neumorphism-form", placeholder: "コメントを書く" %>
 

@@ -1,7 +1,7 @@
 <div class="container mt-5">
-  <div class="row user-show">
+  <div class="row user-show justify-content-around">
 
-    <div class="col-lg-5 col-sm-12 col-12 user-show-image">
+    <div class="col-lg-5 col-10 user-show-image mb-5 mb-lg-0">
 
       <%= attachment_image_tag(@user, :profile_image, fallback: "no_image.jpg") %>
 
@@ -15,12 +15,12 @@
 
       </div>
 
-    <div class="col-lg-5 offset-lg-1 col-sm-12 col-12 user-show-profile">
+    <div class="col-lg-5 col-10 user-show-profile mt-5 mt-lg-0">
 
       <div class="row align-items-center">
 
-        <div class="col-10 user-show-name">
-          <b><%= @user.name %></b>
+        <div class="col-12 font-weight-bold text-break user-show-name">
+          <%= @user.name %>
         </div>
 
         <div class="col-2 user-show-follow-action">
@@ -44,21 +44,21 @@
 
       <div class="row user-show-counts">
 
-        <div class="col-4 user-show-threads">
+        <div class="col-lg-4 col-12 mt-4 mt-lg-5 user-show-threads">
           <h4>Thread</h4>
           <%= link_to user_topics_index_path(user: @user.id) do %>
-            <%= @user.topics.count %>
+            <p><%= @user.topics.count %></p>
           <% end %>
         </div>
 
-        <div class="col-4 user-show-following">
+        <div class="col-lg-4 col-12 mt-3 mt-lg-5 user-show-following">
           <h4>Follow</h4>
           <%= link_to user_follows_path(@user) do %>
             <p><%= @user.following.count %></p>
           <% end %>
         </div>
 
-        <div class="col-4 user-show-follower">
+        <div class="col-lg-4 col-12 mt-3 mt-lg-5 user-show-follower">
           <h4>Follower</h4>
           <%= link_to user_followers_path(@user) do %>
             <p><%= @user.followed.count %></p>
@@ -69,7 +69,7 @@
 
       <div class="row">
 
-        <div class="col-12 user-show-introduction">
+        <div class="col-12 user-show-introduction text-break">
           <%= @user.introduction %>
         </div>
 

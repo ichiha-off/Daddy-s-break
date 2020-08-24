@@ -30,9 +30,7 @@
             </div>
 
             <div class="col-12 category-search d-none d-lg-block">
-
               <%= render 'layouts/category_search', categories: @categories %>
-
             </div>
 
           </div>
@@ -51,11 +49,15 @@
     <% else %>
 
       <div class="col-lg-8 col-12 topic-index mb-5">
-        <h2><b>「<%= Category.find_by(params[:category_id]).name %>」</b></h2>
+        <h2><b>「<%= Category.find(params[:category_id]).name %>」</b></h2>
         <%= render 'index', topics: @category_topics %>
       </div>
 
     <% end %>
+
+    <div class="col-12 category-search d-block d-lg-none mb-5">
+      <%= render 'layouts/category_search', categories: @categories %>
+    </div>
 
   </div>
 </div>

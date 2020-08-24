@@ -7,13 +7,16 @@
       <%= link_to user_path(notification.visitor) do %>
         <%= attachment_image_tag visitor, :profile_image, format: "jpeg", fallback: "no_image.jpg", size: "60x60", style: "border-radius: 50%;", class:"profile-img-circle" %>
       <% end %>
-      <%= notification_form(notification) %><span class="moderate-font"><%= " (#{time_ago_in_words(notification.created_at)}前)" %></span>
     </div>
 
-    <div class="col-2 text-right">
+    <div class="col-2 p-0">
       <%= link_to notification_path(notification), method: :delete, class: "btn btn-danger" do %>
         <i class="far fa-trash-alt"></i>
       <% end %>
+    </div>
+
+    <div class="col-12">
+      <%= notification_form(notification) %><span class="moderate-font"><%= " (#{time_ago_in_words(notification.created_at)}前)" %></span>
     </div>
 
   </div>
@@ -34,6 +37,6 @@
       </div>
     </div>
 
-</div>
+  <div class="border"></div>
 
-<div class="border"></div>
+</div>
