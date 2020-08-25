@@ -19,11 +19,11 @@
 
       <div class="row align-items-center">
 
-        <div class="col-10 font-weight-bold text-break user-show-name">
+        <div class="col-sm-10 col-12 font-weight-bold text-break user-show-name">
           <%= @user.name %>
         </div>
 
-        <div class="col-2 user-show-follow-action">
+        <div class="col-sm-2 col-12 text-right user-show-follow-action">
           <% if current_user != @user %>
 
             <% if current_user.following?(@user) %>

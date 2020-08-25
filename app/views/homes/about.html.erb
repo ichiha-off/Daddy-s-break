@@ -1,8 +1,10 @@
 <div class="about-backimage d-none d-lg-block">
   <div class="about-main text-center">
     <div class="about-main-text text-left d-inline-block">
-      <h1>Welcom to 
-      <br>Daddy's break!</h1>
+      <div class="w-100 text-center">
+        <%= image_tag asset_path('Daddy_s_logo.svg'), alt: "logo", size: "250x250" %>
+      </div>
+      <h1>Daddy's break</h1>
       <p>ここはパパ達が気軽に相談ができる休める場所です。
       <br>いま世間のパパは何を悩んでいるのでしょう…。</p>
     </div>
@@ -16,15 +18,15 @@
 
 <div class="about-backimage d-block d-lg-none">
   <div class="py-5 about-main text-center">
-    <div class="py-5 px-2 text-left d-inline-block">
-      <h1 class="font-weight-bold">
-        Welcom to 
-        <br>Daddy's break!
-      </h1>
-      <p>ここはパパ達が気軽に相談ができる休める場所です。
-      <br>いま世間のパパは何を悩んでいるのでしょう…。</p>
+    <div class="about-main-text text-left d-inline-block">
+      <div class="w-100 text-center">
+        <%= image_tag asset_path('Daddy_s_logo.svg'), alt: "logo", size: "125x125" %>
+      </div>
+      <h2 class="w-100">Daddy's break</h2>
     </div>
-    <div class="p-5 about-login">
+    <p class="my-5 mx-3">ここはパパ達が気軽に相談ができる休める場所です。
+    <br>いま世間のパパは何を悩んでいるのでしょう…。</p>
+    <div class="about-login-md">
       <%= link_to new_user_session_path do %>
         <i class="fas fa-sign-in-alt text-body"> Rest now</i>
       <% end %>
@@ -37,15 +39,14 @@
 
     <div class="col-12 about-section">
       <div class="row justify-content-center">
-        <div class="col-md-4 col-6">
-          <%= image_tag asset_path('Daddy_s_logo.svg'), class: "about-section-image", alt: "logo" %>
-        </div>
+
         <div class="col-12 text-center about-section-text">
-          <h3><b>Daddy’s　breakで、休憩しよう</b></h3>
+          <h3><b>Daddy’s breakで、休憩しよう</b></h3>
           <p>話すことでストレスを解消することができます</p>
           <p>もちろん真剣な話だけではなく、すこしふざけた話や、愚痴、趣味の話でもいいでしょう</p>
           <p>ここでしっかりと休息してから<b>現実へ</b>もどりましょう</p>
         </div>
+        
       </div>
     </div>
 
@@ -75,7 +76,7 @@
 
         <div class="col-lg-6 col-12 about-section-text">
           <h3><b>より交流を深めよう</b></h3>
-          <p>マイページを編集して自己紹介文を書いたり</p>
+          <p>マイページを編集して自己紹介文を書いたり、</p>
           <p>アイコンを設定したりしてみましょう</p>
         </div>
 
@@ -84,10 +85,21 @@
 
   </div>
 
-    <div class="col-12 mb-0 mb-md-5 about-section about-login">
+    <div class="col-12 d-block d-lg-none mb-5 about-section about-login">
       <div class="row">
 
-        <h1 class="mb-5 px-0 col-lg-8 col-12 about-section-image"><b>はじめてみよう</b></h1>
+        <h1 class="px-0 col-lg-8 col-12 about-section-image"><b>はじめてみよう</b></h1>
+        <%= link_to new_user_session_path, class: "px-0 col-12 about-section-text" do %>
+          <i class="fas fa-sign-in-alt"> Rest now</i>
+        <% end %>
+
+      </div>
+    </div>
+
+    <div class="col-12 d-none d-lg-block about-section about-login">
+      <div class="row">
+
+        <h1 class="px-0 col-lg-8 col-12 about-section-image"><b>はじめてみよう</b></h1>
         <%= link_to new_user_session_path, class: "px-0 col-12 about-section-text" do %>
           <i class="fas fa-sign-in-alt"> Rest now</i>
         <% end %>

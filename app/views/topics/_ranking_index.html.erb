@@ -34,24 +34,24 @@
           
           </div>
 
-          <div class="col-sm-8 col-6 p-1 text-break topic-index-title">
+          <div class="col-sm-8 col-6 pl-0 text-break topic-index-title">
             <%= link_to topic_path(topic) do %>
               <%= topic.title %>
             <% end %>
-            <div class="row align-items-end topic-index-info m-0 pt-5">
+            <div class="row mt-md-5 align-items-end topic-index-info">
 
-              <div class="col-sm-4 col-10 col-10 my-2 m-sm-0 p-0 text-break topic-index-username">
+              <div class="col-sm-4 col-10 m-1 m-sm-0 text-break topic-index-username">
                 <%= link_to user_path(topic.user) do %>
                   By <%= topic.user.name %>
                 <% end %>
               </div>
 
-              <div class="col-sm-5 col-10 col-10 my-2 m-sm-0 p-0 topic-index-count">
+              <div class="col-sm-5 col-10 col-10 m-1 m-sm-0 topic-index-count">
                 <%= link_to " #{topic.comments.count}", topic_path(topic.id), class: "fas fa-comment-dots" %> 
                 <i class="fas fa-shoe-prints"></i> <%= topic.impressionist_count %>
               </div>
 
-              <div class="col-sm-3 col-10 col-10 my-2 m-sm-0 p-0 topic-index-created">
+              <div class="col-sm-3 col-10 col-10 m-1 m-sm-0 topic-index-created">
                 <%= topic.created_at.strftime('%Y/%m/%d %H:%M') %>
               </div>
 

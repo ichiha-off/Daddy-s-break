@@ -1,6 +1,6 @@
 <% if users.blank? %>
 
-  <h3 class="no-topics-text"><b>見つかりませんでした。</b></h3>
+  <h3 class="no-topics-text"><b>見つかりませんでした</b></h3>
 
 <% else %>
 
@@ -21,13 +21,13 @@
 
               <div class="row">
 
-                <div class="col-md-8 col-6">
+                <div class="col-md-8 col-7 text-truncate ">
                   <%= link_to user_path(user), class: "user-index-name" do %>
                     <%= user.name %>
                   <% end %>
                 </div>
 
-                <div class="col-md-3 col-6 text-right user-index-follow-action">
+                <div class="col-md-3 col-5 text-right user-index-follow-action">
                   <% if current_user != user %>
                     <% if current_user.following?(user) %>
                       <%= link_to 'フォロー中', user_relationships_path(user.id), class: "btn btn-outline-primary", method: :delete %>
