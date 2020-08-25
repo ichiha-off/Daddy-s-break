@@ -13,8 +13,8 @@
   <body class="d-flex flex-column h-100">
 
     <% if user_signed_in? %>
-      <%= render 'layouts/scroll_header' %>
       <%= render 'layouts/header' %>
+      <%= render 'layouts/scroll_header' %>
     <% elsif admin_signed_in? %>
       <%= render 'layouts/admin_header' %>
     <% end %>
@@ -29,7 +29,7 @@
 
     <%= yield %>
 
-    <div class="d-none d-md-block">
+    <div class="d-none d-lg-block">
       <div id="page_top"><a href="#"></a></div>
     </div>
 

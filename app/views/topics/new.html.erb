@@ -4,7 +4,7 @@
 
       <div class="col-12 col-lg-6 p-0 topic-new-image">
         <%= attachment_image_tag(@topic, :image, fallback: "no_image.jpg", size: "300x300" ) %>
-        <div class="row justify-content-center mb-4">
+        <div class="mb-4">
 
           <div class="add-image">
             <span class="fas fa-camera"></span> <%= f.attachment_field :image %>

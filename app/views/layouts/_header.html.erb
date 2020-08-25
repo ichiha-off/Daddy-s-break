@@ -1,24 +1,26 @@
-<header class="nav navbar header">
-  <div class="container-lg">
-    <nav class='nav'>
-      <%= link_to topics_path, class: 'navbar-link d-lg-block d-none' do %>
-        <div class="header-logo nav-item">
-          <%= image_tag asset_path("Daddy_s_logo_white.svg"), class: "Daddy-s-logo" %>
-          Daddy's break
-        </div>
-      <% end %>
-      <%= link_to topics_path, class: 'navbar-link d-lg-none d-block' do %>
-        <div class="header-logo nav-item">
-          <%= image_tag asset_path("Daddy_s_logo_white.svg"), size: "50x75", class: "pt-2" %>
-        </div>
-      <% end %>
-    </nav>
+<header class="header">
+  <div class="nav navbar">
+    <div class="container-lg">
+      <nav class='nav'>
+        <%= link_to topics_path, class: 'navbar-link d-lg-block d-none' do %>
+          <div class="header-logo nav-item">
+            <%= image_tag asset_path("Daddy_s_logo_white.svg"), class: "Daddy-s-logo" %>
+            Daddy's break
+          </div>
+        <% end %>
+        <%= link_to topics_path, class: 'navbar-link d-lg-none d-block' do %>
+          <div class="header-logo nav-item">
+            <%= image_tag asset_path("Daddy_s_logo_white.svg"), size: "50x75", class: "pt-2" %>
+          </div>
+        <% end %>
+      </nav>
 
-    <div class="d-none d-md-block">
-      <%= render 'layouts/searchbar' %>
+      <div class="d-none d-md-block">
+        <%= render 'layouts/searchbar' %>
+      </div>
+
+      <%= render 'layouts/nav_dropdown' %>
+
     </div>
-
-    <%= render 'layouts/nav_dropdown' %>
-
   </div>
 </header>
