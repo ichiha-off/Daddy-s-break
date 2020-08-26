@@ -49,33 +49,43 @@
 
     <div class="row">
       
-      <%= paginate @comments %>
+      <div class="col-12 my-5">
+        <%= paginate @comments %>
+      </div>
 
         <% @comments.each do |comment| %>
           <div class="col-12">
-            <div class="comment-user">
-              <%= attachment_image_tag(comment.user, :profile_image, style: "width: 60px; height: 60px; border-radius: 50%;", fallback: "no_image.jpg") %>
-              <%= link_to user_path(comment.user) do %>
-                <%= comment.user.name %>
-              <% end %>
-              <%= comment.created_at.strftime('%Y/%m/%d %H:%M') %>
-            </div>
-            <% if current_user == comment.user %>
-              <div class="comment-destroy">
-                <%= link_to topic_comment_path(comment.topic, comment), method: :delete, class: "btn btn-danger" do %>
-                  <i class="far fa-trash-alt"></i>
+            <div class="row">
+
+              <div class="comment-user col-lg-6 col-9">
+                <%= attachment_image_tag(comment.user, :profile_image, class: "rounded-circle", size: "60x60", fallback: "no_image.jpg") %>
+                <%= link_to user_path(comment.user) do %>
+                  <%= comment.user.name %>
                 <% end %>
+                <%= comment.created_at.strftime('%Y/%m/%d %H:%M') %>
               </div>
-            <% end %>
+              <% if current_user == comment.user %>
+                <div class="comment-destroy col-lg-6 col-3">
+                  <%= link_to topic_comment_path(comment.topic, comment), method: :delete, class: "btn btn-danger" do %>
+                    <i class="far fa-trash-alt"></i>
+                  <% end %>
+                </div>
+              <% end %>
+            
+            </div>
+
             <div class="comment-view-image">
               <%= attachment_image_tag(comment, :image, style: "width: 200px; height: 200px;") %>
             </div>
+
             <div class="comment-comment"><%= comment.comment %></div>
+
             <div class="comment-reply-button">
               <%= link_to topic_comment_path(comment.topic, comment), class: "reply-button" do %>
                 <i class="fas fa-reply"> 返信する　<%= comment.replies.count %>件</i>
               <% end %>
             </div>
+            
             <div id="favorites_buttons_<%= comment.id %>" class="comment-favorite">
               <%= render 'favorites/favorites', comment: comment %>
             </div>
@@ -85,7 +95,9 @@
           </div>
         <% end %>
 
-      <%= paginate @comments %>
+      <div class="col-12 my-5">
+        <%= paginate @comments %>
+      </div>
 
     </div>
 

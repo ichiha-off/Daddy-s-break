@@ -17,9 +17,16 @@
 }
 
 .comment-user {
+  width: 49%;
   margin-bottom: 20px;
   display: inline-block;
   color: #3F8EFC;
+}
+
+.comment-destroy {
+  width: 49%;
+  display: inline-block;
+  text-align: right;
 }
 
 .comment-comment {
@@ -31,12 +38,6 @@
 
 .preview {
   display: inline-block;
-}
-
-.comment-destroy {
-  width: 50%;
-  display: inline-block;
-  text-align: right;
 }
 
 .comment-favorite {

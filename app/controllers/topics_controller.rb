@@ -60,6 +60,10 @@ class TopicsController < ApplicationController
 
   def edit
     @topic = Topic.find(params[:id])
+    unless @topic == current_user.topics
+      redirect_to topics_path
+      flash[:alert] = "エラーが発生しました"
+    end
   end
 
   def update

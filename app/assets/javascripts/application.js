@@ -88,7 +88,7 @@ $(document).on('turbolinks:load',function(){
 
 // TOP画面へボタン
 $(document).on('turbolinks:load', function() {
-  var pagetop = $('#page_top');   
+  var pagetop = $('#page_top');
   pagetop.hide();
   $(window).scroll(function () {
       if ($(this).scrollTop() > 200) {  //200pxスクロールしたら表示
@@ -102,6 +102,16 @@ $(document).on('turbolinks:load', function() {
           scrollTop: 0
       }, 500); //0.5秒かけてトップへ移動
       return false;
+  });
+});
+
+$(document).on('turbolinks:load', function () {
+  var navpagetop = $('.nav_page_top');
+  navpagetop.click(function () {
+    $('body,html').animate({
+      scrollTop: 0
+    }, 500); //0.5秒かけてトップへ移動
+    return false;
   });
 });
 

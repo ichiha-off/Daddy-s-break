@@ -11,18 +11,24 @@
       <div class="row">
 
         <div class="col-12 reply-users">
-          <div class="d-lg-inline d-block">
-              <%= attachment_image_tag(reply.user, :profile_image, style: "width: 60px; height: 60px; border-radius: 50%;", fallback: "no_image.jpg") %>
-          </div>
+          <div class="row">
 
-          <div class="d-lg-inline d-block">
-            <%= link_to user_path(reply.user) do %>
-              <%= reply.user.name %>
+            <div class="col">
+                <%= attachment_image_tag(reply.user, :profile_image, class: "rounded-circle", size: "60x60", fallback: "no_image.jpg") %>
+                <%= link_to user_path(reply.user) do %>
+                  <%= reply.user.name %>
+                <% end %>
+                <%= reply.created_at.strftime('%Y/%m/%d %H:%M') %>
+            </div>
+
+            <% if current_user == reply.user %>
+              <div class="col-3 text-right">
+                <%= link_to topic_comment_reply_path(reply.comment.topic, reply.comment, reply), method: :delete, class: "btn btn-danger" do %>
+                  <i class="far fa-trash-alt"></i>
+                <% end %>
+              </div>
             <% end %>
-          </div>
 
-          <div class="d-lg-inline d-block">
-            <%= reply.created_at.strftime('%Y/%m/%d %H:%M') %>
           </div>
         </div>
 
@@ -33,26 +39,22 @@
             >> <%= reply.comment.user.name %>
           <% end %>
         </div>
+
         <div class="col-12">
           <%= attachment_image_tag(reply, :image, class: "my-5", style: "width: 200px; height: 200px;") %>
         </div>
+
         <div class="col-12 reply-reply my-3"><%= reply.reply %></div>
+
         <div class="col-12 text-left comment-reply-button">
           <%= link_to topic_comment_path(reply.comment.topic, reply.comment, re_reply: reply.id) + "#reply-form", class: "reply-button" do %>
             <i class="fas fa-reply"> 返信する</i>
           <% end %>
         </div>
+
       </div>
 
     </div>
-
-    <% if current_user == reply.user %>
-      <div class="col-2 p-0 text-right">
-        <%= link_to topic_comment_reply_path(reply.comment.topic, reply.comment, reply), method: :delete, class: "btn btn-danger" do %>
-          <i class="far fa-trash-alt"></i>
-        <% end %>
-      </div>
-    <% end %>
 
     <div class="border"></div>
   
