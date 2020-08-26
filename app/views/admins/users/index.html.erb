@@ -1,0 +1,39 @@
+<div class="container-lg">
+  <div class="row my-5">
+
+    <div class="col-12 text-center">
+      <h3>アカウント一覧</h3>
+    </div>
+
+  </div>
+
+  <div class="row mb-5">
+    <div class="col-12">
+      <table class="table table-responsive-sm table-striped table-light">
+
+        <thead class="thead-dark">
+          <tr>
+            <th>ユーザー名</th>
+            <th>アドレス</th>
+            <th>アカウント状態</th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @users.each do |user| %>
+            <tr>
+              <td><%= user.name %></td>
+              <td><%= user.email %></td>
+              <td><%= user.is_active %></td>
+              <td class="text-right"><%= link_to "編集する", edit_admins_user_path(user), class: "btn btn-primary" %></td>
+            </tr>
+          <% end %>
+        </tbody>
+
+      </table>
+    </div>
+  </div>
+
+</div>
+

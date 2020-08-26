@@ -40,6 +40,7 @@ Rails.application.routes.draw do
 
   namespace :admins do
     resources :categories, only: [:index, :create, :edit, :update]
+    resources :users, only: [:index, :edit, :update]
   end
 
 end

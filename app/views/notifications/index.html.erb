@@ -1,16 +1,28 @@
 <div class="container-lg">
-  <h3 class="mt-5 text-center notifications-headline"><b>Notifications</b></h3>
   <div class="my-5 row">
+
+    <div class="col-12">
+      <h3 class="text-center notifications-headline"><b>Notifications</b></h3>
+    </div>
     
     <% if @notifications.exists? %>
-      <div class="notifications-destroy-all text-right">
+
+      <div class="col-12 notifications-destroy-all text-right">
         <%= link_to notifications_destroy_all_path, class: "btn btn-danger", method: :delete, data: { confirm: '全て削除しますか？' } do %>
-          <i class="far fa-times-circle">All Delete</i>
+          <i class="far fa-times-circle"> All</i>
         <% end %>
       </div>
-      <%= render @notifications %>
-      <%= paginate @notifications %>
 
+      <div class="col-12 my-3">
+        <%= paginate @notifications %>
+      </div>
+
+      <%= render @notifications %>
+
+      <div class="col-12 my-3">
+        <%= paginate @notifications %>
+      </div>
+    
     <% else %>
 
       <p class="text-center d-block w-100 font-weight-bold">通知はありません</p>

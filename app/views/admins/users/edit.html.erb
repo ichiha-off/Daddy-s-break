@@ -1,20 +1,28 @@
 <div class="container-lg">
   <div class="row">
 
-    <h3 class="col-12 text-center my-5">カテゴリ編集</h3>
+    <h3 class="col-12 text-center my-5">アカウント編集</h3>
+
     <div class="col-12 mb-5">
-      <%= form_with model: [:admins, @category], local:true, class: "admins-form" do |f| %>
+
+      <%= form_with model: [:admins, @user], local:true, class: "admins-form" do |f| %>
         <table class="table table-responsive-sm table-striped table-light">
           <tbody>
               <tr>
-                <td><%= f.label :name, 'カテゴリ名' %></td>
+                <td><%= f.label :name, 'ユーザー名' %></td>
                 <td><%= f.text_field :name, class: "form-control" %></td>
+              </tr>
+
               <tr>
+                <td><%= f.label :name, 'アドレス' %></td>
+                <td><%= f.text_field :email, class: "form-control" %></td>
+              </tr>
 
               <tr>
                 <td></td>
                 <td><%= f.radio_button :is_active, :有効 %> <%= f.label :有効 %>　/　<%= f.radio_button :is_active, :無効 %> <%= f.label :無効 %></td>
               </tr>
+
           </tbody>
         </table>
 
@@ -23,7 +31,8 @@
         </div>
 
       <% end %>
+
     </div>
-    
+
   </div>
 </div>

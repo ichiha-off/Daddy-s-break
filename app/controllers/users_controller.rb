@@ -18,7 +18,8 @@ class UsersController < ApplicationController
     if @user.update(is_active: "無効")
       # ログアウトさせる記述
       reset_session
-      redirect_to topics_path
+      flash[:notice] = "退会を実施しました。今までありがとう！"
+      redirect_to root_path
     else
       flash[:alert] = "エラーが発生しました"
       redirect_to user_path(@user)

@@ -12,7 +12,7 @@
 
   <div class="row user-quit-button justify-content-around">
     <%= link_to "退会しない", user_path(@user), class: 'btn btn-primary col-md-2 col-8 quit-btn' %>
-    <%= link_to "退会する", users_quit_update_path, class: 'btn btn-danger col-md-2 col-8 quit-btn', method: :patch %>
+    <%= link_to "退会する", users_quit_update_path, class: 'btn btn-danger col-md-2 col-8 quit-btn', data: { confirm: '本当に退会してもよろしいでしょうか？' }, method: :patch %>
   </div>
 
 

@@ -5,11 +5,11 @@
 
     <div class="col-10">
       <%= link_to user_path(notification.visitor) do %>
-        <%= attachment_image_tag visitor, :profile_image, format: "jpeg", fallback: "no_image.jpg", size: "60x60", style: "border-radius: 50%;", class:"profile-img-circle" %>
+        <%= attachment_image_tag visitor, :profile_image, format: "jpeg", fallback: "no_image.jpg", size: "60x60", class:"rounded-circle" %>
       <% end %>
     </div>
 
-    <div class="col-2 p-0">
+    <div class="col-2 text-right pl-0">
       <%= link_to notification_path(notification), method: :delete, class: "btn btn-danger" do %>
         <i class="far fa-trash-alt"></i>
       <% end %>
