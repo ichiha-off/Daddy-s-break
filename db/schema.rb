@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_19_065837) do
+ActiveRecord::Schema.define(version: 2020_09_01_080654) do
 
   create_table "admins", force: :cascade do |t|
     t.string "encrypted_password", default: "", null: false
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2020_08_19_065837) do
     t.string "image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.decimal "score", precision: 5, scale: 3
   end
 
   create_table "favorites", force: :cascade do |t|
@@ -100,6 +101,8 @@ ActiveRecord::Schema.define(version: 2020_08_19_065837) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "re_reply_id"
+    t.decimal "score", precision: 5, scale: 3
+    t.integer "topic_id"
     t.index ["re_reply_id"], name: "index_replies_on_re_reply_id"
   end
 

@@ -15,6 +15,7 @@ class CommentsController < ApplicationController
     comment = current_user.comments.new(comment_params)
     comment.topic_id = topic.id
     comment_topic = comment.topic
+    comment.score = Language.get_data(comment_params[:comment])
     if comment.save
       comment_topic.create_notification_comment(current_user, comment.id)
       flash[:notice] = "コメントを投稿しました！"

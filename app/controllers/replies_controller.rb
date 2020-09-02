@@ -7,6 +7,8 @@ class RepliesController < ApplicationController
     comment = Comment.find(params[:comment_id])
     reply = current_user.replies.new(reply_params)
     reply.comment_id = comment.id
+    reply.topic_id = topic.id
+    reply.score = Language.get_data(reply_params[:reply])
     if reply.save
       if reply.re_reply.blank?
         reply.create_notification_reply(current_user, comment.id, reply.id, comment.user.id)

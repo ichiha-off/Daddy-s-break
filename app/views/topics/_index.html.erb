@@ -24,15 +24,16 @@
             <% end %>
             <div class="row mt-md-5 align-items-end topic-index-info">
 
-              <div class="col-sm-6 col-10 m-1 m-sm-0 text-break topic-index-username">
+              <div class="col-xl-5 col-sm-6 col-10 m-1 m-sm-0 text-break topic-index-username">
                 <%= link_to user_path(topic.user) do %>
                   By <%= topic.user.name %>
                 <% end %>
               </div>
 
-              <div class="col-sm-3 col-10 m-1 m-sm-0 topic-index-count">
+              <div class="col-xl-4 col-sm-3 col-10 m-1 m-sm-0 pr-0 px-sm-0 px-lg-3 topic-index-count">
                 <%= link_to " #{topic.comments.count}", topic_path(topic.id), class: "fas fa-comment-dots" %>
                 <i class="fas fa-shoe-prints"></i> <%= topic.impressionist_count %>
+                <i class="fas fa-smile"></i> <%= topic.topic_score_average %>
               </div>
 
               <div class="col-sm-3 col-10 m-1 m-sm-0 topic-index-created">

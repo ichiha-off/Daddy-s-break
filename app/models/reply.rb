@@ -7,6 +7,7 @@ class Reply < ApplicationRecord
   attachment :image
 
   belongs_to :user
+  belongs_to :topic
   belongs_to :comment
 
   def create_notification_reply(current_user, comment_id, reply_id, visited_id)

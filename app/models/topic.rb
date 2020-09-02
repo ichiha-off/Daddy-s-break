@@ -2,6 +2,7 @@ class Topic < ApplicationRecord
 
   has_many :notifications, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :replies, dependent: :destroy
 
   attachment :image
   
@@ -64,5 +65,14 @@ class Topic < ApplicationRecord
     end
   end
 
+  def topic_score_average
+    if self.comments.blank?
+      0
+    elsif self.replies.blank?
+      self.comments.average(:score).round(2)
+    else
+      ((self.comments.sum(:score) + self.replies.sum(:score)) / (self.comments.length + self.replies.length)).round(2)
+    end
+  end
 
 end
