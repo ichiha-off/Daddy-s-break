@@ -10,7 +10,9 @@
       <% end %>
     </div>
   </div>
-  <video src='Ball-animation.mp4' class="about-back-video" muted autoplay loop controlslist="nodownload"></video>
+  <video src='/assets/videos/Ball-animation.mp4' class="about-back-video" muted autoplay loop controlslist="nodownload"></video>
+  <%= video_tag("/assets/videos/Ball-animation.mp4", :muted => true, :loop => true, :autoplay => true, :class => "about-back-video") %>
+
 </div>
 
 <div class="admin-login">
