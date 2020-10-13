@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="300" height="300" viewBox="0 0 300 300">
+  <defs>
+    <clipPath id="clip-path">
+      <rect x="-15" y="-23" width="219" height="260" fill="none"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <rect x="7" y="12" width="125" height="205" fill="none"/>
+    </clipPath>
+    <clipPath id="clip-path-3">
+      <rect x="11" y="15" width="191" height="221" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="グループ_1" data-name="グループ 1" transform="translate(-264 -542)">
+    <rect id="長方形_1" data-name="長方形 1" width="300" height="300" transform="translate(264 542)" fill="#fff"/>
+    <g id="logo" transform="translate(-38 286)">
+      <g id="スクロールグループ_2" data-name="スクロールグループ 2" transform="translate(358 291)" clip-path="url(#clip-path)" style="isolation: isolate">
+        <g id="logo-2" data-name="logo" transform="translate(-11 -13)">
+          <g id="スクロールグループ_3" data-name="スクロールグループ 3" transform="translate(26 13)" clip-path="url(#clip-path-2)" style="isolation: isolate">
+            <text id="b" transform="translate(0 192)" fill="#cbcdd1" font-size="249" font-family="Helvetica"><tspan x="0" y="0">b</tspan></text>
+          </g>
+          <g id="スクロールグループ_1" data-name="スクロールグループ 1" clip-path="url(#clip-path-3)" style="isolation: isolate">
+            <text id="D" transform="translate(0 226)" fill="#cbcdd1" font-size="294" font-family="Helvetica"><tspan x="0" y="0">D</tspan></text>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

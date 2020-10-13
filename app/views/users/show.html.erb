@@ -3,7 +3,7 @@
 
     <div class="col-lg-4 col-12 user-show-image mb-5 mb-lg-0 p-0 text-center">
 
-      <%= attachment_image_tag(@user, :profile_image, fallback: "no_image.jpg", size: "300x300") %>
+      <%= attachment_image_tag(@user, :profile_image, fallback: "no-user.jpg", size: "300x300") %>
 
         <% if current_user == @user %>
           <div class="user-edit-button">

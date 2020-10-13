@@ -56,7 +56,7 @@ $(document).on('turbolinks:load',function(){
     var reader = new FileReader();
     reader.onload = function (e) {
       $(".image_preview").attr('src', e.target.result);
-      $(".image_preview").attr('style', 'width: 100px; height: 100px; margin: 15px;');
+      $(".image_preview").attr('style', 'width: min(60%, 300px); margin: 15px;');
     }
     reader.readAsDataURL(e.target.files[0]);
   });
@@ -64,7 +64,7 @@ $(document).on('turbolinks:load',function(){
     var reader = new FileReader();
     reader.onload = function (e) {
       $(".image_preview").attr('src', e.target.result);
-      $(".image_preview").attr('style', 'width: 200px; height: 200px;');
+      $(".image_preview").attr('style', 'width: min(60%, 300px); margin: 15px;');
     }
     reader.readAsDataURL(e.target.files[0]);
   });
@@ -72,15 +72,15 @@ $(document).on('turbolinks:load',function(){
     var reader = new FileReader();
     reader.onload = function (e) {
       $(".image_preview").attr('src', e.target.result);
-      $(".image_preview").attr('style', 'width: 100px; height: 100px; margin: 15px;');
+      $(".image_preview").attr('style', 'width: min(60%, 300px); margin: 15px;');
     }
     reader.readAsDataURL(e.target.files[0]);
   });
   $('#topic_image').on('change', function (e) {
     var reader = new FileReader();
     reader.onload = function (e) {
-      $(".image").attr('src', e.target.result);
-      $(".image").attr('style');
+      $(".image_preview").attr('src', e.target.result);
+      $(".image_preview").attr('style', 'width: min(70%, 300px);');
     }
     reader.readAsDataURL(e.target.files[0]);
   });
@@ -127,17 +127,17 @@ $(window).scroll(function() {
   var windowH = $(window).height(),
   scrollY = $(window).scrollTop();
   
-  $('.about-section-image').each(function() {
+  $('.about-section-right').each(function() {
     var elPosition = $(this).offset().top;
     if (scrollY > elPosition - windowH) {
-      $(this).addClass("scroll-fade-image");
+      $(this).addClass("scroll-fade-right");
     }
   });
 
-  $('.about-section-text').each(function () {
+  $('.about-section-left').each(function () {
     var elPosition = $(this).offset().top;
     if (scrollY > elPosition - windowH) {
-      $(this).addClass("scroll-fade-text");
+      $(this).addClass("scroll-fade-left");
     }
   });
 

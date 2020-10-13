@@ -3,34 +3,38 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .about-backimage {
+  position: relative;
   width: 100%;
   height: 100%;
-  background-image: image-url("homes/about-back.jpg");
-  background-size: cover;
-  background-color:rgba(255,255,255,0.6);
-  background-blend-mode:lighten;
+}
+
+.about-back-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
 }
 
 .about-main {
   height: 100vh;
 }
 
+.about-main-logo {
+  width: 20vw;
+  height: 30vh;
+}
+
 .about-main-text { 
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
   h1 {
+    display: block;
     font-weight: bold;
-    font-size: 100px;
-    line-height: 100px;
-    display: inline-block;
-    margin-top: 20px;
-    text-align: center;
-  }
-  h2 {
-    font-weight: bold;
-    font-size: 50px;
-    line-height: 50px;
-    display: inline-block;
-    margin-top: 10px;
-    text-align: center;
+    font-size: clamp(20px, 10vw, 100px);
   }
 }
 
@@ -42,8 +46,12 @@
 }
 
 .about-login {
-  font-size: 48px;
-  margin-bottom: 50px;
+  font-size: clamp(10px, 5vw, 48px);
+  transform: translate(-50%, -50%);
+  margin-bottom: 30px;
+  bottom: 0;
+  left: 50%;
+  position: absolute;
   a{
     color: black;
   }
@@ -57,53 +65,75 @@
 }
 
 .about-section {
-  margin: 150px 0px;
+  height: 100vh;
   text-align: center;
-  padding: 150px 0px;
+  overflow: hidden;
+  .row {
+    margin: 0;
+    position: absolute;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+  }
 }
 
-.about-section-image {
+.about-section-right {
   opacity: 0;
-  transform: translateY(100px);
+  transform: translateX(100px);
   width: 75%;
-  height: 100%;
 }
 
-.about-section-text {
-  padding-top: 50px;
+.about-section-left {
   opacity: 0;
-  transform: translateY(-100px);
+  transform: translateX(-100px);
   h3 {
-    margin-bottom: 50px;
-    line-height: 56px;
+    margin-bottom: 10%;
+    font-size: clamp(24px, 3vw, 36px);
     b {
     border-bottom: 3px solid #3F8EFC;
     }
   }
+}
+
+.about-section-content {
+  display: inline-block;
+  text-align: center;
   p {
-    font-size: 20px;
+    text-align: left;
+    font-size: clamp(12px, 2vw, 24px);
   }
 }
 
-.scroll-fade-image {
-  animation: scrollFadeImage 1.5s both;
+.about-login-bottom {
+  font-size: clamp(24px, 5vw, 48px);
+  h1 {
+    font-size: clamp(24px, 5vw, 48px);
+  }
+  a {
+    color: black;
+  }
 }
 
-.scroll-fade-text {
-  animation: scrollFadeText 1.5s both;
+.scroll-fade-right {
+  animation: scrollFadeImage 1s both;
+}
+
+.scroll-fade-left {
+  animation: scrollFadeText 1s both;
 }
 
 @keyframes scrollFadeImage {
   100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
   }
 }
 
 @keyframes scrollFadeText {
   100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
   }
 }
 

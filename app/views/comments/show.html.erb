@@ -5,7 +5,7 @@
     <div class="row topic-title">
 
       <div class="col-md-3 col-12 text-center">
-        <%= attachment_image_tag(@topic, :image, size: "120x120", fallback: "no_image.jpg") %>
+        <%= attachment_image_tag(@topic, :image, size: "120x120", fallback: "no-image.svg") %>
       </div>
 
       <div class="col-md-9 col-12">
@@ -36,7 +36,7 @@
     <div class="row">
 
       <div class="col-12 comment-user">
-        <%= attachment_image_tag(@comment.user, :profile_image, class: "rounded-circle", size: "60x60", fallback: "no_image.jpg") %>
+        <%= attachment_image_tag(@comment.user, :profile_image, class: "rounded-circle", size: "60x60", fallback: "no-image.svg") %>
         <%= link_to user_path(@comment.user) do %>
           <%= @comment.user.name %>
         <% end %>

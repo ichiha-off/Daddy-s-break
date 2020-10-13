@@ -1,76 +1,56 @@
-<div class="about-backimage d-none d-lg-block">
+<div class="about-backimage">
   <div class="about-main text-center">
-    <div class="about-main-text text-left d-inline-block">
-      <div class="w-100 text-center">
-        <%= image_tag asset_path('Daddy_s_logo.svg'), alt: "logo", size: "250x250" %>
-      </div>
+    <div class="about-main-text">
+      <%= image_tag asset_path('Daddy_s_logo.svg'), alt: "logo", class: "about-main-logo" %>
       <h1 class='header-font-type'>Daddy's break</h1>
-      <p>ここはパパ達が気軽に相談ができる休める場所です。
-      <br>いま世間のパパは何を悩んでいるのでしょう…。</p>
     </div>
     <div class="about-login text-center">
       <%= link_to new_user_session_path do %>
-        <i class="fas fa-sign-in-alt"> Rest now</i>
+        <i class="fas fa-sign-in-alt"> Login</i>
       <% end %>
     </div>
   </div>
-  <div class="admin-login">
-    <%= link_to "admins", new_admin_session_path %>
-  </div>
+  <video src='Ball-animation.mp4' class="about-back-video" muted autoplay loop controlslist="nodownload"></video>
 </div>
 
-<div class="about-backimage d-block d-lg-none">
-  <div class="py-5 about-main text-center">
-    <div class="about-main-text text-left d-inline-block">
-      <div class="w-100 text-center">
-        <%= image_tag asset_path('Daddy_s_logo.svg'), alt: "logo", size: "125x125" %>
-      </div>
-      <h2 class="header-font-type w-100">Daddy's break</h2>
-    </div>
-    <p class="my-5 mx-3">ここはパパ達が気軽に相談ができる休める場所です。
-    <br>いま世間のパパは何を悩んでいるのでしょう…。</p>
-    <div class="about-login-md">
-      <%= link_to new_user_session_path do %>
-        <i class="fas fa-sign-in-alt text-body"> Rest now</i>
-      <% end %>
-    </div>
-  </div>
-  <div class="admin-login">
-    <%= link_to "admins", new_admin_session_path %>
-  </div>
+<div class="admin-login">
+  <%= link_to "admins", new_admin_session_path %>
 </div>
 
 <div class="container-lg">
   <div class="row">
 
     <div class="col-12 about-section">
-      <div class="row">
+      <div class="row align-items-center">
 
-        <div class="col-lg-6 col-12 order-lg-last">
-          <%= image_tag asset_path("homes/about-section1.jpg"), class: "about-section-image" %>
+        <div class="col-md-5 pb-5 p-md-0 col-12 order-md-last">
+          <%= image_tag asset_path("homes/about-section1.jpg"), class: "about-section-right" %>
         </div>
 
-        <div class="col-lg-6 col-12 text-center about-section-text">
+        <div class="col-md-7 col-12 about-section-left">
           <h3><b>Daddy’s breakで、休憩しよう</b></h3>
-          <p>話すことでストレスを解消することができます</p>
-          <p>もちろん真剣な話だけではなく、すこしふざけた話や、愚痴、趣味の話でもいいでしょう</p>
-          <p>ここでしっかりと休息してから<b>現実へ</b>もどりましょう</p>
+          <div class="about-section-content">
+            <p>ここはパパさんが集まります</p>
+            <p>同じ立場の人と交流して<b>休憩</b>しよう</p>
+          </div>
         </div>
         
       </div>
     </div>
 
     <div class="col-12 about-section">
-      <div class="row">
+      <div class="row align-items-center">
 
-        <div class="col-lg-6 col-12 text-center">
-          <%= image_tag asset_path("homes/about-section2.jpg"), class: "about-section-image" %>
+        <div class="col-md-5 pb-5 p-md-0 col-12 text-center">
+          <%= image_tag asset_path("homes/about-section2.jpg"), class: "about-section-right" %>
         </div>
 
-        <div class="col-lg-6 col-12 about-section-text">
-          <h3><b>スレッドを立ち上げて相談しよう</b></h3>
-          <p>サイトの利用には会員登録が必要です。</p>
-          <p>まずは会員登録をしてみよう</p>
+        <div class="col-md-7 col-12 about-section-left">
+          <h3><b>始めるためには</b></h3>
+          <div class="about-section-content">
+            <p>サイトの利用には会員登録が必要です</p>
+            <p>まずは会員登録をしてみよう</p>
+          </div>
         </div>
 
       </div>
@@ -78,16 +58,20 @@
     </div>
 
     <div class="col-12 about-section">
-      <div class="row">
+      <div class="row align-items-center">
 
-        <div class="col-lg-6 col-12 order-lg-last text-center">
-          <%= image_tag asset_path("homes/about-section3.jpg"), class: "about-section-image" %>
+        <div class="col-md-5 pb-5 p-md-0 col-12 order-md-last text-center">
+          <%= image_tag asset_path("homes/about-section3.jpg"), class: "about-section-right" %>
         </div>
 
-        <div class="col-lg-6 col-12 about-section-text">
-          <h3><b>より交流を深めよう</b></h3>
-          <p>マイページを編集して自己紹介文を書いたり、</p>
-          <p>アイコンを設定したりしてみましょう</p>
+        <div class="col-md-7 col-12 about-section-left">
+          <h3><b>なにができるの？</b></h3>
+          <div class="about-section-content">
+            <p>SNSのような掲示板です</p>
+            <p>スレッドを立ち上げて相談したり</p>
+            <p>リプライをしてフォローしたり…</p>
+            <p>いますぐ交流を深めよう！</p>
+          </div>
         </div>
 
       </div>
@@ -95,23 +79,12 @@
 
   </div>
 
-    <div class="col-12 d-block d-lg-none about-section about-login">
+    <div class="col-12 about-section about-login-bottom">
       <div class="row">
 
-        <h1 class="px-0 col-lg-8 col-12 about-section-image"><b>はじめてみよう</b></h1>
-        <%= link_to new_user_session_path, class: "px-0 col-12 about-section-text" do %>
-          <i class="fas fa-sign-in-alt"> Rest now</i>
-        <% end %>
-
-      </div>
-    </div>
-
-    <div class="col-12 d-none d-lg-block about-section about-login">
-      <div class="row">
-
-        <h1 class="px-0 col-lg-8 col-12 about-section-image"><b>はじめてみよう</b></h1>
-        <%= link_to new_user_session_path, class: "px-0 col-12 about-section-text" do %>
-          <i class="fas fa-sign-in-alt"> Rest now</i>
+        <h1 class="col-12 about-section-right"><b>はじめてみよう</b></h1>
+        <%= link_to new_user_session_path, class: "col-12 about-section-left" do %>
+          <i class="fas fa-sign-in-alt"> Login</i>
         <% end %>
 
       </div>

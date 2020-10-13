@@ -14,7 +14,7 @@
           <div class="col-sm-4 col-6 p-0 topic-index-image ranking-image">
             <span class="topic-ranking-number topic-ranking-number-<%= i %>"><%= i %></span>
             <%= link_to topic_path(topic) do %>
-              <%= attachment_image_tag(topic, :image, size: "100x100", fallback: "no_image.jpg") %>
+              <%= attachment_image_tag(topic, :image, size: "100x100", fallback: "no-image.svg") %>
             <% end %>
           
             <%# 1〜3位にのみ王冠を付与 %>

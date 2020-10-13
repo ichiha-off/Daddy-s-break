@@ -66,6 +66,13 @@
 
 .topic-new-image {
   text-align: center;
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  img {
+    padding-left: 30px;
+    text-align: center;
+  }
 }
 
 .topic-form-area {

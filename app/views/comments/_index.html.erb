@@ -14,7 +14,7 @@
           <div class="row">
 
             <div class="col">
-                <%= attachment_image_tag(reply.user, :profile_image, class: "rounded-circle", size: "60x60", fallback: "no_image.jpg") %>
+                <%= attachment_image_tag(reply.user, :profile_image, class: "rounded-circle", size: "60x60", fallback: "no-image.svg") %>
                 <%= link_to user_path(reply.user) do %>
                   <%= reply.user.name %>
                 <% end %>

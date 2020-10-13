@@ -2,6 +2,26 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.fa-heart{
+  animation: heartAnimation .4s;
+  color: #e2264d;
+}
+
+@keyframes heartAnimation {
+  0% {
+    transform: scale(0);
+  }
+  75% {
+    transform: scale(1.1, 0.9) translate(0%, 5%);
+  }
+  80% {
+    transform: scale(0.95, 1.05) translate(0%, -3%);
+  }
+  100% {
+    transform: scale(1, 1) translate(0%, 0%);
+  }
+}
+
 .comment-favorite {
   text-align: right;
   background-color: #EBECF0;

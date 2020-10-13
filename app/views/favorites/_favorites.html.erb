@@ -1,14 +1,14 @@
 <% if comment.favorited_by?(current_user) %>
 
   <%= button_to topic_comment_favorites_path(comment.topic, comment), method: :delete, style: "background-color: #EBECF0; border: none;", remote: true do %>
-    <i class="fas fa-heart" aria-hidden="true" style="color:red;"></i>
+    <i class="fas fa-heart" aria-hidden="true"></i>
     <span class="comment-favorite-text"><%= comment.favorites.count %></span>
   <% end %>
 
 <% else %>
 
   <%= button_to topic_comment_favorites_path(comment.topic, comment), method: :post, style: "background-color: #EBECF0; border: none;", remote: true do %>
-    <i class="fas fa-heart" aria-hidden="true"></i>
+    <i class="fas fa-heart" aria-hidden="true" style="color:black;"></i>
     <span class="comment-favorite-text"><%= comment.favorites.count %></span>
   <% end %>
 

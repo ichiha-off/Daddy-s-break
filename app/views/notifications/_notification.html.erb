@@ -5,7 +5,7 @@
 
     <div class="col-10">
       <%= link_to user_path(notification.visitor) do %>
-        <%= attachment_image_tag visitor, :profile_image, format: "jpeg", fallback: "no_image.jpg", size: "60x60", class:"rounded-circle" %>
+        <%= attachment_image_tag visitor, :profile_image, format: "jpeg", fallback: "no-image.svg", size: "60x60", class:"rounded-circle" %>
       <% end %>
     </div>
 

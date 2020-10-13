@@ -4,7 +4,7 @@
     <div class="row user-edit">
 
       <div class="col-sm-12 col-lg-4 user-edit-image">
-        <%= attachment_image_tag(@user, :profile_image, size: "200x200", class: "image_preview", fallback: "no_image.jpg") %>
+        <%= attachment_image_tag(@user, :profile_image, size: "200x200", class: "image_preview", fallback: "no-user.jpg") %>
         <div class="add-image">
           <div class="fas fa-camera"></div> <%= f.attachment_field :profile_image %>
         </div>
