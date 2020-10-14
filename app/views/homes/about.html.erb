@@ -4,6 +4,10 @@
       <%= image_tag asset_path('Daddy_s_logo.svg'), alt: "logo", class: "about-main-logo" %>
       <h1 class='header-font-type'>Daddy's break</h1>
     </div>
+    <div class="about-main-body">
+      <p>生まれた悩みや疑問は仲間に相談し、</p>
+      <p>話し合うことで解決することができる。</p>
+    </div>
     <div class="about-login text-center">
       <%= link_to new_user_session_path do %>
         <i class="fas fa-sign-in-alt"> Login</i>
@@ -29,10 +33,10 @@
         </div>
 
         <div class="col-md-7 col-12 about-section-left">
-          <h3><b>Daddy’s breakで、休憩しよう</b></h3>
+          <h3 class="mb-5 mb-md-4"><b>休憩しよう</b></h3>
           <div class="about-section-content">
-            <p>ここはパパさんが集まります</p>
-            <p>同じ立場の人と交流して<b>休憩</b>しよう</p>
+            <p>Daddy's breakは、主にパパさんが集まる場所です。</p>
+            <p>同じ立場の人に相談したり話し合うことで、悩みを解決し休憩しよう。</p>
           </div>
         </div>
         
@@ -40,17 +44,22 @@
     </div>
 
     <div class="col-12 about-section">
-      <div class="row align-items-center">
+      <div class="row align-items-center justify-content-center">
 
-        <div class="col-md-5 pb-5 p-md-0 col-12 text-center">
-          <%= image_tag asset_path("homes/about-section2.jpg"), class: "about-section-right" %>
-        </div>
-
-        <div class="col-md-7 col-12 about-section-left">
-          <h3><b>始めるためには</b></h3>
+        <div class="col-12 about-section-left">
+          <h3 class="mb-5 mb-md-4"><b>ここでは、なにができるの？</b></h3>
           <div class="about-section-content">
-            <p>サイトの利用には会員登録が必要です</p>
-            <p>まずは会員登録をしてみよう</p>
+            <p>SNSのような掲示板で、主に3つのことができます！</p>
+
+            <div class="about-headline">1：スレッドを立ち上げて相談することができる。</div>
+            <p>パパとしての悩みはもちろん、趣味や仕事についてでもかまいません！スレッドでの交流を通じて仲間を増やすことができます。</p>
+
+            <div class="about-headline">2：できた仲間をフォローできる。</div>
+            <p>仲良くなった人をフォローすることで、その人がスレッドを投稿すると通知してくれるようになります。積極的にフォローしよう。</p>
+
+            <div class="about-headline">3：心を休憩させることができる。</div>
+            <p>現代社会はストレスが多いです。家庭を持つことで、社会だけではなく家でもストレスを感じてしまうこともあります。そんな時に、ここで仲間に相談することで、悩みを解決させスッキリとした気持ちなりましょう！</p>
+
           </div>
         </div>
 
@@ -62,16 +71,14 @@
       <div class="row align-items-center">
 
         <div class="col-md-5 pb-5 p-md-0 col-12 order-md-last text-center">
-          <%= image_tag asset_path("homes/about-section3.jpg"), class: "about-section-right" %>
+          <%= image_tag asset_path("homes/about-section2.jpg"), class: "about-section-right" %>
         </div>
 
         <div class="col-md-7 col-12 about-section-left">
-          <h3><b>なにができるの？</b></h3>
+          <h3 class="mb-5 mb-md-4"><b>はじめるためには</b></h3>
           <div class="about-section-content">
-            <p>SNSのような掲示板です</p>
-            <p>スレッドを立ち上げて相談したり</p>
-            <p>リプライをしてフォローしたり…</p>
-            <p>いますぐ交流を深めよう！</p>
+            <p>サイトの利用には会員登録が必要です。</p>
+            <p>メールアドレス入力し、ユーザー名（表示される名前）とパスワードを決めるだけで作成できます。</p>
           </div>
         </div>
 
