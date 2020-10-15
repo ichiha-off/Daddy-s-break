@@ -87,7 +87,7 @@
             <div class="col-12 about-headline about-section-left">1：スレッドを立ち上げて相談することができる。</div>
             
               <div class="col-12 pb-5">
-                <%= image_tag asset_path("homes/about-section-main1.png"), class: "about-image-main about-section-right w-75" %>
+                <%= image_tag asset_path("homes/about-section-main1.png"), class: "about-image-main about-section-left w-75" %>
               </div>
               
               <div class="col-12 about-section-left">
@@ -148,9 +148,9 @@
       <div class="row align-items-center about-login-bottom h-100">
 
         <div class="col-12">
-          <h1 class="about-section-right font-weight-bold">はじめてみよう</h1>
-          <%= link_to new_user_session_path, class: "about-section-left d-block" do %>
-            <i class="fas fa-sign-in-alt"> Login</i>
+          <h1 class="font-weight-bold">はじめてみよう</h1>
+          <%= link_to new_user_registration_path, class: "btn-white" do %>
+            <i class="fas fa-user-plus"> Sign Up</i>
           <% end %>
         </div>
 

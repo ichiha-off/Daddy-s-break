@@ -61,7 +61,7 @@
 
       <% if params[:re_reply].blank? %>
 
-        <%= form_with model:[@topic, @comment, @reply], class: "col-12", id: "reply-form", local: true do |f| %>
+        <%= form_with model:[@topic, @comment, @reply], class: "col-12 reply-form-position", id: "reply-form", local: true do |f| %>
           <%= f.text_area :reply, rows:'5', class: "col-12 form-control neumorphism-form", placeholder: ">>#{ @comment.user.name }" %>
           <div class="add-image">
             <div class="fas fa-camera"></div> <%= f.attachment_field :image %>
@@ -74,7 +74,7 @@
 
       <% else %>
 
-        <%= form_with model:[@topic, @comment, @reply], class: "col-12", id: "reply-form", local: true do |f| %>
+        <%= form_with model:[@topic, @comment, @reply], class: "col-12 reply-form-position", id: "reply-form", local: true do |f| %>
           <%= f.text_area :reply, rows:'5', class: "col-12 form-control neumorphism-form", placeholder: ">>#{ @re_reply.user.name }" %>
           <%= f.hidden_field :re_reply_id, value: @re_reply.id %>
           <div class="add-image">
