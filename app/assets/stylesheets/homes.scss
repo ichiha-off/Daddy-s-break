@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.about-backimage {
+.about {
   position: relative;
   width: 100%;
   height: 100%;
@@ -20,21 +20,30 @@
 
 .about-main {
   height: 100vh;
-}
-
-.about-main-logo {
-  width: 20vw;
-  height: 30vh;
-}
-
-.about-main-text { 
   display: flex;
-  align-items: center;
-  justify-content: space-around;
-  h1 {
-    display: block;
-    font-weight: bold;
-    font-size: clamp(42px, 10vw, 100px);
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.about-main-top, .about-main-bottom {
+  .about-main-text { 
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    h1 {
+      display: block;
+      font-weight: bold;
+      font-size: clamp(42px, 10vw, 100px);
+    }
+    .about-main-body {
+      font-weight: bold;
+      width: clamp(160px, 40vw, 600px);
+      font-size: clamp(16px, 2vw, 36px);
+      margin-bottom: 30px;
+    }
+    .about-main-logo {
+      height: 30vh;
+    }
   }
 }
 
@@ -45,24 +54,9 @@
   margin-bottom: 50px;
 }
 
-.about-main-body {
-  font-weight: bold;
-  text-align: left;
-  width: clamp(300px, 80vw, 1000px);
-  font-size: clamp(16px, 2vw, 36px);
-  position: absolute;
-  margin-bottom: 30px;
-  bottom: 10%;
-  left: 20px;
-}
-
 .about-login {
   font-size: clamp(32px, 5vw, 48px);
-  transform: translate(-50%, -50%);
   margin-bottom: 30px;
-  bottom: 0;
-  left: 50%;
-  position: absolute;
   a{
     color: black;
   }
@@ -71,36 +65,26 @@
   }
 }
 
-.about-login-md {
-  font-size: 24px;
+.about-back-color {
+  background-color: #fff;
 }
 
 .about-section {
-  height: 100vh;
-  text-align: center;
   overflow: hidden;
-}
-
-.about-section > .row {
-  margin: 0;
-  position: absolute;
-  width: 100%;
-  transform: translate(-50%, -50%);
-  top: 50%;
-  left: 50%;
+  text-align: center;
+  height: 100vh;
 }
 
 .about-section-right {
   opacity: 0;
   transform: translateX(100px);
-  width: 75%;
 }
 
 .about-section-left {
   opacity: 0;
   transform: translateX(-100px);
   h3 {
-    font-size: clamp(36px, 3vw, 48px);
+    font-size: clamp(24px, 10vw, 48px);
     b {
     border-bottom: 3px solid #3F8EFC;
     }
@@ -112,24 +96,30 @@
   text-align: center;
   p {
     text-align: left;
-    font-size: clamp(20px, 2vw, 24px);
+    font-size: clamp(16px, 5vw, 24px);
   }
   .about-headline {
-    font-size: clamp(28px, 2vw, 32px);
+    font-size: clamp(20px, 5vw, 32px);
     font-weight: bold;
     text-align: center;
-    margin: 30px;
+    margin: 30px 0;
     color: #3F8EFC;
+    width: 100%;
   }
 }
 
+.about-image-main {
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+}
+
 .about-login-bottom {
-  font-size: clamp(24px, 5vw, 48px);
+  font-size: clamp(32px, 5vw, 48px);
   h1 {
-    font-size: clamp(24px, 5vw, 48px);
+    font-size: clamp(32px, 5vw, 48px);
+    color: #000;
   }
   a {
-    color: black;
+    color: #000;
   }
 }
 
@@ -157,4 +147,11 @@
 
 .about-link {
   margin-bottom: 100px;
+}
+
+.about-border {
+  content: "";
+  border: .8px #c6cedc solid;
+  margin: 10% 10px;
+  width: 100%;
 }

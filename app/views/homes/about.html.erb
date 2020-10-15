@@ -1,20 +1,29 @@
-<div class="about-backimage">
-  <div class="about-main text-center">
-    <div class="about-main-text">
-      <%= image_tag asset_path('Daddy_s_logo.svg'), alt: "logo", class: "about-main-logo" %>
-      <h1 class='header-font-type'>Daddy's break</h1>
+<div class="about">
+
+  <div class="about-main">
+    <div class="about-main-top">
+      <div class="about-main-text text-center">
+        <%= image_tag asset_path('Daddy_s_logo.svg'), alt: "logo", class: "about-main-logo" %>
+        <h1 class='header-font-type'>Daddy's break</h1>
+      </div>
     </div>
-    <div class="about-main-body">
-      <p>生まれた悩みや疑問は仲間に相談し、</p>
-      <p>話し合うことで解決することができる。</p>
-    </div>
-    <div class="about-login text-center">
-      <%= link_to new_user_session_path do %>
-        <i class="fas fa-sign-in-alt"> Login</i>
-      <% end %>
+
+    <div class="about-main-bottom">
+      <div class="about-main-text">
+        <div class="about-main-body">
+          <p>生まれた悩みや疑問は仲間に相談し、</p>
+          <p>話し合うことで解決することができる。</p>
+        </div>
+        <div class="about-login">
+          <%= link_to new_user_session_path do %>
+            <i class="fas fa-sign-in-alt"> Login</i>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
-  <%= video_tag("/assets/videos/BallAnimation.mp4", :muted => true, :loop => true, :autoplay => true, :class => "about-back-video") %>
+
+  <%= video_tag("/assets/videos/ballAnime.mp4", :muted => true, :loop => true, :autoplay => true, :class => "about-back-video") %>
 
 </div>
 
@@ -26,17 +35,19 @@
   <div class="row">
 
     <div class="col-12 about-section">
-      <div class="row align-items-center">
+      <div class="row align-items-center h-100">
 
-        <div class="col-md-5 pb-5 p-md-0 col-12 order-md-last">
-          <%= image_tag asset_path("homes/about-section1.jpg"), class: "about-section-right" %>
-        </div>
+        <div class="d-md-flex">
+          <div class="col-md-5 pb-5 p-md-0 col-12 order-md-last">
+            <%= image_tag asset_path("homes/about-section1.jpg"), class: "about-image-main about-section-right w-75" %>
+          </div>
 
-        <div class="col-md-7 col-12 about-section-left">
-          <h3 class="mb-5 mb-md-4"><b>休憩しよう</b></h3>
-          <div class="about-section-content">
-            <p>Daddy's breakは、主にパパさんが集まる場所です。</p>
-            <p>同じ立場の人に相談したり話し合うことで、悩みを解決し休憩しよう。</p>
+          <div class="col-md-7 col-12 about-section-left">
+            <h3 class="mb-5 mb-md-4"><b>休憩しよう</b></h3>
+            <div class="about-section-content">
+              <p>Daddy's breakは、主にパパさんが集まる場所です。</p>
+              <p>同じ立場の人に相談したり話し合うことで、悩みを解決し休憩しよう。</p>
+            </div>
           </div>
         </div>
         
@@ -44,58 +55,107 @@
     </div>
 
     <div class="col-12 about-section">
-      <div class="row align-items-center justify-content-center">
+      <div class="row align-items-center h-100">
+
+        <div class="d-md-flex">
+          <div class="col-md-5 pb-5 p-md-0 col-12 order-md-last text-center">
+            <%= image_tag asset_path("homes/about-section2.jpg"), class: "about-image-main about-section-right w-75" %>
+          </div>
+
+          <div class="col-md-7 col-12 about-section-left">
+            <h3 class="mb-5 mb-md-4"><b>はじめるためには</b></h3>
+            <div class="about-section-content">
+              <p>サイトの利用には会員登録が必要です。</p>
+              <p>メールアドレス入力し、ユーザー名（表示される名前）とパスワードを決めるだけで作成できます。</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="col-12 about-section">
+      <div class="row align-items-center h-100">
 
         <div class="col-12 about-section-left">
           <h3 class="mb-5 mb-md-4"><b>ここでは、なにができるの？</b></h3>
-          <div class="about-section-content">
-            <p>SNSのような掲示板で、主に3つのことができます！</p>
+        </div>
 
-            <div class="about-headline">1：スレッドを立ち上げて相談することができる。</div>
-            <p>パパとしての悩みはもちろん、趣味や仕事についてでもかまいません！スレッドでの交流を通じて仲間を増やすことができます。</p>
+        <div class="col-12 about-section-content">
+          <div class="row align-items-center">
 
-            <div class="about-headline">2：できた仲間をフォローできる。</div>
-            <p>仲良くなった人をフォローすることで、その人がスレッドを投稿すると通知してくれるようになります。積極的にフォローしよう。</p>
-
-            <div class="about-headline">3：心を休憩させることができる。</div>
-            <p>現代社会はストレスが多いです。家庭を持つことで、社会だけではなく家でもストレスを感じてしまうこともあります。そんな時に、ここで仲間に相談することで、悩みを解決させスッキリとした気持ちなりましょう！</p>
+            <div class="col-12 about-headline about-section-left">1：スレッドを立ち上げて相談することができる。</div>
+            
+              <div class="col-12 pb-5">
+                <%= image_tag asset_path("homes/about-section-main1.png"), class: "about-image-main about-section-right w-75" %>
+              </div>
+              
+              <div class="col-12 about-section-left">
+                <p>パパとしての悩みはもちろん、趣味や仕事についてでもかまいません！スレッドでの交流を通じて仲間を増やすことができます。タイトルと内容を入力して新規登録ボタンでスレッドを作成できます。</p>
+              </div>
 
           </div>
         </div>
 
       </div>
-
     </div>
 
-    <div class="col-12 about-section">
-      <div class="row align-items-center">
+    <div class="about-border d-none d-md-block"></div>
 
-        <div class="col-md-5 pb-5 p-md-0 col-12 order-md-last text-center">
-          <%= image_tag asset_path("homes/about-section2.jpg"), class: "about-section-right" %>
+    <div class="col-12 about-section">
+      <div class="row align-items-center h-100">
+
+        <div class="about-section-content">
+          <div class="col-12 about-headline about-section-right">2：できた仲間をフォローできる。</div>
+          
+            <div class="col-12 pb-5">
+              <%= image_tag asset_path("homes/about-section-main2.png"), class: "about-image-main about-section-right w-75" %>
+            </div>
+            
+            <div class="col-12 about-section-right">
+              <p>仲良くなった人をフォローすることで、その人がスレッドを投稿すると通知してくれるようになります。フォローしている人、フォローしてくれている人は一覧で確認できます。積極的にフォローしよう。</p>
+            </div>
+
         </div>
 
-        <div class="col-md-7 col-12 about-section-left">
-          <h3 class="mb-5 mb-md-4"><b>はじめるためには</b></h3>
-          <div class="about-section-content">
-            <p>サイトの利用には会員登録が必要です。</p>
-            <p>メールアドレス入力し、ユーザー名（表示される名前）とパスワードを決めるだけで作成できます。</p>
-          </div>
+      </div>
+    </div>
+
+    <div class="about-border d-none d-md-block"></div>
+
+    <div class="col-12 about-section">
+      <div class="row align-items-center h-100">
+
+        <div class="about-section-content">
+          <div class="col-12 about-headline about-section-left">3：心を休憩させることができる。</div>
+          
+            <div class="col-12 pb-5">
+              <%= image_tag asset_path("homes/about-section-main3.png"), class: "about-image-main about-section-left w-75" %>
+            </div>
+            
+            <div class="col-12 about-section-left">
+              <p>現代社会はストレスが多いです。家庭を持つことで、社会だけではなく家でもストレスを感じてしまうこともあります。そんな時に、ここで仲間に相談することで、悩みを解決させスッキリとした気持ちなりましょう！</p>
+            </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="about-border d-none d-md-block"></div>
+
+    <div class="col-12 about-section">
+      <div class="row align-items-center about-login-bottom h-100">
+
+        <div class="col-12">
+          <h1 class="about-section-right font-weight-bold">はじめてみよう</h1>
+          <%= link_to new_user_session_path, class: "about-section-left d-block" do %>
+            <i class="fas fa-sign-in-alt"> Login</i>
+          <% end %>
         </div>
 
       </div>
     </div>
 
   </div>
-
-    <div class="col-12 about-section about-login-bottom">
-      <div class="row">
-
-        <h1 class="col-12 about-section-right"><b>はじめてみよう</b></h1>
-        <%= link_to new_user_session_path, class: "col-12 about-section-left" do %>
-          <i class="fas fa-sign-in-alt"> Login</i>
-        <% end %>
-
-      </div>
-    </div>
-
 </div>
