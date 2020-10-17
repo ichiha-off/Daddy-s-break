@@ -13,13 +13,14 @@
 
     <% if params[:category_id].blank? %>
     
-      <div class="col-lg-10 col-12 topic-index mb-5">
+      <div class="col-lg-10 col-12 topic-index">
+        <h2>Theads</h2>
         <%= render 'index', topics: @topics %>
       </div>
 
     <% else %>
 
-      <div class="col-lg-8 col-12 topic-index mb-5">
+      <div class="col-lg-10 col-12 topic-index">
         <h2><b>「<%= Category.find(params[:category_id]).name %>」</b></h2>
         <%= render 'index', topics: @category_topics %>
       </div>

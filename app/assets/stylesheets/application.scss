@@ -253,7 +253,7 @@ a:hover{
 .pagination>li>a {
   background-color: #EBECF0;
   border-radius: 15px;
-  margin: 0 10px;
+  margin: 0 1vw;
   transition: all 0.2s ease-out;
   box-shadow:
   4px 4px 8px #c8c9cc, 
@@ -280,6 +280,15 @@ a:hover{
   box-shadow:
     inset 4px 4px 8px #c8c9cc, 
     inset -4px -4px 8px #ffffff;
+}
+
+.pagination {
+  .page-item.disabled {
+    .page-link {
+      background-color: #EBECF0;     /*背景の色を変える*/
+      color: rgba(63, 142, 252, 0.6);
+    }
+  }
 }
 
 // 画面TOPに戻るボタン
@@ -410,6 +419,9 @@ a:hover{
   max-width: 50%;
   padding: .5rem;
   text-align: center;
+  .fa-circle {
+    opacity: .6;
+  }
   .fa-stack-1x {
     color: black;
   }
@@ -447,17 +459,18 @@ a:hover{
   }
 }
 .devise-submit {
-  border: 1px solid white;
+  font-weight: bold;
+  border: 3px solid white;
   background: transparent;
   color: white;
   display: block;
-  margin: 1rem auto;
+  margin: 2rem auto;
   min-width: 1px;
   padding: .25rem;
   transition: 250ms ease-in;
   &:hover, &:focus {
-    background: white;
     color: black;
+    background: white;
     transition: 250ms ease-in;
   }
 }
@@ -478,9 +491,14 @@ a:hover{
   }
 }
 
-.devise-form input {
-  @include placeholder(white);
-  opacity: 0.6;
+.devise-form {
+  input {
+    @include placeholder(white);
+    opacity: 0.6;
+  }
+  .devise-submit {
+    opacity: 1;
+  }
 }
 
 // ボトムナビゲーション
@@ -543,6 +561,7 @@ a:hover{
 }
 
 .header {
+  z-index: 5;
   .collapse:not(.show) {
     position: fixed;
     top: 0;
@@ -626,6 +645,7 @@ a:hover{
 }
 
 .scroll_header {
+  z-index: 5;
   .collapse:not(.show) {
     position: fixed;
     top: 0;

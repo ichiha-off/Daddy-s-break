@@ -11,7 +11,10 @@
     background-color: #EBECF0;
   }
   h2 {
-    color: #3F8EFC;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    margin: 3% 0;
   }
 }
 
@@ -155,11 +158,13 @@
 }
 
 .topic-index-created {
-  font-size: 10px;
+  font-size: 12px;
 }
 
 .ranking-headline {
   margin-top: 15px;
+  text-align: center;
+  margin: 3% 0;
   i {
     color: red;
   }

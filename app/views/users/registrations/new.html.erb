@@ -30,13 +30,13 @@
           <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "devise-form" }) do |f| %>
             <%= render "users/shared/error_messages", resource: resource %>
 
-              <%= f.text_field :name, autocomplete: "name", placeholder: "Name", class: "devise-user-field" %>
+              <%= f.text_field :name, autocomplete: "name", placeholder: "ユーザー名", class: "devise-user-field" %>
 
-              <%= f.email_field :email, autocomplete: "email", placeholder: "Email", class: "devise-user-field" %>
+              <%= f.email_field :email, autocomplete: "email", placeholder: "メールアドレス", class: "devise-user-field" %>
 
-              <%= f.password_field :password, autocomplete: "new-password", placeholder: "Password", class: "devise-password" %>
+              <%= f.password_field :password, autocomplete: "new-password", placeholder: "パスワード", class: "devise-password" %>
 
-              <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Password confirmation", class: "devise-password" %>
+              <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "パスワード（確認）", class: "devise-password" %>
 
               <%= f.submit "Sign up", class: "devise-submit" %>
           <% end %>

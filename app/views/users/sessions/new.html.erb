@@ -36,9 +36,9 @@
               </span>
             </div>
 
-            <%= f.text_field :name, autocomplete: "name", placeholder: "Name", class: "devise-user-field" %>
+            <%= f.text_field :name, autocomplete: "name", placeholder: "ユーザー名", class: "devise-user-field" %>
 
-            <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password", class: "devise-password" %>
+            <%= f.password_field :password, autocomplete: "current-password", placeholder: "パスワード", class: "devise-password" %>
 
             <% if devise_mapping.rememberable? %>
                 <%= f.check_box :remember_me %>
