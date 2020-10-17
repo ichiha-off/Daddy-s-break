@@ -33,27 +33,25 @@
 }
 
 .user-show {
-  margin: 30px 0px 100px 0;
   color: #3F8EFC;
 }
 
 .user-show-image {
+  border-radius: 50px;
+  img {
+    height: clamp(50px, 10vw, 100px);
+    width: clamp(50px, 10vw, 100px);
+    margin-bottom: 10px;
+    border-radius: 50%;
+    box-shadow:
+    8px 8px 16px #cacbce, 
+    -8px -8px 16px #ffffff;
+  }
+}
+
+.user-show-profile {
   position: relative;
   border-radius: 50px;
-}
-
-.user-show-image > img {
-  border-radius: 50px;
-  box-shadow:
-  8px 8px 16px #cacbce, 
-  -8px -8px 16px #ffffff;
-}
-
-.user-show-profile {
-  padding-top: 50px;
-  border-radius: 50px;
-}
-.user-show-profile {
   background-color: #EBECF0;
   transition: box-shadow 0.3s ease-out;
   box-shadow:
@@ -72,8 +70,7 @@
 }
 
 .user-show-name {
-  font-size: 48px;
-  text-align: center;
+  font-size: clamp(24px, 5vw, 48px);
   text-shadow:
     4px 4px 8px #cacbce, 
     -4px -4px 8px #ffffff;
@@ -85,14 +82,22 @@
 
 .user-show-threads, .user-show-following, .user-show-follower {
   text-align: center;
+  h4 {
+    font-size: clamp(16px, 3vw, 24px);
+  }
+  p {
+    font-size: clamp(12px, 2vw, 16px);
+  }
 }
 
 .user-show-introduction {
-  margin: 30px 5px;
+  margin: 50px 5px 100px;
 }
 
-.user-show-follow-action > a {
-  border-radius: 50%;
+.user-show-follow-action {
+  a {
+    border-radius: 50%;
+  }
 }
 
 .quit-link {
@@ -106,27 +111,21 @@
   margin-bottom: 30px;
 }
 
-.user-edit-button {
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 15px;
-  border: none solid;
-  border-radius: 50%;
-  background-color: #3F8EFC;
-  box-shadow: 10px 10px 30px rgba(18, 47, 61, 0.5);
-}
-
-.user-edit-button > a {
-  color: white;
-}
-
 .user-topics {
   margin-top: 30px;
 }
 
 .user-topics-image > img {
   border-radius: 50%;
+}
+
+.user-show-follow-action {
+  .user-edit-btn {
+    border-radius: 50%;
+    a {
+      color: #fff;
+    }
+  }
 }
 
 .user-edit {

@@ -6,3 +6,12 @@
   text-align: center;
   margin: 30px 0px;
 }
+
+.category-index {
+  th {
+    font-size: clamp(12px, 3vw, 20px);
+  }
+  td {
+    font-size: clamp(8px, 2vw, 16px);
+  }
+}

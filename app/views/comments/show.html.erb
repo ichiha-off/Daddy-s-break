@@ -4,17 +4,17 @@
 
     <div class="row topic-title">
 
-      <div class="col-md-3 col-12 text-center">
-        <%= attachment_image_tag(@topic, :image, size: "120x120", fallback: "no-image.svg") %>
+      <div class="col-md-3 col-6 offset-3 offset-md-0 text-center align-self-center">
+        <%= attachment_image_tag(@topic, :image, class: "topic-image", fallback: "no-image.svg") %>
       </div>
 
       <div class="col-md-9 col-12">
 
         <div class="row">
-          <div class="col-md-8 col-12 title mt-4 mt-md-0">
+          <div class="col-12 title mt-4 mt-md-0">
             <%= @topic.title %>
           </div>
-          <div class="col-md-4 col-12 comment-show-count">
+          <div class="col-12 comment-show-count">
             <span class="fas fa-comment-dots"> <%= @topic.comments.count %></span>
             <span class="fas fa-shoe-prints"> <%= @topic.impressionist_count %></span>
             <span><%= @topic.created_at.strftime('%Y/%m/%d %H:%M') %></span>
@@ -22,7 +22,7 @@
         </div>
 
         <div class="row">
-          <div class="col-12 mt-4 mt-md-0">
+          <div class="topic-body col-12">
             <%= @topic.body %>
           </div>
         </div>
@@ -30,8 +30,6 @@
       </div>
 
     </div>
-
-    <div class="border"></div>
 
     <div class="row">
 
@@ -55,6 +53,8 @@
     </div>
 
   </div>
+
+  <div class="border"></div>
 
   <div class="reply-form-area">
     <div class="row">

@@ -1,8 +1,8 @@
 <div class="container-lg">
   <div class="row topic-title">
 
-    <div class="col-md-3 col-12 text-center">
-      <%= attachment_image_tag(@topic, :image, size: "120x120", fallback: "no-image.svg") %>
+    <div class="col-md-3 col-6 offset-3 offset-md-0 text-center">
+      <%= attachment_image_tag(@topic, :image, class: "topic-image", fallback: "no-image.svg") %>
     </div>
 
     <div class="col-md-9 col-12">
@@ -20,9 +20,19 @@
           <span><i class="fas fa-smile"></i> <%= @topic.topic_score_average %></span>
           <span><%= @topic.created_at.strftime('%Y/%m/%d %H:%M') %></span>
         </div>
-        <div class="col-md-6 col-12 comment-to mt-3 mt-md-0">
+        <div class="col-md-6 col-12 comment-to mt-5 mt-md-0 d-none d-md-block">
           <%= link_to "コメントする", '#comment-form', class: "btn btn-lg btn-white" %>
         </div>
+      </div>
+
+      <div class="row topic-body d-block d-md-none">
+        <div class="col-12">
+          <%= @topic.body %>
+        </div>
+      </div>
+
+      <div class="col-12 comment-to mt-3 mb-3 d-block d-md-none">
+        <%= link_to "コメントする", '#comment-form', class: "btn btn-lg btn-white" %>
       </div>
 
       <% if user_signed_in? %>
@@ -38,12 +48,12 @@
 
     </div>
 
-  </div>
-
-  <div class="row topic-body m-0">
-    <div class="col-12">
-      <%= @topic.body %>
+    <div class="row topic-body m-0 d-none d-md-block">
+      <div class="col-12">
+        <%= @topic.body %>
+      </div>
     </div>
+
   </div>
 
   <div class="mb-5 m-lg-0">

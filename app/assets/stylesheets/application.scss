@@ -48,10 +48,13 @@ a {
 
 .header {
   background-color: #3F8EFC;
+  .header-logo{
+    font-size: clamp(12px, 3vw, 30px);
+  }
   .Daddy-s-logo {
-    max-width: 100%;
-    height: 50px;
-  }  
+    height: clamp(50px, 5vh, 70px);
+    width: clamp(50px, 5vw, 70px);
+  } 
 }
 
 .scroll_header{
@@ -63,10 +66,11 @@ a {
   background-color: #EBECF0;
   .header-logo {
     color: #3F8EFC;
+    font-size: clamp(12px, 3vw, 30px);
   }
   .Daddy-s-logo {
-    max-width: 100%;
-    height: 50px;
+    height: clamp(50px, 5vh, 70px);
+    width: clamp(50px, 5vw, 70px);
   }  
 }
 .scroll_header.fixed{
@@ -95,7 +99,7 @@ a {
   border-radius: 50%;
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
-  &:hover {
+  &:active {
     box-shadow: 0 3px 4px rgba(0, 0, 0, 0.3);
   }
 }
@@ -113,11 +117,10 @@ a {
     transform: scale(1,0);
     display: block;
   }
-  &:hover {
-      .dropdown-menu {
-          transform: scale(1);
-      }
-  }
+}
+
+.dropdown-menu.show {
+  transform: scale(1)
 }
 
 .dropdown-item {
@@ -533,4 +536,173 @@ a:hover{
   line-height: 1.2;
 }
 
+// 検索バーのアニメーション
+
+.search-collapse {
+  width: 100%;
+}
+
+.header {
+  .collapse:not(.show) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: block;
+    min-width: 100%;
+  }
+  .collapse.show {
+    position: absolute;
+    top: 0;
+    padding: 15px 2%;
+    width: 100%;
+    z-index: 10;
+    transform: scale(1);
+    background-color: #3F8EFC;
+    height: 100%;
+    .search-form {
+      width: 80%;
+      background-color: #3F8EFC;
+      margin: 0 10% 0 0;
+    }
+  }
+  .collapse, .collapsing{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    transition: all 0.5s;
+    overflow: hidden;
+    transform-origin: top center;
+    transform: scale(1,0);
+    display: block;
+    background-color: #3F8EFC;
+    height: 100%;
+    .search-form {
+      width: 80%;
+      background-color: #3F8EFC;
+      margin: 0 10% 0 0;
+    }
+  }
+}
+
+.header-inner-collapse {
+  position: absolute;
+  top: 15px;
+  right: 5%;
+}
+
+.header-collapse {
+  border: none;
+  background-color: #3F8EFC;
+  border-radius: 50%;
+  transition: box-shadow 0.2s ease-out;
+  box-shadow:
+  4px 4px 8px #3679d6, 
+  -4px -4px 8px #48a3ff,
+  inset 4px 4px 8px transparent, 
+  inset -4px -4px 8px transparent;
+  i {
+    color: #fff;
+    font-size: 24px;
+    padding: 10px;
+  }
+  &:active {
+    box-shadow: 
+    4px 4px 8px transparent, 
+    -4px -4px 8px transparent,
+    inset 4px 4px 8px #3679d6, 
+    inset -4px -4px 8px #48a3ff;
+  }
+}
+.header-inner-collapse {
+  border: none;
+  background-color: #3F8EFC;
+  i {
+    color: #fff;
+    font-size: 24px;
+    padding: 10px;
+  }
+}
+
+.scroll_header {
+  .collapse:not(.show) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: block;
+    min-width: 100%;
+  }
+  .collapse.show {
+    position: absolute;
+    top: 0;
+    padding: 15px 2%;
+    width: 100%;
+    z-index: 10;
+    transform: scale(1);
+    background-color: #EBECF0;
+    height: 100%;
+    .search-form {
+      width: 80%;
+      background-color: #EBECF0;
+      margin: 0 10% 0 0;
+    }
+  }
+  .collapse, .collapsing{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    transition: all 0.5s;
+    overflow: hidden;
+    transform-origin: top center;
+    transform: scale(1,0);
+    display: block;
+    background-color: #EBECF0;
+    height: 100%;
+    .search-form {
+      width: 80%;
+      background-color: #EBECF0;
+      margin: 0 10% 0 0;
+    }
+  }
+  .header-inner-collapse {
+    position: absolute;
+    top: 15px;
+    right: 5%;
+  }
+  .header-collapse {
+    border: none;
+    background-color: #EBECF0;
+    border-radius: 50%;
+    transition: box-shadow 0.2s ease-out;
+    box-shadow:
+    4px 4px 8px #c8c9cc, 
+    -4px -4px 8px #ffffff,
+    inset 4px 4px 8px transparent, 
+    inset -4px -4px 8px transparent;
+    i {
+      color: #3F8EFC;
+      font-size: 24px;
+      padding: 10px;
+    }
+    &:active {
+      box-shadow: 
+      4px 4px 8px transparent, 
+      -4px -4px 8px transparent,
+      inset 4px 4px 8px #c8c9cc, 
+      inset -4px -4px 8px #ffffff;
+    }
+  }
+  .header-inner-collapse {
+    border: none;
+    background-color: #EBECF0;
+    i {
+      color: #3F8EFC;
+      font-size: 24px;
+      padding: 10px;
+    }
+  }
+}
 

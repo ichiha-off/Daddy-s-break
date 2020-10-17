@@ -18,7 +18,7 @@
 
   .search-form {
     position: relative;
-    width: 350px;
+    width: clamp(200px, 30vw, 350px);
     height: 40px;
     border-radius: 40px;
     transition: box-shadow 0.2s ease-out;
@@ -199,7 +199,7 @@
   
   .search-form {
     position: relative;
-    width: 350px;
+    width: clamp(200px, 30vw, 350px);
     height: 40px;
     border-radius: 40px;
     transition: box-shadow 0.2s ease-out;
@@ -351,6 +351,9 @@
 
 .fix-searchbar {
   $color: #3F8EFC;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   .search-bar .edit-pen-title {
     color: #3F8EFC;
@@ -358,7 +361,7 @@
   
   .search-form {
     position: relative;
-    width: 100%;
+    width: clamp(250px, 50vw, 500px);
     height: 40px;
     border-radius: 40px;
     transition: box-shadow 0.2s ease-out;

@@ -1,1 +1,25 @@
-<svg id="レイヤー_1" data-name="レイヤー 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 162.62 233.54"><defs><style>.cls-1{font-size:196.91px;}.cls-1,.cls-2{fill:#fff;font-family:YuGo-Medium-83pv-RKSJ-H, YuGothic;}.cls-2{font-size:151.02px;}</style></defs><text class="cls-1" transform="translate(0 173.28) scale(1.11 1)">D</text><text class="cls-2" transform="translate(2.36 159.73) scale(1.49 1)">b</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="219" height="260" viewBox="0 0 219 260">
+  <defs>
+    <clipPath id="clip-path">
+      <rect x="-15" y="-23" width="219" height="260" fill="none"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <rect x="7" y="12" width="125" height="205" fill="none"/>
+    </clipPath>
+    <clipPath id="clip-path-3">
+      <rect x="11" y="15" width="191" height="221" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="logo" transform="translate(-670 -293)">
+    <g id="スクロールグループ_2" data-name="スクロールグループ 2" transform="translate(685 316)" clip-path="url(#clip-path)" style="isolation: isolate">
+      <g id="logo-2" data-name="logo" transform="translate(-11 -13)">
+        <g id="スクロールグループ_3" data-name="スクロールグループ 3" transform="translate(26 13)" clip-path="url(#clip-path-2)" style="isolation: isolate">
+          <text id="b" transform="translate(0 192)" fill="#fff" font-size="249" font-family="Helvetica"><tspan x="0" y="0">b</tspan></text>
+        </g>
+        <g id="スクロールグループ_1" data-name="スクロールグループ 1" clip-path="url(#clip-path-3)" style="isolation: isolate">
+          <text id="D" transform="translate(0 226)" fill="#fff" font-size="294" font-family="Helvetica"><tspan x="0" y="0">D</tspan></text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

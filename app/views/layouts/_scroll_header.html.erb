@@ -1,24 +1,57 @@
 <header class="nav navbar scroll_header">
   <div class="container-lg">
     <nav class='nav'>
-      <%= link_to topics_path, class: 'navbar-link d-lg-block d-none' do %>
+      <%= link_to topics_path, class: 'navbar-link' do %>
         <div class="header-logo header-font-type nav-item">
           <%= image_tag asset_path("Daddy_s_logo.svg"), class: "Daddy-s-logo" %>
-          Daddy's break
-        </div>
-      <% end %>
-      <%= link_to topics_path, class: 'navbar-link d-lg-none d-block' do %>
-        <div class="header-logo nav-item">
-          <%= image_tag asset_path("Daddy_s_logo.svg"), size: "50x75", class: "pt-2" %>
         </div>
       <% end %>
     </nav>
 
-  <div class="d-none d-md-block">
-    <%= render 'layouts/searchbar' %>
-  </div>
+    <nav class="nav d-flex d-md-none align-items-center">
 
-  <%= render 'layouts/nav_dropdown' %>
+      <a class="header-collapse p-0" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+        <i class="fas fa-search"></i>
+      </a>
 
+      <div class="collapse" id="collapseExample">
+        <%= render 'layouts/searchbar' %>
+        <a class="header-inner-collapse p-0" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+          <i class="fas fa-times"></i>
+        </a>
+      </div>
+
+      <%= render 'layouts/nav_dropdown' %>
+    
+    </nav>
+
+    <div class="d-none d-md-block">
+      <%= render 'layouts/searchbar' %>
+    </div>
+
+      <div class="nav d-none d-md-flex align-items-center">
+        
+        <div class="nav-item nav-button h-50">
+          <%= link_to topics_today_ranking_path do %>
+            <i class="fas fa-crown"> Today</i>
+          <% end %>
+        </div>
+
+        <div class="nav-item nav-button h-50">
+          <%= link_to topics_weekly_ranking_path do %>
+            <i class="fas fa-crown"> Weekly</i>
+          <% end %>
+        </div>
+
+        <div class="nav-item nav-button h-50">
+          <%= link_to new_topic_path do %>
+            <i class="fas fa-plus"> New</i>
+          <% end %>
+        </div>
+
+        <%= render 'layouts/nav_dropdown' %>
+
+      </div>
+    
   </div>
 </header>

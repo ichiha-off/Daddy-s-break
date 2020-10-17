@@ -2,18 +2,19 @@
   <%= form_with model: @topic, local: true do |f| %>
     <div class="row my-5">
 
-      <div class="col-12 col-lg-6 text-center">
-        <%= attachment_image_tag(@topic, :image, fallback: "no-image.svg", class: "image_preview", size: "300x300" ) %>
-        <div class="row justify-content-center">
+      <div class="col-12 topic-edit-image">
 
-          <div class="add-image">
-            <span class="fas fa-camera"></span> <%= f.attachment_field :image %>
-          </div>
-
+        <div class="add-image">
+          <span class="fas fa-camera"></span> <%= f.attachment_field :image %>
         </div>
+
+        <div class="w-100">
+          <%= attachment_image_tag(@topic, :image, fallback: "no-image.svg", class: "image_preview edit-image") %>
+        </div>
+
       </div>
 
-      <div class="col-12 col-lg-6 mb-5 mb-lg-0">
+      <div class="col-12">
         <div class="topic-form-area">
           <%= f.text_field :title, placeholder: "タイトルを記入してください", class: "form-control neumorphism-form" %>
         </div>

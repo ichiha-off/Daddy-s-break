@@ -1,7 +1,7 @@
 <% if user_signed_in? %>
   <div class="container">
     <div class="row">
-      <nav class="fixed-bottom bottom-sticky-nav col-12 d-lg-none">
+      <nav class="fixed-bottom bottom-sticky-nav col-12 d-md-none">
         <ul>
 
           <li>
@@ -17,8 +17,8 @@
           </li>
 
           <li>
-            <%= link_to user_path(current_user) do %>
-              <i class="fa fa-user"></i><span>My Page</span>
+            <%= link_to new_topic_path do %>
+              <i class="fas fa-plus"></i><span>New</span>
             <% end %>
           </li>
 
