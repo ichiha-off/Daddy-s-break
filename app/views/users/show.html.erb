@@ -9,7 +9,7 @@
           <%= attachment_image_tag(@user, :profile_image, fallback: "no-user.jpg") %>
         </div>
 
-        <div class="col-9 col-sm-7 font-weight-bold text-truncate user-show-name">
+        <div class="col-9 col-sm-7 pl-4 pl-md-3 font-weight-bold text-truncate user-show-name">
           <%= @user.name %>
         </div>
 
@@ -43,21 +43,21 @@
 
       <div class="row user-show-counts">
 
-        <div class="col-sm-4 col-12 mt-4 mt-lg-5 user-show-threads">
+        <div class="col mt-4 mt-lg-5 user-show-threads">
           <h4>Thread</h4>
           <%= link_to user_topics_index_path(user: @user.id) do %>
             <p><%= @user.topics.count %></p>
           <% end %>
         </div>
 
-        <div class="col-sm-4 col-12 mt-3 mt-lg-5 user-show-following">
+        <div class="col mt-4 mt-lg-5 user-show-following">
           <h4>Follow</h4>
           <%= link_to user_follows_path(@user) do %>
             <p><%= @user.following.count %></p>
           <% end %>
         </div>
 
-        <div class="col-sm-4 col-12 mt-3 mt-lg-5 user-show-follower">
+        <div class="col mt-4 mt-lg-5 user-show-follower">
           <h4>Follower</h4>
           <%= link_to user_followers_path(@user) do %>
             <p><%= @user.followed.count %></p>

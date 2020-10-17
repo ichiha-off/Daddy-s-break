@@ -39,8 +39,9 @@
 .user-show-image {
   border-radius: 50px;
   img {
-    height: clamp(50px, 10vw, 100px);
-    width: clamp(50px, 10vw, 100px);
+    margin-left: 3%;
+    height: clamp(100px, 10vw, 150px);
+    width: clamp(100px, 10vw, 150px);
     margin-bottom: 10px;
     border-radius: 50%;
     box-shadow:
@@ -70,7 +71,7 @@
 }
 
 .user-show-name {
-  font-size: clamp(24px, 5vw, 48px);
+  font-size: clamp(32px, 5vw, 48px);
   text-shadow:
     4px 4px 8px #cacbce, 
     -4px -4px 8px #ffffff;
