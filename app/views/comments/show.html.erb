@@ -34,7 +34,7 @@
     <div class="row">
 
       <div class="col-12 comment-user">
-        <%= attachment_image_tag(@comment.user, :profile_image, class: "rounded-circle", size: "60x60", fallback: "no-image.svg") %>
+        <%= attachment_image_tag(@comment.user, :profile_image, class: "rounded-circle", size: "60x60", fallback: "no-user.jpg") %>
         <%= link_to user_path(@comment.user) do %>
           <%= @comment.user.name %>
         <% end %>
